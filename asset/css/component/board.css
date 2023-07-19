@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/* board-head */
+.board-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+	min-height: 60px;
+	padding: 0 21px;
+}
+.board-head .total {
+	color: #333;
+}
+.board-head .total .val {
+	color: #333;
+	font-weight: 700;
+}
+.board-head .right {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+
+	gap: 24px;
+}
+
+/* board-view */
+.board-view .view-top {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+.board-view .title {
+	color: #333;
+	font-weight: 700;
+}
+.board-view .utility {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+.board-view .view-body {
+	padding: 20px 0;
+}
+.board-view .view-body img {
+	max-height: none;
+}

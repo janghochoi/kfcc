@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>TITLE</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="SHORTCUT ICON" href="../../asset/images/common/favicon.ico">
+	<link rel="stylesheet" href="../../asset/css/common/package.css">
+	<!-- jquery -->
+	<script src="../../asset/js/jquery-3.6.0.js"></script>
+	<script src="../../asset/js/jquery-ui.min.js"></script>
+	<!-- webfont js -->
+	<script src="../../asset/js/webfont.js"></script>
+	<!-- common js -->
+	<script defer src="../../asset/js/common.js"></script>
+	<script defer src="../../asset/js/dialog.js"></script>
+	<style>
+		body {
+			padding: 30px;
+		}
+
+		.guide-title {
+			margin: 20px 0 10px;
+			color: #000;
+			font-size: 18px;
+		}
+
+		.guide-title::before {
+			content: "·";
+			display: inline-block;
+			margin-right: 4px;
+			color: #222;
+		}
+
+		.guide-list {
+			margin: 10px 0 30px;
+		}
+
+		.guide-list li {
+			position: relative;
+			margin: 5px 0;
+			color: #222;
+		}
+
+		.guide-list>li {
+			padding-left: 8px;
+		}
+
+		.guide-list>li::before {
+			content: "";
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 2px;
+			height: 2px;
+			background-color: #333;
+		}
+
+		.guide-list ul {
+			padding-left: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<h2 class="guide-title">기본 팝업 샘플</h2>
+	<ul class="guide-list">
+		<li>
+			팝업 호출할 대상에 onclick="feUI.dialog.__init('<span class="color01">sample01:target</span>', this:버튼 포커스, dialog addClass 'animate' 추가, true: dimmed click close none)" 선언<br>
+			ex) 호출대상 Class 명 : sample01, this : 필수입력
+		</li>
+		<li>dialog-wrap 에 호출대상 Class 명 연결 ex)<span class="color01">sample01</span></li>
+		<li>data-align="center" / 화면 중앙 정렬</li>
+		<li>data-lock="none" / 화면 스크롤 고정 X</li>
+		<li>aria-labelledby="" / title 'ID' 랑 매칭 (접근성)</li>
+		<li>aria-describedby="" / dialog-body 'ID' 랑 매칭 (접근성)</li>
+	</ul>
+
+	<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample01', this)">sample 기본 Center</button>
+		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample02', this)">dialog Full</button>
+		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample03', this)">dialog alert</button>
+		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample04', this, 'animate')">dialog bottom</button>
+	</div>
+
+	<!-- sample01 -->
+	<div class="dialog-wrap sample01">
+		<!-- dialog -->
+		<!--
+			DESC
+			중앙 정렬
+			data-align="center"
+		 -->
+		<section class="dialog" aria-labelledby="title01" aria-describedby="dialog-body01" data-align="center">
+			<!-- dialog-head -->
+			<header class="dialog-head">
+				<h2 id="title01" class="title">기본 팝업</h2>
+			</header>
+			<!-- //dialog-head -->
+			<!-- dialog-body -->
+			<div id="dialog-body01" class="dialog-body">
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+				<p>내용 영역</p>
+			</div>
+			<!-- //dialog-body -->
+			<!-- dialog-foot -->
+			<div class="dialog-foot">
+				<!-- button-wrap -->
+				<div class="button-wrap">
+					<button type="button" class="button button-border01 cancle">취소</button>
+					<button type="button" class="button button-bg01 cancle">저장</button>
+				</div>
+				<!-- //button-wrap -->
+			</div>
+			<!-- //dialog-foot -->
+			<button type="button" class="close" aria-label="dialog 닫기"></button>
+		</section>
+		<!-- //dialog -->
+	</div>
+	<!-- //sample01 -->
+
+	<!-- sample02 -->
+	<div class="dialog-wrap sample02">
+		<!-- dialog -->
+		<section class="dialog" aria-labelledby="title02" aria-describedby="dialog-body02" data-full>
+			<!-- dialog-head -->
+			<header class="dialog-head">
+				<h2 id="title02" class="title">기본 팝업</h2>
+			</header>
+			<!-- //dialog-head -->
+			<!-- dialog-body -->
+			<div id="dialog-body02" class="dialog-body">
+				<p class="desc">desc</p>
+				<!-- box -->
+				<div class="box bg01">
+					<span class="title">title</span>
+					<p class="desc">desc</p>
+				</div>
+				<!-- //box -->
+			</div>
+			<!-- //dialog-body -->
+			<!-- dialog-foot -->
+			<div class="dialog-foot">
+				<!-- button-wrap -->
+				<div class="button-wrap">
+					<button type="button" class="button button-border01 cancle">취소</button>
+					<button type="button" class="button button-bg01 cancle">저장</button>
+				</div>
+				<!-- //button-wrap -->
+			</div>
+			<!-- //dialog-foot -->
+			<button type="button" class="close" aria-label="dialog 닫기"></button>
+		</section>
+		<!-- //dialog -->
+	</div>
+	<!-- //sample02 -->
+
+	<!-- sample03 -->
+	<!--
+			DESC
+			dimmed X : data-dimmed="none"
+			scrolllock X :data-lock="none"
+		-->
+	<div class="dialog-wrap sample03">
+		<!-- dialog -->
+		<section class="dialog" aria-describedby="dialog-body03" data-align="center" data-alert>
+			<!-- dialog-body -->
+			<div id="dialog-body03" class="dialog-body">
+				<p class="desc">text area</p>
+				<!-- button-wrap -->
+				<div class="button-wrap align-right auto">
+					<button type="button" class="button button-size-xsmall button-border01 cancle">취소</button>
+					<button type="button" class="button button-size-xsmall button-bg01 cancle">저장</button>
+				</div>
+				<!-- //button-wrap -->
+			</div>
+			<!-- //dialog-body -->
+		</section>
+		<!-- //dialog -->
+	</div>
+	<!-- //sample03 -->
+
+	<!-- sample04 -->
+	<div class="dialog-wrap sample04">
+		<!-- dialog -->
+		<section class="dialog" aria-labelledby="title04" aria-describedby="dialog-body04" data-bottom>
+			<!-- dialog-head -->
+			<header class="dialog-head">
+				<h2 id="title04" class="title">제목</h2>
+			</header>
+			<!-- //dialog-head -->
+			<!-- dialog-body -->
+			<div id="dialog-body04" class="dialog-body">
+				<p class="desc">최근 검색어를 삭제 하시겠습니까?</p>
+				<!-- button-wrap -->
+				<div class="button-wrap align-right auto">
+					<button type="button" class="button button-size-xsmall button-border01 cancle">취소</button>
+					<button type="button" class="button button-size-xsmall button-bg01 cancle">저장</button>
+				</div>
+				<!-- //button-wrap -->
+			</div>
+			<!-- //dialog-body -->
+			<button type="button" class="close" aria-label="dialog 닫기"></button>
+		</section>
+		<!-- //dialog -->
+	</div>
+	<!-- //sample04 -->
+
+	<script>
+
+		$('.calendar').datepicker({
+			dateFormat: 'yy.mm.dd',
+			showOtherMonths: true,
+			showMonthAfterYear: true,
+			yearSuffix: '년',
+			// changeYear: true,
+			// changeMonth: true,
+			showOn: "button", // button, both
+			buttonImageOnly: false, // 버튼 포커스 true, false
+			buttonText: "날짜 선택",
+			firstDay: 1,
+			monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+			dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+		});
+	</script>
+</body>
+</html>

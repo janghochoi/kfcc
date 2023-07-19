@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+/* dialog */
+.dialog-wrap {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .6);
+}
+.dialog-wrap[data-dimmed="none"] {
+	background-color: transparent;
+}
+.dialog-wrap[data-dimmed="none"] .dialog {
+	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+.dialog {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: calc(100% - 42px);
+	margin: auto;
+	border-radius: 10px;
+	background-color: #fff;
+}
+.dialog[data-align="center"] {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	transform: translate(-50%, -50%);
+}
+.dialog .close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	z-index: 5;
+	width: 24px;
+	height: 24px;
+	background: red;
+}
+.dialog .button-wrap:first-child {
+	margin-top: 0;
+}
+.dialog .button-wrap {
+	margin-top: 30px;
+}
+.dialog-head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+.dialog-head .title {
+	overflow: hidden;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.dialog-head .left {
+	margin-right: auto;
+}
+.dialog-head .right {
+	margin-left: auto;
+}
+/* dialog-body */
+.dialog-body {
+	display: flex;
+	overflow-y: auto;
+	flex: 1;
+	flex-direction: column;
+	max-height: 280px;
+	padding: 20px;
+}
+.dialog-body img {
+	max-height: none;
+}
+
+/* dialog-foot */
+.dialog-foot {
+	padding: 20px;
+}
+.dialog-foot .button-wrap {
+	margin-top: 20px;
+}
+/* type */
+.dialog[data-full] {
+	width: 100%;
+	height: 100vh;
+	border-radius: 0;
+}
+.dialog[data-full] .dialog-body {
+	max-height: none;
+}
+.dialog[data-alert] .button-wrap {
+	margin-top: 20px;
+}
+
+/* animate */
+.dialog[data-bottom] {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	transition: .2s;
+	transform: translateY(100%);
+}
+.dialog[data-bottom].animate {
+	transform: translateY(0);
+}
+.dialog[data-bottom] .dialog-head {
+	margin-bottom: 25px;
+}
+.dialog[data-bottom] .dialog-body {
+	max-height: 60vh;
+}

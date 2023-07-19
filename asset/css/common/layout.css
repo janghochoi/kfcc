@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/* skipContent */
+.skip-content {
+	position: absolute;
+	top: -60px;
+	right: 0;
+	left: 0;
+	z-index: 1000;
+	height: 60px;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: -1.5px;
+	line-height: 60px;
+	background-color: #0c8fd2;
+	transition: .1s ease-in-out;
+}
+.skip-content:focus,
+.skip-content:hover {
+	top: 0;
+	text-decoration: none;
+}
+/* wrap */
+.wrap {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+}
+.inner {
+	min-width: 1044px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+/* header */
+.header-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 0;
+	background-color: #fff;
+}
+.header-top .right {
+	display: flex;
+
+	gap: 10px;
+}
+.header-top .user-info {
+	display: flex;
+	align-items: center;
+}
+.header-top li {
+	color: #000;
+	font-size: 14px;
+}
+.header-top .bar:before {
+	height: 14px;
+	background-color: #000;
+}
+.header .search {
+	display: flex;
+	justify-content: space-around;
+	padding: 2px 10px;
+	border-radius: 10px;
+	background-color: #efefef;
+
+	gap: 5px;
+}
+.header .search input {
+	margin: 0;
+	border: 0;
+	font-size: 14px;
+	background-color: #efefef;
+}
+.header .search button {
+	width: 20px;
+}
+.header .search .icon-search {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url(../../images/common/icon-search.png) no-repeat 0 0;
+}
+/* nav */
+.nav {
+	background-color: #0c8fd2;
+}
+.nav ul {
+	display: flex;
+	justify-content: space-between;
+}
+.nav li {
+	padding: 0 25px;
+}
+.nav li a {
+	display: block;
+	padding: 12px 10px;
+	color: #fff;
+}
+/* container */
+.container {
+	padding-bottom: 96px;
+	background-color: #f8fcfe;
+}
+
+.section.left,
+.section.right {
+	flex-basis: 230px;
+	flex-shrink: 0;
+}
+.section.center {
+	width: 100%;
+	min-width: 530px;
+}
+.section .box {
+	margin-bottom: 15px;
+	border: 1px solid #f5f5f5;
+	background-color: #fff;
+	box-shadow: 1px 1px 1px #eaedef;
+}
+/* footer */
+.footer {
+	padding: 15px 0;
+	background-color: #ddd;
+}
+.footer p {
+	color: #000;
+	font-size: 14px;
+}

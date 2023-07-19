@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+/* main */
+.main {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 17px;
+
+	gap: 15px;
+}
