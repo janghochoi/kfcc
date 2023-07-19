@@ -111,8 +111,7 @@
 	flex-shrink: 0;
 }
 .section.center {
-	width: 100%;
-	min-width: 530px;
+	flex: 1;
 }
 .section .box {
 	margin-bottom: 15px;
