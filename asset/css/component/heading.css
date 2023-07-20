@@ -34,23 +34,6 @@
 	margin-top: 24px;
 }
 .heading.depth02 .title {
-	font-size: 24px;
+	font-size: 16px;
 }
-/* depth03 */
-.board-head + .heading.depth03 {
-	margin-top: 0;
-}
-.heading.depth03 {
-	margin-top: 24px;
-	margin-bottom: 24px;
-}
-.heading.depth03 .title {
-	font-size: 20px;
-}
-/* depth04 */
-.heading.depth04 {
-	margin-top: 20px;
-}
-.heading.depth04 .title {
-	font-size: 18px;
-}
+

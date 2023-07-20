@@ -1,5 +1,15 @@
 @charset "utf-8";
+/* icon 공통 */
+.icon {
+	display: inline-block;
+	position: relative;
 
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* old */
 /* icon 공통 */
 [class*=icon-size] {
 	display: inline-block;
