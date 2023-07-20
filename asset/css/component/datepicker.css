@@ -12,8 +12,8 @@
 	background-color: #f4f4f4;
 }
 .ui-datepicker .ui-datepicker-header {
-	margin: 0 -9px;
-	padding: 10px 8px;
+	width: 120px;
+	padding: 0;
 	border: 0;
 	border-radius: 0;
 	background-color: #000;
@@ -40,7 +40,7 @@
 }
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
-	top: 15px;
+	top: 5px;
 	width: 20px;
 	height: 20px;
 	border: 0;
@@ -58,14 +58,15 @@
 }
 .ui-datepicker table {
 	margin-bottom: 0;
+	font-size: 16px;
 }
 .ui-datepicker th {
-	color: #35466a;
+	padding: 0 3px;
 }
 .ui-datepicker .ui-datepicker-calendar td span,
 .ui-datepicker .ui-datepicker-calendar td a {
-	width: 24px;
-	height: 24px;
+	width: 20px;
+	height: 20px;
 	border-color: #fff;
 	border-radius: 5px;
 	color: #666;
@@ -82,7 +83,7 @@
 /* 토요일은 파란색, 일요일은 빨간색  */
 .ui-datepicker-week-end:first-child,
 .ui-datepicker-calendar tbody td:first-child a {
-	color: inherit;
+	color: red;
 }
 .ui-datepicker-week-end:last-child,
 .ui-datepicker-calendar tbody td:last-child a {
@@ -91,47 +92,39 @@
 /* calendar */
 .calendar .ui-datepicker {
 	width: 100%;
-	height: 345px;
 	padding: 0;
-	font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
 }
 .calendar .ui-widget.ui-widget-content {
 	border: none;
 	background-color: #fff;
+	margin-bottom: 25px;
 }
 .calendar .ui-datepicker .ui-datepicker-header {
-	margin: 0 0 10px  0;
-	padding-bottom: 12px;
-	border-bottom: 1px solid #ccc;
+	margin: 17px auto 15px;
 	background-color: #fff;
 }
 .calendar .ui-datepicker .ui-datepicker-title {
 	margin: 0;
-	color: #333;
-	text-align: left;
-}
-.calendar .ui-datepicker th {
-	color: #333;
+	color: #000;
+	text-align: center;
 }
 .ui-datepicker td {
-	padding: 8px 10px;
+	padding: 4px;
 }
 .calendar .ui-datepicker .ui-datepicker-calendar td span,
 .calendar .ui-datepicker .ui-datepicker-calendar td a {
 	margin: 0 auto;
 	padding: 0;
-	font-weight: 500;
 	text-align: center;
-	line-height: 24px;
 }
 .calendar .ui-datepicker .ui-datepicker-calendar td span {
-	color: #ccc;
+	color: #898989;
 }
 .calendar .ui-datepicker .ui-datepicker-calendar td .ui-state-highlight {
 	position: relative;
 	color: blue;
 }
-.calendar .ui-datepicker .ui-datepicker-calendar td .ui-state-highlight:after {
+/*.calendar .ui-datepicker .ui-datepicker-calendar td .ui-state-highlight:after {
 	content: "오늘";
 	position: absolute;
 	bottom: -16px;
@@ -140,7 +133,7 @@
 	font-size: 11px;
 	text-align: center;
 	white-space: nowrap;
-}
+}*/
 .calendar .ui-datepicker .ui-datepicker-calendar td .ui-state-active {
 	border-radius: 50%;
 	color: #fff;
@@ -151,14 +144,12 @@
 	display: none;
 }
 .calendar .ui-datepicker .ui-datepicker-prev {
-	right: 40px;
-	left: inherit;
 	transform: rotate(180deg);
 }
 .calendar .ui-datepicker .ui-datepicker-prev,
 .calendar .ui-datepicker .ui-datepicker-next {
-	width: 18px;
-	height: 18px;
+	width: 8px;
+	height: 16px;
 	border: none;
-	background: red;
+	background: url(../../images/common/icon-calender.png) no-repeat 0 0;
 }

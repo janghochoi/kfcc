@@ -47,12 +47,15 @@
 	top: 10px;
 	right: 10px;
 }
+.section-box .tab-content-inner {
+	padding-top: 8px;
+}
 /* section-user (회원정보) */
 .section-user .profile {
 	overflow: hidden;
 	width: 59px;
 	height: 59px;
-	margin: 20px auto 15px;
+	margin: 20px auto 6px;
 	border-radius: 50%;
 }
 .section-user .info {
@@ -75,7 +78,7 @@
 	display: flex;
 	flex-direction: column;
 
-	gap: 4px;
+	gap: 5px;
 }
 .section-user .work-list a {
 	display: flex;
@@ -86,8 +89,8 @@
 }
 .section-user .work-list .badge {
 	font-weight: 700;
+	line-height: 20px;
 }
-
 .section-user .name span {
 	vertical-align: top;
 	margin-left: 3px;
@@ -96,41 +99,61 @@
 
 /* section-sch (통합일정) */
 .sch-list {
-	padding: 15px 0 ;
-	background-color: #f4f4f4;
 	display: flex;
 	flex-direction: column;
+	padding: 10px 0 ;
+	background-color: #f4f4f4;
+
 	gap: 10px;
 }
 .sch-list li {
-	padding: 0 10px 0 20px;
 	position: relative;
+	padding: 0 10px 0 20px;
 }
 .sch-list li a {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
 }
 .sch-list li:before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 50%;
 	left: 9px;
-	width:3px;
+	width: 3px;
 	height: 3px;
+	border-radius: 50%                   ;
 	background-color: #0c8fd2;
 }
 .sch-list .name {
 	display: block;
+	margin-bottom: -3px;
 }
 .sch-list .badge {
-	font-size: 12px
+	font-size: 12px;
 }
 .sch-list .date {
 	display: inline-block;
-	margin-top: -3px;
-	font-size: 12px;
 	color: #898989;
+	font-size: 12px;
+}
+/* link-menu */
+.link-menu {
+	display: flex;
+	align-items: center;
+	padding: 5px 10px 6px;
+
+	gap: 15px;
+}
+
+/* section-banner */
+.section-banner {
+	border: 0;
+	box-shadow: none;
+}
+.section-banner a {
+	display: inline-block;
+	text-align: center;
 }
 /* icon, button*/
 .button-icon {
@@ -165,6 +188,36 @@
 	height: 16px;
 	background: url(../../images/main/icon-arrow.png) no-repeat 0 0;
 }
+[class*=icon-main] {
+	width: 41px;
+	height: 41px;
+	background-image: url(../../images/main/icon-m01.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+.icon-main02 {
+	background-image: url(../../images/main/icon-m02.png);
+}
+.icon-main03 {
+	background-image: url(../../images/main/icon-m03.png);
+}
+.icon-main04 {
+	background-image: url(../../images/main/icon-m04.png);
+}
+.icon-main05 {
+	background-image: url(../../images/main/icon-m05.png);
+}
+.icon-main06 {
+	background-image: url(../../images/main/icon-m06.png);
+}
+.icon-main07 {
+	background-image: url(../../images/main/icon-m07.png);
+}
+.icon-main08 {
+	background-image: url(../../images/main/icon-m08.png);
+}
+
+
 /* table */
 .table-notice table {
 	border: 0;
