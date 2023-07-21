@@ -1824,7 +1824,9 @@
 							<tbody>
 								<tr>
 									<th scope="row">th</th>
-									<td><p>내용 텍스트</p></td>
+									<td>
+										<p>내용 텍스트</p>
+									</td>
 									<th scope="row">th</th>
 									<td></td>
 								</tr>
@@ -1879,9 +1881,9 @@
 									</td>
 									<th scope="row">보존권한</th>
 									<td>
-											<select class="select full" title="구분">
-												<option>선택</option>
-											</select>
+										<select class="select full" title="구분">
+											<option>선택</option>
+										</select>
 									</td>
 								</tr>
 								<tr>
@@ -2014,7 +2016,56 @@
 	<!-- //wrap -->
 
 	<script>
-		var docTitle = $(document).attr('title');
+
+		const guide = {
+			docTitle: $(document).attr('title'),
+			guideMenuArray: [],
+			guideTargetArray: [],
+			guideTargetTopArray: []
+		};
+		$('.guide-menu li a').each(function (i) {
+			const link = $(this);
+			const target = $(link.attr('href')).length > 0 ? $(link.attr('href')) : null;
+			console.log(target);
+			//guide.guideMenuArray.push(link);
+			//guide.guideTargetArray.push(target);
+			//if (target.length > 0) {
+			//	guide.guideTargetTopArray.push(target.offset().top);
+			//} else {
+			//	guide.guideTargetTopArray.push(null);
+			//}
+
+		});
+
+		console.log(guide);
+
+		function onScroll() {
+			var scrollPos = $(document).scrollTop(),
+				$lnb = $('.guide-menu'),
+				$target = $lnb.find('a');
+			$target = $lnb.find('a');
+
+
+
+			$target.each(function () {
+				var $this = $(this),
+					target = $($this.attr('href'));
+				console.log(
+					target.offsetTop <= scrollPos && Math.round(target.offsetTop) + target.height() > scrollPos
+				);
+
+				if (target.offsetTop <= scrollPos && Math.round(target.offsetTop) + target.height() > scrollPos) {
+					$target.removeClass('current');
+					$this.addClass('current');
+				}
+				else {
+					$this.removeClass('current');
+				}
+			});
+		}
+
+
+
 		$(document).on('scroll', onScroll);
 		$('.guide-menu li a').off().on('click', function () {
 			var $body = $('html, body'),
@@ -2033,25 +2084,7 @@
 			});
 			return false;
 		});
-		function onScroll() {
-			var scrollPos = $(document).scrollTop(),
-				$lnb = $('.guide-menu'),
-				$target = $lnb.find('a');
-			$target = $lnb.find('a');
 
-			$target.each(function () {
-				var $this = $(this),
-					target = $($this.attr('href'));
-
-				if (target.offsetTop <= scrollPos && Math.round(target.offsetTop) + target.height() > scrollPos) {
-					$target.removeClass('current');
-					$this.addClass('current');
-				}
-				else {
-					$this.removeClass('current');
-				}
-			});
-		}
 
 		Prism.plugins.NormalizeWhitespace.setDefaults({
 			'remove-trailing': true,
