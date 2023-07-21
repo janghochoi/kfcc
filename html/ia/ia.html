@@ -344,25 +344,21 @@
 	<!--// wrap -->
 	<script>
 		const iaWrap = document.querySelector('.ia-wrap');
-		const iaValue = iaWrap.querySelector('.ia-value');
-		const iaValueO = iaValue.querySelector('.o');
-		const iaValueX = iaValue.querySelector('.x');
-		const iaValueM = iaValue.querySelector('.m');
-		const iaValueTotal = iaValue.querySelector('.total');
-		const iaTable = iaWrap.querySelector('.ia-table');
-		const tbody = iaTable.querySelector('tbody');
-		const trs = tbody.querySelectorAll('tr');
+		const iaValueO = iaWrap.querySelector('.ia-value .o em');
+		const iaValueX = iaWrap.querySelector('.ia-value .x em');
+		const iaValueM = iaWrap.querySelector('.ia-value .m em');
+		const iaValueTotal = iaWrap.querySelector('.ia-value .total');
+		const trs = iaWrap.querySelectorAll('.ia-table tbody tr');
 		const dir = '../';
 
-		function tableNo() {
+		function updateTableNo() {
 			trs.forEach((tr, i) => {
 				const tdNo = tr.querySelector('[data-title=No]');
 				tdNo.textContent = i + 1;
 			});
 		}
-		tableNo();
 
-		function iaURL() {
+		function updateIaURL() {
 			trs.forEach((tr) => {
 				const folder = tr.querySelector('[data-title=Folder]').textContent;
 				const urlElem = tr.querySelector('[data-title=URL]');
@@ -371,41 +367,36 @@
 				link.href = `${dir}${folder}/${url}.html`;
 			});
 		}
-		iaURL();
 
-		function iaState() {
-			const numO = Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[data-title=State]').textContent.trim() === 'O').length;
-			const numX = Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[data-title=State]').textContent.trim() === 'X').length;
-			const numM = Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[data-title=State]').textContent.trim() === 'M').length;
-			const total = Array.from(trs).filter(tr => !tr.classList.contains('ia-del')).length;
+		function updateIaState() {
+			const getFilteredTrs = (stateType) => Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[data-title=State]').textContent.trim() === stateType).length;
 
-			iaValueO.querySelector('em').textContent = numO;
-			iaValueX.querySelector('em').textContent = numX;
-			iaValueM.querySelector('em').textContent = numM;
-			iaValueTotal.textContent = total;
+			iaValueO.textContent = getFilteredTrs('O');
+			iaValueX.textContent = getFilteredTrs('X');
+			iaValueM.textContent = getFilteredTrs('M');
+			iaValueTotal.textContent = Array.from(trs).filter(tr => !tr.classList.contains('ia-del')).length;
 
 			trs.forEach((tr) => {
 				if (!tr.classList.contains('ia-del')) {
 					const state = tr.querySelector('td[data-title=State]').textContent.trim();
-					if (state === 'O') tr.querySelector('td[data-title=State]').style.color = 'blue';
-					if (state === 'X') tr.querySelector('td[data-title=State]').style.color = 'red';
-					if (state === 'M') tr.querySelector('td[data-title=State]').style.color = 'green';
+					const stateColor = state === 'O' ? 'blue' : state === 'X' ? 'red' : 'green';
+					tr.querySelector('td[data-title=State]').style.color = stateColor;
 				}
 			});
 		}
-		iaState();
 
-		function bgColor() {
+		function updateBgColor() {
+			const firstDepthList = ["공통", "메인", "주문방식별 매장찾기", "상품찾기", "모바일 상품권", "결제하기", "알림함", "고객센터"];
+
 			trs.forEach((tr) => {
 				const firstDepth = tr.querySelector('td[data-title="1depth"]').textContent;
-				if (["공통", "메인", "주문방식별 매장찾기", "상품찾기", "모바일 상품권", "결제하기", "알림함", "고객센터"].includes(firstDepth)) {
+				if (firstDepthList.includes(firstDepth)) {
 					tr.classList.add('bg');
 				}
 			});
 		}
-		bgColor();
 
-		function iaMenu() {
+		function initIaMenu() {
 			const iaMenuLinks = document.querySelectorAll('.ia-menu a');
 			iaMenuLinks.forEach(link => {
 				link.addEventListener('click', function (event) {
@@ -418,11 +409,16 @@
 					lis.forEach(li => li.classList.remove('active'));
 					myli.classList.add('active');
 
-					window.scrollTo({ top: myOffset + 1, behavior: 'smooth' });
+					window.scrollTo({ top: myOffset + 1/*, behavior: 'smooth'*/ });
 				});
 			});
 		}
-		iaMenu();
+
+		updateTableNo();
+		updateIaURL();
+		updateIaState();
+		updateBgColor();
+		initIaMenu();
 	</script>
 </body>
 </html>

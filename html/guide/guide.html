@@ -2017,43 +2017,56 @@
 	<script>
 		const docTitle = document.title;
 
-		document.addEventListener('scroll', onScroll);
+		document.addEventListener("scroll", onScroll);
 
-		const guideMenuLinks = document.querySelectorAll('.guide-menu li a');
+		const guideMenuLinks = document.querySelectorAll(".guide-menu li a");
 		guideMenuLinks.forEach((link) => {
-			link.addEventListener('click', function (event) {
-				event.preventDefault();
-
-				const myId = this.getAttribute('href');
-				const myElem = document.querySelector(myId);
-
-				if (!myElem) return;
-				const myPos = myElem.offsetTop;
-				const myName = this.innerText;
-
-				document.title = `${myName} | ${docTitle}`;
-				document.removeEventListener('scroll', onScroll);
-
-				guideMenuLinks.forEach((menuLink) => menuLink.classList.remove('current'));
-				this.classList.add('current');
-
-				window.scrollTo({ top: myPos });
-				setTimeout(() => document.addEventListener('scroll', onScroll), 500);
-			});
+			link.addEventListener("click", scrollToSection);
 		});
+
+		function scrollToSection(event) {
+			event.preventDefault();
+
+			const myId = this.getAttribute("href");
+			const myElem = document.querySelector(myId);
+
+			if (!myElem) return;
+
+			const myPos = myElem.offsetTop;
+			const myName = this.innerText;
+
+			updateDocumentTitle(myName);
+			updateGuideMenuLinks(this);
+
+			window.scrollTo({ top: myPos/*, behavior: 'smooth'*/ });
+			setTimeout(() => document.addEventListener("scroll", onScroll), 500);
+		}
+
+		function updateDocumentTitle(myName) {
+			document.title = `${myName} | ${docTitle}`;
+			document.removeEventListener("scroll", onScroll);
+		}
+
+		function updateGuideMenuLinks(currentLink) {
+			guideMenuLinks.forEach((menuLink) => menuLink.classList.remove("current"));
+			currentLink.classList.add("current");
+		}
 
 		function onScroll() {
 			const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
-			const targetLinks = document.querySelectorAll('.guide-menu a');
+			const targetLinks = document.querySelectorAll(".guide-menu a");
 
 			targetLinks.forEach((link) => {
-				const target = document.querySelector(link.getAttribute('href'));
+				const target = document.querySelector(link.getAttribute("href"));
 
 				if (!target) return;
-				if (Math.round(target.offsetTop) <= scrollPos && Math.round(target.offsetTop) + target.offsetHeight > scrollPos) {
-					link.classList.add('current');
+				if (
+					Math.round(target.offsetTop) <= scrollPos &&
+					Math.round(target.offsetTop) + target.offsetHeight > scrollPos
+				) {
+					link.classList.add("current");
 				} else {
-					link.classList.remove('current');
+					link.classList.remove("current");
 				}
 			});
 		}
