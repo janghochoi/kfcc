@@ -103,6 +103,7 @@
 .container {
 	padding-bottom: 96px;
 	background-color: #f8fcfe;
+	min-height: calc(100vh - 152px);
 }
 
 /* footer */
