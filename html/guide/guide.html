@@ -2037,7 +2037,7 @@
 				guideMenuLinks.forEach((menuLink) => menuLink.classList.remove('current'));
 				this.classList.add('current');
 
-				window.scrollTo({ top: myPos, behavior: 'smooth' });
+				window.scrollTo({ top: myPos });
 				setTimeout(() => document.addEventListener('scroll', onScroll), 500);
 			});
 		});
