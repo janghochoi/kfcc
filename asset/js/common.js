@@ -17,6 +17,7 @@
 		}),
 		$wrap = $body.find('#wrap'),
 		$header = $wrap.find('.header'),
+		$footer = $wrap.find('.footer'),
 		$container = $body.find('.container'),
 		$content = $body.find('#content'),
 		winWidth = $window.width(),
@@ -395,6 +396,16 @@
 		});
 	};
 	_toggleButton();
+
+	//footer link
+	function _footerLink() {
+		var $button = $footer.find('.button-link'),
+				$tgLink = $footer.find('.footer-link ul');
+		$button.off().on('click', function () {
+			$tgLink.slideToggle(aniSpeed);
+		});
+	};
+	_footerLink();
 
 	function count() {
 		var $formCount = $('.form-count');

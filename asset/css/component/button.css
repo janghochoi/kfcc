@@ -205,3 +205,12 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+/* button-icon */
+.button-icon {
+	display: inline-flex;
+	padding: 0 1px;
+}
+.button-icon + .button-icon {
+	margin-left: 3px;
+}

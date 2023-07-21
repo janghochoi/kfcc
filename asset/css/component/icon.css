@@ -8,138 +8,6 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
-
-/* old */
-/* icon 공통 */
-[class*=icon-size] {
-	display: inline-block;
-	position: relative;
-	vertical-align: middle;
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-/* icon-size xxsmall 16x16 */
-[class*=icon-size-xxsmall] {
-	width: 16px;
-	height: 16px;
-	background-size: 16px;
-}
-.icon-size-xxsmall01 {
-	/*background-image: url()*/
-	background-color: red;
-}
-
-/* icon-size xsmall 18x18 */
-[class*=icon-size-xsmall] {
-	width: 18px;
-	height: 18px;
-	background-size: 18px;
-}
-.icon-size-xsmall01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size small 20x20 */
-[class*=icon-size-small] {
-	width: 20px;
-	height: 20px;
-	background-size: 20px;
-}
-.icon-size-small01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size default 22x22 */
-[class*=icon-size-default] {
-	width: 22px;
-	height: 22px;
-	background-size: 22px;
-}
-.icon-size-default01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size large 24x24 */
-[class*=icon-size-large] {
-	width: 24px;
-	height: 24px;
-	background-size: 24px;
-}
-.icon-size-large01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size xlarge 26x26 */
-[class*=icon-size-xlarge] {
-	width: 26px;
-	height: 26px;
-	background-size: 26px;
-}
-.icon-size-xlarge01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size xxlarge 28x28 */
-[class*=icon-size-xxlarge] {
-	width: 28px;
-	height: 28px;
-	background-size: 28px;
-}
-.icon-size-xxlarge01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size xxxlarge 36x36 */
-[class*=icon-size-xxxlarge] {
-	width: 36px;
-	height: 36px;
-	background-size: 36px;
-}
-.icon-size-xxxlarge01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size result 46x46 */
-[class*=icon-size-result] {
-	width: 46px;
-	height: 46px;
-	background-size: 46px;
-}
-.icon-size-result01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size state 80x80 */
-[class*=icon-size-state] {
-	width: 80px;
-	height: 80px;
-	background-size: 80px;
-}
-.icon-size-state01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
-/* icon-size character 100x100 */
-[class*=icon-size-character] {
-	width: 100px;
-	height: 100px;
-	background-size: 100px;
-}
-.icon-size-character01 {
-	/*background-image: url();*/
-	background-color: red;
-}
-
 /* rotate */
 [class*=icon-].rotate {
 	transition: transform .2s;
@@ -148,4 +16,35 @@
 }
 .active [class*=icon-].rotate {
 	transform: rotate(-180deg);
+}
+/* icon- */
+.icon-modify {
+	width: 17px;
+	height: 17px;
+	background-image: url(../../images/common/icon-modify.png);
+}
+.icon-refresh {
+	width: 17px;
+	height: 17px;
+	background-image: url(../../images/common/icon-refresh.png);
+}
+.icon-more {
+	width: 16px;
+	height: 16px;
+	background-image: url(../../images/common/icon-more.png);
+}
+.icon-more02 {
+	width: 14px;
+	height: 14px;
+	background-image: url(../../images/common/icon-more02.png);
+}
+.icon-user {
+	width: 21px;
+	height: 15px;
+	background-image: url(../../images/main/icon-user.png);
+}
+.icon-arrow {
+	width: 9px;
+	height: 16px;
+	background-image: url(../../images/main/icon-arrow.png);
 }

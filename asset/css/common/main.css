@@ -122,7 +122,7 @@
 	left: 9px;
 	width: 3px;
 	height: 3px;
-	border-radius: 50%                   ;
+	border-radius: 50%;
 	background-color: #0c8fd2;
 }
 .sch-list .name {
@@ -155,39 +155,7 @@
 	display: inline-block;
 	text-align: center;
 }
-/* icon, button*/
-.button-icon {
-	display: inline-flex;
-	padding: 0 1px;
-}
-.button-icon + .button-icon {
-	margin-left: 3px;
-}
-.icon-modify {
-	width: 17px;
-	height: 17px;
-	background: url(../../images/common/icon-modify.png) no-repeat 0 0;
-}
-.icon-refresh {
-	width: 17px;
-	height: 17px;
-	background: url(../../images/common/icon-refresh.png) no-repeat 0 0;
-}
-.icon-more {
-	width: 16px;
-	height: 16px;
-	background: url(../../images/common/icon-more.png) no-repeat 0 0;
-}
-.icon-user {
-	width: 21px;
-	height: 15px;
-	background: url(../../images/main/icon-user.png) no-repeat 0 0;
-}
-.icon-arrow {
-	width: 9px;
-	height: 16px;
-	background: url(../../images/main/icon-arrow.png) no-repeat 0 0;
-}
+/* icon */
 [class*=icon-main] {
 	width: 41px;
 	height: 41px;
@@ -216,9 +184,7 @@
 .icon-main08 {
 	background-image: url(../../images/main/icon-m08.png);
 }
-
-
-/* table */
+/* table-notice */
 .table-notice table {
 	border: 0;
 }
