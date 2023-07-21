@@ -7,7 +7,7 @@
 @import url(layout.css);
 
 /* Plugin */
-@import url(../plugin/jqueryui.css);
+@import url(../plugin/jquery-ui.css);
 @import url(../plugin/swiper-bundle.css);
 
 /* Component */

@@ -14,8 +14,8 @@
 	<!-- code highligt -->
 	<script src="../../asset/js/prism.js"></script>
 	<!-- jquery -->
-	<script src="../../asset/js/jquery-3.6.0.js"></script>
-	<script src="../../asset/js/jquery-ui.min.js"></script>
+	<script src="../../asset/js/jquery-3.7.0.js"></script>
+	<script src="../../asset/js/jquery-ui.js"></script>
 	<!-- plugin -->
 	<script src="../../asset/js/swiper-bundle.js"></script>
 	<!-- webfont js -->
@@ -233,12 +233,12 @@
 			<h2 class="hidden-el">가이드 메뉴</h2>
 			<ul>
 				<li><a href="#menu-typography">Typography</a></li>
-				<li><a href="#menu-content">Content</a></li>
 				<li><a href="#menu-accordion">Accordion</a></li>
 				<li><a href="#menu-badge">Badge</a></li>
 				<li><a href="#menu-board-head">Board Head</a></li>
 				<li><a href="#menu-box">Box</a></li>
 				<li><a href="#menu-button">Button</a></li>
+				<li><a href="#menu-calendar">Calendar</a></li>
 				<li><a href="#menu-form-input">Form Input</a></li>
 				<li><a href="#menu-form-radio">Form Radio</a></li>
 				<li><a href="#menu-form-checkbox">Form Checkbox</a></li>
@@ -247,7 +247,6 @@
 				<li><a href="#menu-icon">Icon</a></li>
 				<li><a href="#menu-pagination">Pagination</a></li>
 				<li><a href="#menu-tab">Tab</a></li>
-				<li><a href="#menu-calendar">Calendar</a></li>
 				<li><a href="#menu-table">Table</a></li>
 			</ul>
 		</nav>
@@ -1150,7 +1149,7 @@
 					</pre>
 
 					<h3 class="guide-title">inner-text</h3>
-					<div class="inner-text" style="padding-right: 40px;">
+					<div class="inner-text">
 						<div class="input">
 							<input type="text" title="" placeholder="input Default">
 						</div>
@@ -1158,7 +1157,7 @@
 					</div>
 					<pre>
 						<code class="language-html">
-							&lt;div class=&quot;inner-text&quot; style=&quot;padding-right: 40px;&quot;&gt;
+							&lt;div class=&quot;inner-text&quot;&gt;
 								&lt;div class=&quot;input&quot;&gt;
 									&lt;input type=&quot;text&quot; title=&quot;&quot; placeholder=&quot;input Default&quot;&gt;
 								&lt;/div&gt;
@@ -1169,7 +1168,7 @@
 
 					<h3 class="guide-title">inner-button</h3>
 					<div class="inner-button">
-						<div class="inner-text" style="padding-right: 24px;">
+						<div class="inner-text">
 							<div class="input input-size-small input-bg01">
 								<input type="tel" title="금액" class="comma">
 							</div>
@@ -1180,7 +1179,7 @@
 					<pre>
 						<code class="language-html">
 							&lt;div class=&quot;inner-button&quot;&gt;
-								&lt;div class=&quot;inner-text&quot; style=&quot;padding-right: 24px;&quot;&gt;
+								&lt;div class=&quot;inner-text&quot;&gt;
 									&lt;div class=&quot;input input-size-small input-bg01&quot;&gt;
 										&lt;input type=&quot;tel&quot; title=&quot;금액&quot; class=&quot;comma&quot;&gt;
 									&lt;/div&gt;
@@ -1222,7 +1221,7 @@
 					</pre>
 
 					<h3 class="guide-title">Comma</h3>
-					<div class="inner-text" style="padding-right: 24px;">
+					<div class="inner-text">
 						<div class="input">
 							<input type="tel" title="금액" class="comma">
 						</div>
@@ -1230,7 +1229,7 @@
 					</div>
 					<pre>
 						<code class="language-html">
-							&lt;div class=&quot;inner-text&quot; style=&quot;padding-right: 24px;&quot;&gt;
+							&lt;div class=&quot;inner-text&quot;&gt;
 								&lt;div class=&quot;input&quot;&gt;
 									&lt;input type=&quot;tel&quot; title=&quot;금액&quot; class=&quot;comma&quot;&gt;
 								&lt;/div&gt;
@@ -2016,50 +2015,58 @@
 	<!-- //wrap -->
 
 	<script>
+		const docTitle = document.title;
 
-		const guide = {
-			docTitle: $(document).attr('title'),
-			guideMenuArray: [],
-			guideTargetArray: [],
-			guideTargetTopArray: []
-		};
-		$('.guide-menu li a').each(function (i) {
-			const link = $(this);
-			const target = $(link.attr('href')).length > 0 ? $(link.attr('href')) : null;
-			console.log(target);
-			//guide.guideMenuArray.push(link);
-			//guide.guideTargetArray.push(target);
-			//if (target.length > 0) {
-			//	guide.guideTargetTopArray.push(target.offset().top);
-			//} else {
-			//	guide.guideTargetTopArray.push(null);
-			//}
+		document.addEventListener("scroll", onScroll);
 
+		const guideMenuLinks = document.querySelectorAll(".guide-menu li a");
+		guideMenuLinks.forEach((link) => {
+			link.addEventListener("click", scrollToSection);
 		});
 
-		console.log(guide);
+		function scrollToSection(event) {
+			event.preventDefault();
+
+			const myId = this.getAttribute("href");
+			const myElem = document.querySelector(myId);
+
+			if (!myElem) return;
+
+			const myPos = myElem.offsetTop;
+			const myName = this.innerText;
+
+			updateDocumentTitle(myName);
+			updateGuideMenuLinks(this);
+
+			window.scrollTo({ top: myPos/*, behavior: 'smooth'*/ });
+			setTimeout(() => document.addEventListener("scroll", onScroll), 500);
+		}
+
+		function updateDocumentTitle(myName) {
+			document.title = `${myName} | ${docTitle}`;
+			document.removeEventListener("scroll", onScroll);
+		}
+
+		function updateGuideMenuLinks(currentLink) {
+			guideMenuLinks.forEach((menuLink) => menuLink.classList.remove("current"));
+			currentLink.classList.add("current");
+		}
 
 		function onScroll() {
-			var scrollPos = $(document).scrollTop(),
-				$lnb = $('.guide-menu'),
-				$target = $lnb.find('a');
-			$target = $lnb.find('a');
+			const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+			const targetLinks = document.querySelectorAll(".guide-menu a");
 
+			targetLinks.forEach((link) => {
+				const target = document.querySelector(link.getAttribute("href"));
 
-
-			$target.each(function () {
-				var $this = $(this),
-					target = $($this.attr('href'));
-				console.log(
-					target.offsetTop <= scrollPos && Math.round(target.offsetTop) + target.height() > scrollPos
-				);
-
-				if (target.offsetTop <= scrollPos && Math.round(target.offsetTop) + target.height() > scrollPos) {
-					$target.removeClass('current');
-					$this.addClass('current');
-				}
-				else {
-					$this.removeClass('current');
+				if (!target) return;
+				if (
+					Math.round(target.offsetTop) <= scrollPos &&
+					Math.round(target.offsetTop) + target.offsetHeight > scrollPos
+				) {
+					link.classList.add("current");
+				} else {
+					link.classList.remove("current");
 				}
 			});
 		}

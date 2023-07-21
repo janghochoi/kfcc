@@ -66,6 +66,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 /* input date */
 .input-date {
+	display: flex;
 	border: 1px solid #ccc;
 }
 .input-date input {
@@ -86,49 +87,27 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 /* inner text */
 .inner-text {
-	display: inline-block;
+	display: inline-flex;
 	overflow: hidden;
 	position: relative;
-	vertical-align: middle;
+	align-items: center;
 	width: 100%;
+
+	gap: 10px;
 }
 .inner-text input {
 	text-align: right;
-}
-.inner-text .text {
-	position: absolute;
-	top: 50%;
-	right: 0;
-	transform: translateY(-50%);
 }
 /* inner button */
 .inner-button {
 	display: flex;
 	align-items: center;
-}
-.inner-button .select:first-child,
-.inner-button .input:first-child,
-.inner-button .inner-text:first-child {
-	margin-left: 0;
-}
-.inner-button .select:last-child,
-.inner-button .input:last-child,
-.inner-button .inner-text:last-child {
-	margin-right: 0;
-}
-.inner-button .input:first-child {
-	margin-right: 0;
+
+	gap: 10px;
 }
 .inner-button .input,
 .inner-button .inner-text {
 	flex: 1;
-	margin: 0 10px;
-}
-.inner-button .select {
-	margin: 0 4px;
-}
-.inner-button .border-color01 {
-	margin-left: -1px;
 }
 /* radio, checkbox */
 .radio,
