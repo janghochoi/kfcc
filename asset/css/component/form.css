@@ -7,19 +7,19 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .input {
 	overflow: hidden;
 	position: relative;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+	border: 1px solid #ddd;
 }
 .input input {
 	width: 100%;
-	height: 48px;
-	padding: 0 46px 0 14px;
+	height: 34px;
+	padding: 0 46px 0 9px;
 	border: 0;
-	color: #555;
+	color: #000;
+	font-size: 13px;
 	text-overflow: ellipsis;
 	word-break: break-all;
 	white-space: nowrap;
-	line-height: 46px;
+	line-height: 32px;
 	transition: .2s;
 }
 .input input:read-only,
@@ -106,18 +106,27 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	display: flex;
 	align-items: center;
 }
+.inner-button .select:first-child,
 .inner-button .input:first-child,
 .inner-button .inner-text:first-child {
 	margin-left: 0;
 }
+.inner-button .select:last-child,
 .inner-button .input:last-child,
 .inner-button .inner-text:last-child {
 	margin-right: 0;
 }
+
 .inner-button .input,
 .inner-button .inner-text {
 	flex: 1;
 	margin: 0 10px;
+}
+.inner-button .select {
+	margin: 0 4px;
+}
+.inner-button .border-color01 {
+	margin-left: -1px;
 }
 /* radio, checkbox */
 .radio,
@@ -126,7 +135,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	align-items: center;
 	flex-wrap: wrap;
 
-	gap: 8px;
+	gap: 3px;
 }
 .radio input[type=radio],
 .checkbox input[type=checkbox] {
@@ -147,6 +156,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .radio span,
 .checkbox span {
 	flex: 1;
+	font-size: 13px;
 }
 .radio i,
 .checkbox i {
@@ -154,12 +164,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	overflow: hidden;
 	position: relative;
 	vertical-align: middle;
-	width: 22px;
-	height: 22px;
+	width: 18px;
+	height: 18px;
 	background-color: transparent;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 22px;
+	background-size: 18px;
 	transition: background-image .2s;
 }
 .radio i {
@@ -191,6 +201,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .radio :disabled ~ i + span,
 .checkbox :disabled ~ i + span {
 	opacity: .5;
+}
+.checkbox + .checkbox,
+.radio + .radio {
+	margin-left: 10px;
 }
 /* switch */
 .switch {
@@ -241,20 +255,21 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	-webkit-appearance: none;
 	   -moz-appearance: none;
 	        appearance: none;
-	width: 100%;
-	height: 48px;
-	padding: 0 49px 0 16px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+	height: 34px;
+	padding: 0 49px 0 15px;
+	border: 1px solid #ddd;
+	font-size: 13px;
 	text-overflow: ellipsis;
 	word-break: break-all;
 	white-space: nowrap;
-
-/*background: red;*/
+	background: url(../../images/common/icon-select.png) no-repeat right 7px center;
 	transition: border-color .2s;
 }
 .select:disabled {
 	background-color: #eee;
+}
+.select.full {
+	width: 100%;
 }
 
 /* textarea */
@@ -299,7 +314,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .select:focus,
 .textarea.success,
 .select.success {
-	border-color: blue;
+	border-color: #0c8fd3;
 }
 
 /* form-group */

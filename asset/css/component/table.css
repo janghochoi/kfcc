@@ -10,20 +10,21 @@
 }
 .table table {
 	table-layout: fixed;
-	border-top: 2px solid #eee;
+	border-top: 2px solid #0b90d3;
 }
 .table th,
 .table td {
 	vertical-align: middle;
-	height: 40px;
+	height: 38px;
 	padding: 4px;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ddd;
 	text-align: center;
 	word-break: break-all;
 	background-color: #fff;
+	font-size: 13px;
 }
 .table th {
-	background-color: #f1f1f1;
+	background-color: #ebf6fc;
 }
 .table td .desc:first-child {
 	margin-top: 0;
@@ -33,8 +34,8 @@
 }
 
 /* table row */
-.table.type-row th,
 .table.type-row td {
-	vertical-align: top;
 	text-align: left;
+	padding-left:15px;
+	padding-right: 15px;
 }

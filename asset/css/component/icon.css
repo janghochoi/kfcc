@@ -48,3 +48,8 @@
 	height: 16px;
 	background-image: url(../../images/main/icon-arrow.png);
 }
+.icon-person {
+	width: 20px;
+	height: 17px;
+	background-image: url(../../images/common/icon-person.png);
+}

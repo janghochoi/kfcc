@@ -28,6 +28,9 @@
 /* depth01 */
 .heading.depth01 .title {
 	font-size: 30px;
+	font-weight: 500;
+	padding-left: 25px;
+	background: url(../../images/common/bg-heading.png) no-repeat 0 0;
 }
 /* depth02 */
 .heading.depth02 {
