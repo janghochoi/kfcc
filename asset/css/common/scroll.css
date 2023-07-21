@@ -2,8 +2,8 @@
 
 /* firefox scroll */
 html {
-    scrollbar-width: thin;
-    scrollbar-color: #ccc rgba(240, 240, 240, .5);
+	scrollbar-width: thin;
+	scrollbar-color: #ccc rgba(240, 240, 240, .5);
 }
 
 /* 스크롤 바 */

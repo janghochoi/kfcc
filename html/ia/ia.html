@@ -11,8 +11,8 @@
 	<link rel="SHORTCUT ICON" href="../../asset/images/common/favicon.ico">
 	<link rel="stylesheet" href="../../asset/css/common/package.css">
 	<!-- jquery -->
-	<script src="../../asset/js/jquery-3.6.0.js"></script>
-	<script src="../../asset/js/jquery-ui.min.js"></script>
+	<script src="../../asset/js/jquery-3.7.0.js"></script>
+	<script src="../../asset/js/jquery-ui.js"></script>
 	<!-- plugin -->
 	<script src="../../asset/js/swiper-bundle.js"></script>
 	<!-- webfont js -->
@@ -343,66 +343,83 @@
 	</div>
 	<!--// wrap -->
 	<script>
-		var $iaWrap = $('.ia-wrap'),
-			$iaValue = $iaWrap.find('.ia-value'),
-			$iaValueO = $iaValue.find('.o'),
-			$iaValueX = $iaValue.find('.x'),
-			$iaValueM = $iaValue.find('.m'),
-			$iaValueTotal = $iaValue.find('.total'),
-			$iaTable = $iaWrap.find('.ia-table'),
-			$tbody = $iaTable.find('tbody'),
-			$tr = $tbody.find('tr'),
-			dir = '../';
-		var tableNo = function () {
-			$tr.each(function (i) {
-				var $this = $(this),
-					$tdNo = $this.find('[data-title=No]');
-				$tdNo.text(i + 1);
+		const iaWrap = document.querySelector('.ia-wrap');
+		const iaValue = iaWrap.querySelector('.ia-value');
+		const iaValueO = iaValue.querySelector('.o');
+		const iaValueX = iaValue.querySelector('.x');
+		const iaValueM = iaValue.querySelector('.m');
+		const iaValueTotal = iaValue.querySelector('.total');
+		const iaTable = iaWrap.querySelector('.ia-table');
+		const tbody = iaTable.querySelector('tbody');
+		const trs = tbody.querySelectorAll('tr');
+		const dir = '../';
+
+		function tableNo() {
+			trs.forEach((tr, i) => {
+				const tdNo = tr.querySelector('[data-title=No]');
+				tdNo.textContent = i + 1;
 			});
 		}
 		tableNo();
-		var iaURL = function () {
-			$tr.each(function (i) {
-				var $this = $(this),
-					folder = $this.find('[data-title=Folder]').text(),
-					url = $.trim($this.find('[data-title=URL]').text());
-				$this.find('[data-title=URL] a').attr({
-					href: dir + folder + '/' + url + '.html'
-				});
+
+		function iaURL() {
+			trs.forEach((tr) => {
+				const folder = tr.querySelector('[data-title=Folder]').textContent;
+				const urlElem = tr.querySelector('[data-title=URL]');
+				const url = urlElem.textContent.trim();
+				const link = urlElem.querySelector('a');
+				link.href = `${dir}${folder}/${url}.html`;
 			});
 		}
 		iaURL();
-		var iaState = function () {
-			var $numO = $tr.not('.ia-del').find('td[data-title=State]:contains("O")').length,
-				$numX = $tr.not('.ia-del').find('td[data-title=State]:contains("X")').length,
-				$numM = $tr.not('.ia-del').find('td[data-title=State]:contains("M")').length,
-				$total = $tr.not('.ia-del').length;
-			$iaValueO.find('em').text($numO);
-			$iaValueX.find('em').text($numX);
-			$iaValueM.find('em').text($numM);
-			$iaValueTotal.text($total);
-			$tr.not('.ia-del').find('td[data-title=State]:contains("O")').css('color', 'blue');
-			$tr.not('.ia-del').find('td[data-title=State]:contains("X")').css('color', 'red');
-			$tr.not('.ia-del').find('td[data-title=State]:contains("M")').css('color', 'green');
-		};
+
+		function iaState() {
+			const numO = Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[data-title=State]').textContent.trim() === 'O').length;
+			const numX = Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[data-title=State]').textContent.trim() === 'X').length;
+			const numM = Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[data-title=State]').textContent.trim() === 'M').length;
+			const total = Array.from(trs).filter(tr => !tr.classList.contains('ia-del')).length;
+
+			iaValueO.querySelector('em').textContent = numO;
+			iaValueX.querySelector('em').textContent = numX;
+			iaValueM.querySelector('em').textContent = numM;
+			iaValueTotal.textContent = total;
+
+			trs.forEach((tr) => {
+				if (!tr.classList.contains('ia-del')) {
+					const state = tr.querySelector('td[data-title=State]').textContent.trim();
+					if (state === 'O') tr.querySelector('td[data-title=State]').style.color = 'blue';
+					if (state === 'X') tr.querySelector('td[data-title=State]').style.color = 'red';
+					if (state === 'M') tr.querySelector('td[data-title=State]').style.color = 'green';
+				}
+			});
+		}
 		iaState();
-		var bgColor = function () {
-			var $ctg = $tr.find('td[data-title=1depth]:contains("공통")').add('td[data-title=1depth]:contains("메인")').add('td[data-title=1depth]:contains("주문방식별 매장찾기")').add('td[data-title=1depth]:contains("상품찾기")').add('td[data-title=1depth]:contains("모바일 상품권")').add('td[data-title=1depth]:contains("결제하기")').add('td[data-title=1depth]:contains("알림함")').add('td[data-title=1depth]:contains("고객센터")');
-			if (!$ctg.length) return false;
-			$ctg.parent('tr').addClass('bg');
-		};
+
+		function bgColor() {
+			trs.forEach((tr) => {
+				const firstDepth = tr.querySelector('td[data-title="1depth"]').textContent;
+				if (["공통", "메인", "주문방식별 매장찾기", "상품찾기", "모바일 상품권", "결제하기", "알림함", "고객센터"].includes(firstDepth)) {
+					tr.classList.add('bg');
+				}
+			});
+		}
 		bgColor();
-		var iaMenu = function () {
-			$('.ia-menu a').on('click', function () {
-				var $iaMenu = $('.ia-menu'),
-					$li = $iaMenu.find('li'),
-					$myli = $(this).closest('li'),
-					myOffset = $($(this).attr('href')).offset().top - $iaMenu.outerHeight();
-				$li.removeClass('active');
-				$myli.addClass('active');
-				$('html, body').animate({
-					scrollTop: myOffset + 1
-				}, 500)
+
+		function iaMenu() {
+			const iaMenuLinks = document.querySelectorAll('.ia-menu a');
+			iaMenuLinks.forEach(link => {
+				link.addEventListener('click', function (event) {
+					event.preventDefault();
+					const iaMenu = document.querySelector('.ia-menu');
+					const lis = iaMenu.querySelectorAll('li');
+					const myli = this.closest('li');
+					const myOffset = document.querySelector(this.getAttribute('href')).offsetTop - iaMenu.offsetHeight;
+
+					lis.forEach(li => li.classList.remove('active'));
+					myli.classList.add('active');
+
+					window.scrollTo({ top: myOffset + 1, behavior: 'smooth' });
+				});
 			});
 		}
 		iaMenu();
