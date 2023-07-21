@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+/* firefox scroll */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc rgba(240, 240, 240, .5);
+}
+
 /* 스크롤 바 */
 ::-webkit-scrollbar {
 	width: 6px;
