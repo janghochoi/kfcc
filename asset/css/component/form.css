@@ -116,7 +116,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .inner-button .inner-text:last-child {
 	margin-right: 0;
 }
-
+.inner-button .input:first-child {
+	margin-right: 0;
+}
 .inner-button .input,
 .inner-button .inner-text {
 	flex: 1;
