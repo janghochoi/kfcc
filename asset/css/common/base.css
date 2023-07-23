@@ -171,21 +171,9 @@ video {
 	vertical-align: middle;
 }
 /* Placeholder */
-::-webkit-input-placeholder {
-	color: #898989 !important;
-}
-:-ms-input-placeholder {
-	color: #898989 !important;
-}
-::-moz-placeholder {
-	color: #898989 !important;
-}
-:-moz-placeholder {
-	color: #898989 !important;
-}
 ::placeholder,
 .placeholder {
-	color: #898989 !important;
+	color: #898989;
 }
 /* Selection */
 ::-moz-selection {

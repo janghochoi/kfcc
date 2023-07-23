@@ -93,7 +93,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	align-items: center;
 	width: 100%;
 
-	gap: 10px;
+	gap: 4px;
 }
 .inner-text input {
 	text-align: right;
@@ -103,7 +103,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	display: flex;
 	align-items: center;
 
-	gap: 10px;
+	gap: 4px;
 }
 .inner-button .input,
 .inner-button .inner-text {
@@ -157,13 +157,10 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	background-image: url(../../images/common/icon-radio-off.png);
 }
 .checkbox i {
-	border-radius: 50%;
 	background-color: #fff;
 	background-image: url(../../images/common/icon-checkbox-off.png);
 }
-.checkbox.type02 i {
-	background-image: url(../../images/common/icon-checkbox02-off.png);
-}
+
 .radio span ~ i,
 .checkbox span ~ i {
 	margin-left: 8px;
@@ -173,9 +170,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .checkbox :checked ~ i {
 	background-image: url(../../images/common/icon-checkbox-on.png);
-}
-.checkbox.type02 :checked ~ i {
-	background-image: url(../../images/common/icon-checkbox02-on.png);
 }
 .radio :disabled ~ i,
 .checkbox :disabled ~ i,
@@ -356,7 +350,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .form-list {
 	display: flex;
 
-	gap: 20px;
+	gap: 10px;
 }
 /* form-text */
 .form-text {

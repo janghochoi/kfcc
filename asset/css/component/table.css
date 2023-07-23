@@ -39,3 +39,9 @@
 	padding-left:15px;
 	padding-right: 15px;
 }
+
+/* table all border */
+.table.type-all-borde th,
+.table.type-all-borde td {
+	border: 1px solid #ddd;
+}
