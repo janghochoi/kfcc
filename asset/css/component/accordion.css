@@ -17,7 +17,6 @@
 .accordion .accordion-content {
 	display: none;
 	position: relative;
-	margin-bottom: -1px;
 	padding: 24px 21px;
 	background-color: #ddd;
 }
