@@ -212,7 +212,7 @@
 	opacity: 1;
 }
 
-.sub-page .lnb .accordion .active .icon-menu::after {
+.sub-page .lnb .accordion button.active .icon-menu::after {
 	opacity: 0;
 }
 
