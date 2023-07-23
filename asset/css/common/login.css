@@ -4,10 +4,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-width: 1300px;
 	height: 100vh;
 	background: rgb(127, 184, 254);
 	background: linear-gradient(145deg, rgba(127, 184, 254, 1) 0%, rgba(16, 73, 143, 1) 100%);
-	background: url('../../images/login/bg_login.png') no-repeat center top;
+	background: url("../../images/login/bg_login.png") no-repeat center top;
 	background-size: cover;
 }
 
@@ -56,9 +57,9 @@
 
 .login-form .button {
 	height: 54px;
+	margin-top: 20px;
 	color: #fff;
 	font-size: 14px;
 	font-weight: 700;
 	background-color: #00397f;
-	margin-top: 20px;
 }
