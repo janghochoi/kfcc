@@ -400,7 +400,7 @@
 	//footer link
 	function _footerLink() {
 		var $button = $footer.find('.button-link'),
-				$tgLink = $footer.find('.footer-link ul');
+			$tgLink = $footer.find('.footer-link ul');
 		$button.off().on('click', function () {
 			$tgLink.slideToggle(aniSpeed);
 		});
