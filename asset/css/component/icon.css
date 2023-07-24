@@ -3,7 +3,6 @@
 .icon {
 	display: inline-block;
 	position: relative;
-
 	background-color: transparent;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -21,35 +20,40 @@
 .icon-modify {
 	width: 17px;
 	height: 17px;
-	background-image: url(../../images/common/icon-modify.png);
+	background-image: url("../../images/common/icon-modify.png");
 }
 .icon-refresh {
 	width: 17px;
 	height: 17px;
-	background-image: url(../../images/common/icon-refresh.png);
+	background-image: url("../../images/common/icon-refresh.png");
 }
 .icon-more {
 	width: 16px;
 	height: 16px;
-	background-image: url(../../images/common/icon-more.png);
+	background-image: url("../../images/common/icon-more.png");
 }
 .icon-more02 {
 	width: 14px;
 	height: 14px;
-	background-image: url(../../images/common/icon-more02.png);
+	background-image: url("../../images/common/icon-more02.png");
 }
 .icon-user {
 	width: 21px;
 	height: 15px;
-	background-image: url(../../images/main/icon-user.png);
+	background-image: url("../../images/main/icon-user.png");
 }
 .icon-arrow {
 	width: 9px;
 	height: 16px;
-	background-image: url(../../images/main/icon-arrow.png);
+	background-image: url("../../images/main/icon-arrow.png");
 }
 .icon-person {
 	width: 20px;
 	height: 17px;
-	background-image: url(../../images/common/icon-person.png);
+	background-image: url("../../images/common/icon-person.png");
+}
+.icon-search {
+	width: 20px;
+	height: 20px;
+	background-image: url("../../images/common/icon-search-20x20.png");
 }

@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /* main */
 .main {
 	display: flex;
@@ -24,8 +23,8 @@
 	box-shadow: 6px 6px 15px 5px rgba(137,137,137,.16);
 }
 .main-box .heading {
-	margin-bottom: 0;
 	height: 40px;
+	margin-bottom: 0;
 	padding: 10px 12px;
 }
 .main-box .heading .title:before {
@@ -93,7 +92,6 @@
 	margin-left: 3px;
 	font-size: 14px;
 }
-
 /* main-schedule (통합일정) */
 .schedule-list {
 	display: flex;
@@ -142,7 +140,6 @@
 
 	gap: 15px;
 }
-
 /* main-banner */
 .main-banner {
 	border: 0;
@@ -156,30 +153,30 @@
 [class*=icon-main] {
 	width: 41px;
 	height: 41px;
-	background-image: url(../../images/main/icon-m01.png);
+	background-image: url("../../images/main/icon-m01.png");
 	background-repeat: no-repeat;
 	background-position: 0 0;
 }
 .icon-main02 {
-	background-image: url(../../images/main/icon-m02.png);
+	background-image: url("../../images/main/icon-m02.png");
 }
 .icon-main03 {
-	background-image: url(../../images/main/icon-m03.png);
+	background-image: url("../../images/main/icon-m03.png");
 }
 .icon-main04 {
-	background-image: url(../../images/main/icon-m04.png);
+	background-image: url("../../images/main/icon-m04.png");
 }
 .icon-main05 {
-	background-image: url(../../images/main/icon-m05.png);
+	background-image: url("../../images/main/icon-m05.png");
 }
 .icon-main06 {
-	background-image: url(../../images/main/icon-m06.png);
+	background-image: url("../../images/main/icon-m06.png");
 }
 .icon-main07 {
-	background-image: url(../../images/main/icon-m07.png);
+	background-image: url("../../images/main/icon-m07.png");
 }
 .icon-main08 {
-	background-image: url(../../images/main/icon-m08.png);
+	background-image: url("../../images/main/icon-m08.png");
 }
 /* table-notice */
 .table-notice table {

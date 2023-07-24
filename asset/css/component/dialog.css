@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /* dialog */
 .dialog-wrap {
 	display: none;
@@ -8,6 +7,7 @@
 	right: 0;
 	left: 0;
 	z-index: 100;
+	flex-wrap: wrap;
 	height: 100vh;
 	background-color: rgba(0, 0, 0, .6);
 }
@@ -21,9 +21,8 @@
 	display: flex;
 	position: relative;
 	flex-direction: column;
-	width: calc(100% - 42px);
+	width: 856px;
 	margin: auto;
-	border-radius: 10px;
 	background-color: #fff;
 }
 .dialog[data-align="center"] {
@@ -38,9 +37,9 @@
 	top: 16px;
 	right: 16px;
 	z-index: 5;
-	width: 24px;
-	height: 24px;
-	background: red;
+	width: 20px;
+	height: 20px;
+	background: url("../../images/common/icon-close.png") no-repeat center / 20px;
 }
 .dialog .button-wrap:first-child {
 	margin-top: 0;
@@ -51,11 +50,11 @@
 .dialog-head {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding: 20px;
+	padding: 18px 15px;
 }
 .dialog-head .title {
 	overflow: hidden;
+	font-size: 13px;
 	font-weight: 700;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -68,20 +67,17 @@
 }
 /* dialog-body */
 .dialog-body {
-	display: flex;
 	overflow-y: auto;
 	flex: 1;
-	flex-direction: column;
-	max-height: 280px;
+	max-height: 530px;
 	padding: 20px;
 }
 .dialog-body img {
 	max-height: none;
 }
-
 /* dialog-foot */
 .dialog-foot {
-	padding: 20px;
+	padding: 10px 20px 20px;
 }
 .dialog-foot .button-wrap {
 	margin-top: 20px;
@@ -98,7 +94,6 @@
 .dialog[data-alert] .button-wrap {
 	margin-top: 20px;
 }
-
 /* animate */
 .dialog[data-bottom] {
 	position: absolute;

@@ -1,13 +1,10 @@
 @charset "utf-8";
-
 /* board-head */
 .board-head {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 60px;
-	min-height: 60px;
-	padding: 0 21px;
+	margin-bottom: 10px;
 }
 .board-head .total {
 	color: #333;
@@ -21,9 +18,8 @@
 	align-items: center;
 	margin-left: auto;
 
-	gap: 24px;
+	gap: 5px;
 }
-
 /* board-view */
 .board-view .view-top {
 	padding-bottom: 20px;

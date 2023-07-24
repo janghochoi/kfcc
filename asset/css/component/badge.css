@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 .badge-wrap:first-child {
 	margin-top: 0;
 }
@@ -20,14 +19,13 @@
 	align-items: center;
 	justify-content: center;
 	min-width: 21px;
-	padding: 0 5px;
 	height: 21px;
+	padding: 0 5px;
 	border-radius: 10px;
 	line-height: normal;
 
 	gap: 3px;
 }
-
 /* badge-size */
 .badge-size-small {
 	height: 20px;
@@ -38,7 +36,6 @@
 	padding: 0 10px;
 	font-weight: 500;
 }
-
 /* badge-bg */
 [class*=badge-bg] {
 	color: #fff;
@@ -46,7 +43,6 @@
 .badge-bg01 {
 	background-color: #0c8fd2;
 }
-
 /* badge-line */
 .badge-line01 {
 	border: 1px solid #333;

@@ -18,50 +18,51 @@
 	<script defer src="../../asset/js/common.js"></script>
 	<script defer src="../../asset/js/dialog.js"></script>
 	<style>
-		body {
-			padding: 30px;
-		}
+body {
+	padding: 30px;
+}
 
-		.guide-title {
-			margin: 20px 0 10px;
-			color: #000;
-			font-size: 18px;
-		}
+.guide-title {
+	margin: 20px 0 10px;
+	color: #000;
+	font-size: 18px;
+}
 
-		.guide-title::before {
-			content: "·";
-			display: inline-block;
-			margin-right: 4px;
-			color: #222;
-		}
+.guide-title::before {
+	content: "·";
+	display: inline-block;
+	margin-right: 4px;
+	color: #222;
+}
 
-		.guide-list {
-			margin: 10px 0 30px;
-		}
+.guide-list {
+	margin: 10px 0 30px;
+}
 
-		.guide-list li {
-			position: relative;
-			margin: 5px 0;
-			color: #222;
-		}
+.guide-list li {
+	position: relative;
+	margin: 5px 0;
+	color: #222;
+}
 
-		.guide-list>li {
-			padding-left: 8px;
-		}
+.guide-list > li {
+	padding-left: 8px;
+}
 
-		.guide-list>li::before {
-			content: "";
-			position: absolute;
-			top: 10px;
-			left: 0;
-			width: 2px;
-			height: 2px;
-			background-color: #333;
-		}
+.guide-list > li::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 2px;
+	height: 2px;
+	background-color: #333;
+}
 
-		.guide-list ul {
-			padding-left: 20px;
-		}
+.guide-list ul {
+	padding-left: 20px;
+}
+
 
 	</style>
 </head>
@@ -69,7 +70,7 @@
 	<h2 class="guide-title">기본 팝업 샘플</h2>
 	<ul class="guide-list">
 		<li>
-			팝업 호출할 대상에 onclick="feUI.dialog.__init('<span class="color01">sample01:target</span>', this:버튼 포커스, dialog addClass 'animate' 추가, true: dimmed click close none)" 선언<br>
+			팝업 호출할 대상에 onclick="dialogUI.dialog.__init('<span class="color01">sample01:target</span>', this:버튼 포커스, dialog addClass 'animate' 추가, true: dimmed click close none)" 선언<br>
 			ex) 호출대상 Class 명 : sample01, this : 필수입력
 		</li>
 		<li>dialog-wrap 에 호출대상 Class 명 연결 ex)<span class="color01">sample01</span></li>
@@ -83,7 +84,6 @@
 		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample01', this)">sample 기본 Center</button>
 		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample02', this)">dialog Full</button>
 		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample03', this)">dialog alert</button>
-		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample04', this, 'animate')">dialog bottom</button>
 	</div>
 
 	<!-- sample01 -->
@@ -102,35 +102,168 @@
 			<!-- //dialog-head -->
 			<!-- dialog-body -->
 			<div id="dialog-body01" class="dialog-body">
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
-				<p>내용 영역</p>
+				<div class="switch-box">
+					<div class="switch-left">
+						<div class="board-head">
+							<div class="input-search">
+								<div class="input">
+									<input type="text" title="검색어" placeholder="검색어를 입력해 주세요.">
+								</div>
+								<button type="button" class="button" aria-label="검색">
+									<i class="icon icon-search"></i>
+								</button>
+							</div>
+						</div>
+						<div class="scroll-y" style="height: 440px; border: 1px solid #eee; border-top: 0;">
+							<div class="accordion type-tree tree-depth01">
+								<ul>
+									<li>
+										<button type="button" class="accordion-name">
+											<span class="name">SI사업본부</span>
+											<i class="icon-menu rotate"></i>
+										</button>
+										<div class="accordion-content" role="region">
+											<div class="accordion tree-depth02">
+												<ul>
+													<li>
+														<button type="button" class="accordion-name">
+															<span class="name font-regular">IS운영팀</span>
+															<i class="icon-menu rotate"></i>
+														</button>
+														<div class="accordion-content" role="region">
+															<ul class="check-list">
+																<li>
+																	<label class="checkbox">
+																		<input type="checkbox">
+																		<i></i>
+																		<span>팀장 박팀장</span>
+																	</label>
+																</li>
+																<li>
+																	<label class="checkbox">
+																		<input type="checkbox">
+																		<i></i>
+																		<span>과장 황민기</span>
+																	</label>
+																</li>
+																<li>
+																	<label class="checkbox">
+																		<input type="checkbox">
+																		<i></i>
+																		<span>대리 이현수</span>
+																	</label>
+																</li>
+															</ul>
+														</div>
+													</li>
+													<li>
+														<button type="button" class="accordion-name">
+															<span class="name font-regular">IS운영팀</span>
+															<i class="icon-menu rotate"></i>
+														</button>
+														<div class="accordion-content" role="region">
+															<ul class="check-list">
+																<li>
+																	<label class="checkbox">
+																		<input type="checkbox">
+																		<i></i>
+																		<span>팀장 박팀장</span>
+																	</label>
+																</li>
+																<li>
+																	<label class="checkbox">
+																		<input type="checkbox">
+																		<i></i>
+																		<span>과장 황민기</span>
+																	</label>
+																</li>
+															</ul>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li>
+										<button type="button" class="accordion-name">
+											<span class="name">SM 1팀</span>
+											<i class="icon-menu rotate"></i>
+										</button>
+										<div class="accordion-content" role="region">
+											<div class="accordion tree-depth02">
+												<ul>
+													<li>
+														<button type="button" class="accordion-name">
+															<span class="name font-regular">IS운영팀</span>
+															<i class="icon-menu rotate"></i>
+														</button>
+														<div class="accordion-content" role="region">
+															<ul class="check-list">
+																<li>
+																	<label class="checkbox">
+																		<input type="checkbox">
+																		<i></i>
+																		<span>팀장 박팀장</span>
+																	</label>
+																</li>
+															</ul>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="button-group">
+						<button type="button" class="button button-right" aria-label="오른쪽으로 이동"></button>
+						<button type="button" class="button button-left" aria-label="왼쪽으로 이동"></button>
+					</div>
+					<div class="switch-right">
+						<div class="board-head">
+							<button type="button" class="button button-size-lage button-border01">모두삭제</button>
+							<div class="right">
+								<button type="button" class="button button-size-lage button-border01">버튼</button>
+								<button type="button" class="button button-size-lage button-border01">버튼</button>
+							</div>
+						</div>
+						<div class="scroll-y" style="height: 440px; border: 1px solid #eee;">
+							<table class="switch-table">
+								<caption>결제선지정자 (No, 팀명, 직급, 이름, 결재여부) 구성 표 입니다.</caption>
+								<colgroup>
+									<col style="width: 10%;">
+									<col style="width: 15%;">
+									<col style="width: 15%;">
+									<col style="width: 15%;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>IT운영팀</td>
+										<td>팀장</td>
+										<td>박팀장</td>
+										<td>
+											<select class="select" title="결재 구분" style="width: 155px;">
+												<option>결재</option>
+											</select>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!-- //dialog-body -->
 			<!-- dialog-foot -->
 			<div class="dialog-foot">
 				<!-- button-wrap -->
 				<div class="button-wrap">
-					<button type="button" class="button button-border01 cancle">취소</button>
-					<button type="button" class="button button-bg01 cancle">저장</button>
+					<button type="button" class="button button-size-lage button-bg01 cancle">확인</button>
+					<button type="button" class="button button-size-lage button-border01 cancle">취소</button>
 				</div>
 				<!-- //button-wrap -->
 			</div>
@@ -153,20 +286,14 @@
 			<!-- dialog-body -->
 			<div id="dialog-body02" class="dialog-body">
 				<p class="desc">desc</p>
-				<!-- box -->
-				<div class="box bg01">
-					<span class="title">title</span>
-					<p class="desc">desc</p>
-				</div>
-				<!-- //box -->
 			</div>
 			<!-- //dialog-body -->
 			<!-- dialog-foot -->
 			<div class="dialog-foot">
 				<!-- button-wrap -->
 				<div class="button-wrap">
-					<button type="button" class="button button-border01 cancle">취소</button>
-					<button type="button" class="button button-bg01 cancle">저장</button>
+					<button type="button" class="button button-size-lage button-bg01 cancle">저장</button>
+					<button type="button" class="button button-size-lage button-border01 cancle">취소</button>
 				</div>
 				<!-- //button-wrap -->
 			</div>
@@ -191,8 +318,8 @@
 				<p class="desc">text area</p>
 				<!-- button-wrap -->
 				<div class="button-wrap align-right auto">
-					<button type="button" class="button button-size-xsmall button-border01 cancle">취소</button>
 					<button type="button" class="button button-size-xsmall button-bg01 cancle">저장</button>
+					<button type="button" class="button button-size-xsmall button-border01 cancle">취소</button>
 				</div>
 				<!-- //button-wrap -->
 			</div>
@@ -201,32 +328,6 @@
 		<!-- //dialog -->
 	</div>
 	<!-- //sample03 -->
-
-	<!-- sample04 -->
-	<div class="dialog-wrap sample04">
-		<!-- dialog -->
-		<section class="dialog" aria-labelledby="title04" aria-describedby="dialog-body04" data-bottom>
-			<!-- dialog-head -->
-			<header class="dialog-head">
-				<h2 id="title04" class="title">제목</h2>
-			</header>
-			<!-- //dialog-head -->
-			<!-- dialog-body -->
-			<div id="dialog-body04" class="dialog-body">
-				<p class="desc">최근 검색어를 삭제 하시겠습니까?</p>
-				<!-- button-wrap -->
-				<div class="button-wrap align-right auto">
-					<button type="button" class="button button-size-xsmall button-border01 cancle">취소</button>
-					<button type="button" class="button button-size-xsmall button-bg01 cancle">저장</button>
-				</div>
-				<!-- //button-wrap -->
-			</div>
-			<!-- //dialog-body -->
-			<button type="button" class="close" aria-label="dialog 닫기"></button>
-		</section>
-		<!-- //dialog -->
-	</div>
-	<!-- //sample04 -->
 
 	<script>
 

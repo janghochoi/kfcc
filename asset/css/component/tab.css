@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /* tab-wrap */
 .tab-wrap:first-child {
 	margin-top: 0;
@@ -39,7 +38,6 @@
 
 	gap: 22px;
 }
-
 .tab-list .active a {
 	z-index: 1;
 	color: #0c8fd2;
@@ -62,8 +60,6 @@
 .tab-list.scroll-x::-webkit-scrollbar {
 	display: none; /* Chrome, Safari, Opera*/
 }
-
-
 /* tab-content */
 .tab-content:first-child {
 	display: block;

@@ -1,15 +1,12 @@
 @charset "utf-8";
-
 :root {
 	--color01: #000;
 }
-
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
-
 h1,
 h2,
 h3,
@@ -18,7 +15,6 @@ h5,
 h6 {
 	font-weight: 700;
 }
-
 body {
 	position: relative;
 	min-height: 100vh;
@@ -32,41 +28,33 @@ body {
 	line-height: 1.2;
 	background-color: #fff;
 }
-
 body {
 	opacity: 1;
 }
-
 /* Before JS load */
 .JS body {
 	opacity: 1;
 }
-
 /* modal lock scroll */
 .LS {
 	overflow: hidden;
 }
-
 /* ouline disabled */
 .OL * {
 	outline: 0 !important;
 }
-
 /* clear */
 .cf::before,
 .cf::after {
 	content: "";
 	display: table;
 }
-
 .cf::after {
 	clear: both;
 }
-
 .visible {
 	overflow: visible !important;
 }
-
 /* hide */
 .hidden-el {
 	overflow: hidden;
@@ -77,20 +65,17 @@ body {
 	clip: rect(1px 1px 1px 1px);
 	clip: rect(1px, 1px, 1px, 1px);
 }
-
 .hidden-text {
 	overflow: hidden;
 	color: transparent;
 	text-indent: -999em;
 	white-space: nowrap;
 }
-
 .ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-
 .bar::before {
 	content: "";
 	display: inline-block;
@@ -100,190 +85,160 @@ body {
 	margin: 0 9px;
 	background-color: #b4b4b4;
 }
-
 .space {
 	display: inline-block;
 	vertical-align: middle;
 	margin: 0 5px;
 }
-
 .imgs {
 	overflow: hidden;
 	text-align: center;
 }
-
 /* border */
 .border-none {
 	border: 0 !important;
 }
-
 .border-left-none {
 	border-left: 0 !important;
 }
-
 .border-right-none {
 	border-right: 0 !important;
 }
-
 .border-bottom-none {
 	border-bottom: 0 !important;
 }
-
 .border-top-none {
 	border-top: 0 !important;
 }
-
 .border-left {
 	border-left: 1px solid #ddd !important;
 }
-
 .border-right {
 	border-right: 1px solid #ddd !important;
 }
-
 /* text align */
 .align-left {
 	text-align: left !important;
 }
-
 .align-center {
 	text-align: center !important;
 }
-
 .align-right {
 	text-align: right !important;
 }
-
 .vertical-top {
 	vertical-align: top !important;
 }
-
 .vertical-middle {
 	vertical-align: middle !important;
 }
-
 .vertical-bottom {
 	vertical-align: bottom !important;
 }
-
 /* underline */
 .underline {
 	text-decoration: underline;
 
 	text-underline-position: under;
 }
-
 a.underline,
 button.underline {
 	color: #000;
 }
-
 /* text color */
 .disabled {
 	color: #999 !important;
 }
-
 .point-color01 {
 	color: #0c8fd2;
 }
-
 /* color */
 .color01 {
 	color: #898989;
 }
-
-
 /* font */
 .font-regular {
 	font-weight: 400 !important;
 }
-
 .font-medium {
 	font-weight: 500 !important;
 }
-
 .font-bold {
 	font-weight: 700 !important;
 }
-
 /* 필수사항 */
 .required {
 	vertical-align: super;
 }
-
 .scroll-x {
 	overflow-x: auto;
 }
-
+.scroll-y {
+	overflow-y: auto;
+}
 /* flex */
 .flex {
 	display: flex;
 
 	gap: 12px;
 }
-
 .flex-item {
 	flex: 1;
 }
-
 /* has-line */
 .has-line:not(.group):first-child {
 	border-top: 0;
 }
-
 /* bullet */
 .bullet:first-child {
 	margin-top: 0;
 }
-
 .bullet:last-child {
 	margin-bottom: 0;
 }
-
 .bullet {
 	display: flex;
 	flex-direction: column;
 	margin: 8px 0;
 }
-
 .bullet li {
 	position: relative;
 	padding-left: 8px;
 }
-
 .bullet li::before {
 	content: "";
 	position: absolute;
 	left: 0;
 	background-color: #555;
 }
-
 .bullet .bullet {
 	margin-top: 4px;
 }
-
 /* bullet type */
 .bullet-hyphen {
 	margin: 8px 0;
 
 	gap: 4px 0;
 }
-
-.bullet-hyphen>li::before {
+.bullet-hyphen > li::before {
 	top: 9px;
 	left: 1px;
 	width: 4px;
 	height: 1px;
 }
-
 .bullet-dot {
 	gap: 8px 0;
 }
-
-.bullet-dot>li::before {
+.bullet-dot > li::before {
 	top: 10px;
 	left: 1px;
 	width: 3px;
 	height: 3px;
 	border-radius: 50%;
+}
+/* no-data */
+.no-data {
+	padding: 100px 10px;
+	color: #9b9b9b;
+	text-align: center;
 }

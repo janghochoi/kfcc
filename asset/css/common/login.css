@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 .login-wrap {
 	display: flex;
 	align-items: center;
@@ -11,23 +10,19 @@
 	background: url("../../images/login/bg_login.png") no-repeat center top;
 	background-size: cover;
 }
-
 .login-box {
 	width: 330px;
 }
-
 .login-logo {
 	margin-bottom: 95px;
 	text-align: center;
 }
-
 .login-form {
 	display: flex;
 	flex-direction: column;
 
 	gap: 34px;
 }
-
 .login-form .item {
 	display: flex;
 	align-items: center;
@@ -35,14 +30,12 @@
 
 	gap: 28px;
 }
-
 .login-form .icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 37px;
 }
-
 .login-form .input {
 	flex: 1;
 	height: 37px;
@@ -50,11 +43,9 @@
 	color: #fff;
 	background-color: transparent;
 }
-
 .login-form .input::placeholder {
 	color: #fff;
 }
-
 .login-form .button {
 	height: 54px;
 	margin-top: 20px;

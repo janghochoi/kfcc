@@ -151,5 +151,5 @@
 	width: 8px;
 	height: 16px;
 	border: none;
-	background: url(../../images/common/icon-calender.png) no-repeat 0 0;
+	background: url("../../images/common/icon-calender.png") no-repeat 0 0;
 }

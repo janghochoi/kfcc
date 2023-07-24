@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 .heading:first-child {
 	margin-top: 0 !important;
 }
@@ -35,7 +34,7 @@
 	padding-left: 25px;
 	font-size: 30px;
 	font-weight: 500;
-	background: url(../../images/common/bg-heading.png) no-repeat 0 center;
+	background: url("../../images/common/bg-heading.png") no-repeat 0 center;
 }
 /* depth02 */
 .heading.depth02 {
@@ -44,4 +43,3 @@
 .heading.depth02 .title {
 	font-size: 16px;
 }
-

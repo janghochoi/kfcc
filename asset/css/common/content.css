@@ -1,1 +1,41 @@
 @charset "utf-8";
+/* switch-box */
+.switch-box {
+	display: flex;
+
+	gap: 14px;
+}
+.switch-box .switch-left {
+	width: 250px;
+}
+.switch-box .button-group {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	gap: 10px;
+}
+.switch-box .button-group .button {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #eee;
+	background: url(../../images/common/icon-switch-arrow.png) no-repeat center;
+}
+.switch-box .button-group .button-left {
+	transform: rotate(-180deg);
+}
+.switch-box .switch-right {
+	flex: 1;
+}
+.switch-table tr:first-child td {
+	border-top: 0;
+}
+.switch-table td {
+	vertical-align: middle;
+	height: 50px;
+	padding: 8px 4px;
+	border-top: 1px solid #eee;
+	font-size: 13px;
+	text-align: center;
+}

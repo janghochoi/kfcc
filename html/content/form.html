@@ -31,7 +31,7 @@
 				<div class="accordion lnb-depth01 type-option" data-toggle="one">
 					<ul>
 						<li>
-							<button type="button" class="accordion-name">
+							<button type="button" class="accordion-name"><!-- 활성화 class [active] -->
 								<span class="name">메뉴1</span>
 								<i class="icon-menu rotate"></i>
 							</button>
@@ -39,13 +39,13 @@
 								<div class="accordion lnb-depth02" data-toggle="one">
 									<ul>
 										<li>
-											<button type="button" class="accordion-name type-dot">
+											<button type="button" class="accordion-name type-dot"><!-- 활성화 class [active] -->
 												<span class="name">메뉴 1-1</span>
 												<i class="icon-menu rotate"></i>
 											</button>
 											<div class="accordion-content" role="region">
 												<ul class="lnb-depth03">
-													<li><a href="#">메뉴 1-1-1</a></li>
+													<li><a href="#">메뉴 1-1-1</a></li><!-- 활성화 class [active] -->
 													<li><a href="#">메뉴 1-1-2</a></li>
 													<li><a href="#">메뉴 1-1-3</a></li>
 													<li><a href="#">메뉴 1-1-4</a></li>
@@ -332,6 +332,66 @@
 										<input type="text" class="input" title="수급인 근로자2">
 									</div>
 								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="table">
+					<table>
+						<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
+						<colgroup>
+							<col style="width: 91px;">
+							<col>
+							<col style="width: 91px;">
+							<col style="width: 91px;">
+							<col style="width: 91px;">
+							<col style="width: 91px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col">점검사항</th>
+								<th scope="col">양호</th>
+								<th scope="col">보통</th>
+								<th scope="col">미흡</th>
+								<th scope="col">해당무</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="6">
+									<div class="no-data">
+										상단 점검표 분류 항목을 선택하십시요.
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="align-left"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="table">
+					<table>
+						<caption>합동안전보건 점검표 (미흡 시 조치사항 (기타 특이사항)) 구성 표 입니다.</caption>
+						<colgroup>
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="align-left">[미흡 시 조치사항 (기타 특이사항)]</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="align-left"></td>
 							</tr>
 						</tbody>
 					</table>

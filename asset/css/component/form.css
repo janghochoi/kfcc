@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 input[type=date]::-webkit-calendar-picker-indicator {
 	margin-left: 0;
 }
@@ -38,6 +37,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	position: absolute;
 	top: 50%;
 	right: 14px;
+	width: 18px;
+	height: 18px;
 	transform: translateY(-50%);
 }
 .input.active .button-clean {
@@ -47,7 +48,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	display: inline-block;
 	width: 18px;
 	height: 18px;
-	background: red;
+	background: url("../../images/common/icon-input-clear.png") no-repeat center;
 }
 /* input size */
 .input-size-small input {
@@ -64,6 +65,18 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .input-bg01 input {
 	background-color: #ccc;
 }
+/* input search */
+.input-search {
+	display: inline-flex;
+	border: 1px solid #ddd;
+}
+.input-search .input {
+	border: 0;
+}
+.input-search .button {
+	width: 34px;
+	padding: 0;
+}
 /* input date */
 .input-date {
 	display: flex;
@@ -74,7 +87,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	height: 100%;
 	padding: 0 34px 0 8px;
 	border: 0;
-	/*background: red;*/
 }
 .date-group {
 	display: flex;
@@ -116,7 +128,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	align-items: center;
 	flex-wrap: wrap;
 
-	gap: 3px;
+	gap: 4px;
 }
 .radio input[type=radio],
 .checkbox input[type=checkbox] {
@@ -154,22 +166,22 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	transition: background-image .2s;
 }
 .radio i {
-	background-image: url(../../images/common/icon-radio-off.png);
+	background-image: url("../../images/common/icon-radio-off.png");
 }
 .checkbox i {
 	background-color: #fff;
-	background-image: url(../../images/common/icon-checkbox-off.png);
+	background-image: url("../../images/common/icon-checkbox-off.png");
+	background-size: 14px;
 }
-
 .radio span ~ i,
 .checkbox span ~ i {
 	margin-left: 8px;
 }
 .radio :checked ~ i {
-	background-image: url(../../images/common/icon-radio-on.png);
+	background-image: url("../../images/common/icon-radio-on.png");
 }
 .checkbox :checked ~ i {
-	background-image: url(../../images/common/icon-checkbox-on.png);
+	background-image: url("../../images/common/icon-checkbox-on.png");
 }
 .radio :disabled ~ i,
 .checkbox :disabled ~ i,
@@ -237,7 +249,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	text-overflow: ellipsis;
 	word-break: break-all;
 	white-space: nowrap;
-	background: url(../../images/common/icon-select.png) no-repeat right 7px center;
+	background: url("../../images/common/icon-select.png") no-repeat right 7px center #fff;
 	transition: border-color .2s;
 }
 .select:disabled {
@@ -246,7 +258,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .select.full {
 	width: 100%;
 }
-
 /* textarea */
 .textarea {
 	display: block;
@@ -291,7 +302,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .select.success {
 	border-color: #0c8fd3;
 }
-
 /* form-group */
 .form-group .both-info-list.type-center {
 	margin-top: 16px;

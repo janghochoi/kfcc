@@ -1,15 +1,11 @@
 @charset "utf-8";
-
 /* reset */
 @import url(base.css);
-
 /* Layout */
 @import url(layout.css);
-
 /* Plugin */
 @import url(../plugin/jquery-ui.css);
 @import url(../plugin/swiper-bundle.css);
-
 /* Component */
 @import url(../component/accordion.css);
 @import url(../component/badge.css);
@@ -24,11 +20,9 @@
 @import url(../component/pagination.css);
 @import url(../component/tab.css);
 @import url(../component/table.css);
-
 /* Common */
 @import url(scroll.css);
 @import url(common.css);
-
 /* content */
 @import url(main.css);
 @import url(login.css);

@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /* table */
 .table:first-child {
 	margin-top: 0;
@@ -31,14 +30,15 @@
 .table td .desc {
 	margin-top: 8px;
 }
-
+.table .align-left {
+	padding-left: 15px;
+}
 /* table row */
 .table.type-row td {
 	padding-right: 15px;
 	padding-left: 15px;
 	text-align: left;
 }
-
 /* table all border */
 .table.type-all-borde th,
 .table.type-all-borde td {
