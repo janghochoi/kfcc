@@ -19,6 +19,33 @@
 	<!-- common js -->
 	<script defer src="../../asset/js/common.js"></script>
 	<script defer src="../../asset/js/dialog.js"></script>
+	<script>
+
+
+		function changeMainGroup(windowWidth) {
+			if (windowWidth > 1500) {
+				const gridHeight = $('.main-group.center').outerHeight(true);
+				const resultItemHeight = gridHeight / 2 - 15;
+				$('.main-inner-group').addClass('full-wide');
+				$('.main-inner-group > *').each(function () {
+					$(this).css('min-height', resultItemHeight);
+				})
+			} else {
+				$('.main-inner-group').removeClass('full-wide');
+				$('.main-inner-group > *').each(function () {
+					$(this).css('min-height', 0);
+				})
+			}
+		}
+		$(document).ready(function () {
+			changeMainGroup($(window).outerWidth(true));
+
+		});
+		$(window).resize(function () {
+			changeMainGroup($(window).outerWidth(true));
+
+		})
+	</script>
 </head>
 <body>
 	<!-- skipNavi -->
@@ -122,243 +149,247 @@
 						</div>
 					</div>
 					<div class="main-group center">
-						<div class="main-box">
-							<div class="tab-wrap">
-								<div class="tab-list">
-									<ul>
-										<li class="active">
-											<a href="#tab05" id="tabList05">MG 준법지수</a>
-										</li>
-										<li>
-											<a href="#tab06" id="tabList06">세부내역</a>
-										</li>
-									</ul>
-								</div>
-								<div class="tab-container">
-									<div id="tab05" class="tab-content" aria-labelledby="tabList05">
-										<div class="tab-content-inner">
-											<div>
-												graph1
+						<div class="main-inner-group">
+							<div class="main-box">
+								<div class="tab-wrap">
+									<div class="tab-list">
+										<ul>
+											<li class="active">
+												<a href="#tab05" id="tabList05">MG 준법지수</a>
+											</li>
+											<li>
+												<a href="#tab06" id="tabList06">세부내역</a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-container">
+										<div id="tab05" class="tab-content" aria-labelledby="tabList05">
+											<div class="tab-content-inner">
+												<div>
+													graph1
+												</div>
+												<button type="button" class="button-icon" aria-label="MG 준법지수 새로고침"><i class="icon icon-refresh"></i></button>
 											</div>
-											<button type="button" class="button-icon" aria-label="MG 준법지수 새로고침"><i class="icon icon-refresh"></i></button>
+										</div>
+										<div id="tab06" class="tab-content" aria-labelledby="tabList06">
+											<div class="tab-content-inner">
+												<div>
+													graph2
+												</div>
+												<button type="button" class="button-icon" aria-label="세부내역 새로고침"><i class="icon icon-refresh"></i></button>
+											</div>
 										</div>
 									</div>
-									<div id="tab06" class="tab-content" aria-labelledby="tabList06">
-										<div class="tab-content-inner">
-											<div>
-												graph2
+								</div>
+							</div>
+							<div class="main-box">
+								<div class="tab-wrap">
+									<div class="tab-list">
+										<ul>
+											<li class="active">
+												<a href="#tab01" id="tabList01">공지사항</a>
+											</li>
+											<li>
+												<a href="#tab02" id="tabList02">준법동향</a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-container">
+										<div id="tab01" class="tab-content" aria-labelledby="tabList01">
+											<div class="tab-content-inner">
+												<div class="table table-notice">
+													<table>
+														<caption>공지사항 (제목, 작성자, 날짜)</caption>
+														<colgroup>
+															<col style="width:auto">
+															<col style="width:20%">
+															<col style="width:25%">
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col">제목</th>
+																<th scope="col">작성자</th>
+																<th scope="col">날씨</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td><a href="#" class="ellipsis">공지사항 제목 노출</a></td>
+																<td>장그래</td>
+																<td>2023-00-00 14:00</td>
+															</tr>
+															<tr>
+																<td><a href="#" class="ellipsis">공지사항 제목 노출 공지사항 제목 노출 공지사항 제목 노출 공지사항 제목 노출</a></td>
+																<td>장그래</td>
+																<td>2023-00-00 14:00</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<a href="#" class="button-icon" aria-label="공지사항 더보기"><i class="icon icon-more"></i></a>
 											</div>
-											<button type="button" class="button-icon" aria-label="세부내역 새로고침"><i class="icon icon-refresh"></i></button>
+										</div>
+										<div id="tab02" class="tab-content" aria-labelledby="tabList02">
+											<div class="tab-content-inner">
+												<div class="table table-notice">
+													<table>
+														<caption>준법동향 (제목, 작성자, 날짜)</caption>
+														<colgroup>
+															<col style="width:auto">
+															<col style="width:20%">
+															<col style="width:25%">
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col">제목</th>
+																<th scope="col">작성자</th>
+																<th scope="col">날씨</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td><a href="#" class="ellipsis">준법동향 제목 노출</a></td>
+																<td>장그래</td>
+																<td>2023-00-00 14:00</td>
+															</tr>
+															<tr>
+																<td><a href="#" class="ellipsis">준법동향 제목 노출 준법동향 제목 노출 준법동향 제목 노출 공지사항 제목 노출</a></td>
+																<td>장그래</td>
+																<td>2023-00-00 14:00</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<a href="#" class="button-icon" aria-label="준법동향 더보기"><i class="icon icon-more"></i></a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="main-box">
-							<div class="tab-wrap">
-								<div class="tab-list">
-									<ul>
-										<li class="active">
-											<a href="#tab01" id="tabList01">공지사항</a>
-										</li>
-										<li>
-											<a href="#tab02" id="tabList02">준법동향</a>
-										</li>
-									</ul>
-								</div>
-								<div class="tab-container">
-									<div id="tab01" class="tab-content" aria-labelledby="tabList01">
-										<div class="tab-content-inner">
-											<div class="table table-notice">
-												<table>
-													<caption>공지사항 (제목, 작성자, 날짜)</caption>
-													<colgroup>
-														<col style="width:auto">
-														<col style="width:20%">
-														<col style="width:25%">
-													</colgroup>
-													<thead>
-														<tr>
-															<th scope="col">제목</th>
-															<th scope="col">작성자</th>
-															<th scope="col">날씨</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td><a href="#" class="ellipsis">공지사항 제목 노출</a></td>
-															<td>장그래</td>
-															<td>2023-00-00 14:00</td>
-														</tr>
-														<tr>
-															<td><a href="#" class="ellipsis">공지사항 제목 노출 공지사항 제목 노출 공지사항 제목 노출 공지사항 제목 노출</a></td>
-															<td>장그래</td>
-															<td>2023-00-00 14:00</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<a href="#" class="button-icon" aria-label="공지사항 더보기"><i class="icon icon-more"></i></a>
-										</div>
+						<div class="main-inner-group">
+							<div class="main-box">
+								<div class="tab-wrap">
+									<div class="tab-list">
+										<ul>
+											<li class="active">
+												<a href="#tab03" id="tabList03">FAQ</a>
+											</li>
+											<li>
+												<a href="#tab04" id="tabList04">체크리스트</a>
+											</li>
+										</ul>
 									</div>
-									<div id="tab02" class="tab-content" aria-labelledby="tabList02">
-										<div class="tab-content-inner">
-											<div class="table table-notice">
-												<table>
-													<caption>준법동향 (제목, 작성자, 날짜)</caption>
-													<colgroup>
-														<col style="width:auto">
-														<col style="width:20%">
-														<col style="width:25%">
-													</colgroup>
-													<thead>
-														<tr>
-															<th scope="col">제목</th>
-															<th scope="col">작성자</th>
-															<th scope="col">날씨</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td><a href="#" class="ellipsis">준법동향 제목 노출</a></td>
-															<td>장그래</td>
-															<td>2023-00-00 14:00</td>
-														</tr>
-														<tr>
-															<td><a href="#" class="ellipsis">준법동향 제목 노출 준법동향 제목 노출 준법동향 제목 노출 공지사항 제목 노출</a></td>
-															<td>장그래</td>
-															<td>2023-00-00 14:00</td>
-														</tr>
-													</tbody>
-												</table>
+									<div class="tab-container">
+										<div id="tab03" class="tab-content" aria-labelledby="tabList03">
+											<div class="tab-content-inner">
+												<div class="table table-notice">
+													<table>
+														<caption>FAQ (제목, 작성자, 날짜)</caption>
+														<colgroup>
+															<col style="width:auto">
+															<col style="width:20%">
+															<col style="width:25%">
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col">제목</th>
+																<th scope="col">작성자</th>
+																<th scope="col">날씨</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td><a href="#" class="ellipsis">FAQ 제목 노출</a></td>
+																<td>장그래</td>
+																<td>2023-00-00 14:00</td>
+															</tr>
+															<tr>
+																<td><a href="#" class="ellipsis">FAQ 제목 노출 FAQ 제목 노출 FAQ 제목 노출 FAQ 제목 노출</a></td>
+																<td>장그래</td>
+																<td>2023-00-00 14:00</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<a href="#" class="button-icon" aria-label="FAQ 더보기"><i class="icon icon-more"></i></a>
 											</div>
-											<a href="#" class="button-icon" aria-label="준법동향 더보기"><i class="icon icon-more"></i></a>
 										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="main-box">
-							<div class="tab-wrap">
-								<div class="tab-list">
-									<ul>
-										<li class="active">
-											<a href="#tab03" id="tabList03">FAQ</a>
-										</li>
-										<li>
-											<a href="#tab04" id="tabList04">체크리스트</a>
-										</li>
-									</ul>
-								</div>
-								<div class="tab-container">
-									<div id="tab03" class="tab-content" aria-labelledby="tabList03">
-										<div class="tab-content-inner">
-											<div class="table table-notice">
-												<table>
-													<caption>FAQ (제목, 작성자, 날짜)</caption>
-													<colgroup>
-														<col style="width:auto">
-														<col style="width:20%">
-														<col style="width:25%">
-													</colgroup>
-													<thead>
-														<tr>
-															<th scope="col">제목</th>
-															<th scope="col">작성자</th>
-															<th scope="col">날씨</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td><a href="#" class="ellipsis">FAQ 제목 노출</a></td>
-															<td>장그래</td>
-															<td>2023-00-00 14:00</td>
-														</tr>
-														<tr>
-															<td><a href="#" class="ellipsis">FAQ 제목 노출 FAQ 제목 노출 FAQ 제목 노출 FAQ 제목 노출</a></td>
-															<td>장그래</td>
-															<td>2023-00-00 14:00</td>
-														</tr>
-													</tbody>
-												</table>
+										<div id="tab04" class="tab-content" aria-labelledby="tabList04">
+											<div class="tab-content-inner">
+												<div class="table table-notice">
+													<table>
+														<caption>체크리스트 (제목, 작성자, 날짜)</caption>
+														<colgroup>
+															<col style="width:auto">
+															<col style="width:20%">
+															<col style="width:25%">
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col">제목</th>
+																<th scope="col">작성자</th>
+																<th scope="col">날씨</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td><a href="#" class="ellipsis">체크리스트 제목 노출</a></td>
+																<td>소 회의실3</td>
+																<td>2023-00-00 14:00</td>
+															</tr>
+															<tr>
+																<td><a href="#" class="ellipsis">체크리스트 제목 노출 체크리스트 제목 노출 체크리스트 제목 노출 공지사항 제목 노출</a></td>
+																<td>장그래</td>
+																<td>2023-00-00 14:00</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+												<a href="#" class="button-icon" aria-label="체크리스트 더보기"><i class="icon icon-more"></i></a>
 											</div>
-											<a href="#" class="button-icon" aria-label="FAQ 더보기"><i class="icon icon-more"></i></a>
-										</div>
-									</div>
-									<div id="tab04" class="tab-content" aria-labelledby="tabList04">
-										<div class="tab-content-inner">
-											<div class="table table-notice">
-												<table>
-													<caption>체크리스트 (제목, 작성자, 날짜)</caption>
-													<colgroup>
-														<col style="width:auto">
-														<col style="width:20%">
-														<col style="width:25%">
-													</colgroup>
-													<thead>
-														<tr>
-															<th scope="col">제목</th>
-															<th scope="col">작성자</th>
-															<th scope="col">날씨</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td><a href="#" class="ellipsis">체크리스트 제목 노출</a></td>
-															<td>소 회의실3</td>
-															<td>2023-00-00 14:00</td>
-														</tr>
-														<tr>
-															<td><a href="#" class="ellipsis">체크리스트 제목 노출 체크리스트 제목 노출 체크리스트 제목 노출 공지사항 제목 노출</a></td>
-															<td>장그래</td>
-															<td>2023-00-00 14:00</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<a href="#" class="button-icon" aria-label="체크리스트 더보기"><i class="icon icon-more"></i></a>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="main-box">
-							<div class="heading depth02">
-								<h2 class="title">할일</h2>
-								<div class="right">
-									<a href="#" class="button-icon" role="button" aria-label="글쓰기"><i class="icon icon-modify"></i></a>
-									<button type="button" class="button-icon" aria-label="새로고침"> <i class="icon icon-refresh"></i></button>
+							<div class="main-box">
+								<div class="heading depth02">
+									<h2 class="title">할일</h2>
+									<div class="right">
+										<a href="#" class="button-icon" role="button" aria-label="글쓰기"><i class="icon icon-modify"></i></a>
+										<button type="button" class="button-icon" aria-label="새로고침"> <i class="icon icon-refresh"></i></button>
+									</div>
 								</div>
-							</div>
-							<div class="sub">
-								<div class="table table-notice">
-									<table>
-										<caption>할일 (제목, 장소, 날짜)</caption>
-										<colgroup>
-											<col style="width:auto">
-											<col style="width:20%">
-											<col style="width:25%">
-										</colgroup>
-										<thead>
-											<tr>
-												<th scope="col">제목</th>
-												<th scope="col">장소</th>
-												<th scope="col">날씨</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><a href="#" class="ellipsis">2023 홈페이지 리뉴얼 회의</a></td>
-												<td>소 회의실2</td>
-												<td>2023-00-00 14:00</td>
-											</tr>
-											<tr>
-												<td><a href="#" class="ellipsis">2023 홈페이지 리뉴얼 회의 2023 홈페이지 리뉴얼 회의 2023 홈페이지 리뉴얼 회의</a></td>
-												<td>소 회의실2</td>
-												<td>2023-00-00 14:00</td>
-											</tr>
-										</tbody>
-									</table>
+								<div class="sub">
+									<div class="table table-notice">
+										<table>
+											<caption>할일 (제목, 장소, 날짜)</caption>
+											<colgroup>
+												<col style="width:auto">
+												<col style="width:20%">
+												<col style="width:25%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">제목</th>
+													<th scope="col">장소</th>
+													<th scope="col">날씨</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><a href="#" class="ellipsis">2023 홈페이지 리뉴얼 회의</a></td>
+													<td>소 회의실2</td>
+													<td>2023-00-00 14:00</td>
+												</tr>
+												<tr>
+													<td><a href="#" class="ellipsis">2023 홈페이지 리뉴얼 회의 2023 홈페이지 리뉴얼 회의 2023 홈페이지 리뉴얼 회의</a></td>
+													<td>소 회의실2</td>
+													<td>2023-00-00 14:00</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div>
 							</div>
 						</div>

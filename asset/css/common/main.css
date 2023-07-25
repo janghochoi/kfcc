@@ -1,9 +1,11 @@
 @charset "utf-8";
+
 /* main */
 .main-page {
 	padding-bottom: 96px;
 	background-color: #f8fcfe;
 }
+
 .main-page .content {
 	display: flex;
 	justify-content: space-between;
@@ -11,26 +13,41 @@
 
 	gap: 15px;
 }
+
 /* main-group */
 .main-group.left,
 .main-group.right {
 	flex-basis: 230px;
 	flex-shrink: 0;
 }
+
 .main-group.center {
 	flex: 1;
 }
+
+.main-inner-group.full-wide {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.main-inner-group.full-wide>* {
+	flex: 1;
+}
+
 .main-box {
 	margin-bottom: 15px;
 	border: 1px solid #e5e5e5;
 	background-color: #fff;
-	box-shadow: 6px 6px 15px 5px rgba(137,137,137,.16);
+	box-shadow: 6px 6px 15px 5px rgba(137, 137, 137, .16);
 }
+
 .main-box .heading {
 	height: 40px;
 	margin-bottom: 0;
 	padding: 10px 12px;
 }
+
 .main-box .heading .title:before {
 	content: "";
 	display: inline-block;
@@ -39,18 +56,22 @@
 	margin: 0 5px -2px 0;
 	background-color: #0c8fd2;
 }
+
 .main-box .sub {
 	padding: 13px 10px;
 	border-top: 1px solid #0c8fd2;
 }
+
 .main-box .tab-wrap .button-icon {
 	position: absolute;
 	top: 10px;
 	right: 10px;
 }
+
 .main-box .tab-content-inner {
 	padding-top: 8px;
 }
+
 /* user-box (회원정보) */
 .user-box .profile {
 	overflow: hidden;
@@ -59,61 +80,74 @@
 	margin: 20px auto 6px;
 	border-radius: 50%;
 }
+
 .user-box .info {
 	text-align: center;
 }
+
 .user-box .info em {
 	font-size: 14px;
 }
+
 .user-box .info .bar:before {
 	margin: 0 4px;
 	background-color: #0c8fd2;
 }
+
 .user-box .name {
 	vertical-align: top;
 	margin: 8px 0 15px;
 	font-size: 20px;
 	font-weight: 700;
 }
+
 .user-box .work-list {
 	display: flex;
 	flex-direction: column;
 
 	gap: 5px;
 }
+
 .user-box .work-list .item {
 	display: flex;
 	justify-content: space-between;
 }
+
 .user-box .icon-user {
 	margin-right: 5px;
 }
+
 .user-box .work-list .badge {
 	font-weight: 700;
 }
+
 .user-box .name span {
 	vertical-align: top;
 	margin-left: 3px;
 	font-size: 14px;
 }
+
 /* main-schedule (통합일정) */
 .schedule-list {
 	display: flex;
 	flex-direction: column;
-	padding: 10px 0 ;
+	padding: 10px 0;
 	background-color: #f4f4f4;
 
 	gap: 10px;
 }
+
 .schedule-list li {
 	position: relative;
 	padding: 0 10px 0 20px;
 }
+
 .schedule-list li a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
+
 .schedule-list li:before {
 	content: "";
 	position: absolute;
@@ -124,18 +158,22 @@
 	border-radius: 50%;
 	background-color: #0c8fd2;
 }
+
 .schedule-list .name {
 	display: block;
 	margin-bottom: -3px;
 }
+
 .schedule-list .badge {
 	font-size: 12px;
 }
+
 .schedule-list .date {
 	display: inline-block;
 	color: #898989;
 	font-size: 12px;
 }
+
 /* main-link */
 .main-link {
 	display: flex;
@@ -144,15 +182,18 @@
 
 	gap: 15px;
 }
+
 /* main-banner */
 .main-banner {
 	border: 0;
 	box-shadow: none;
 }
+
 .main-banner a {
 	display: inline-block;
 	text-align: center;
 }
+
 /* icon */
 [class*=icon-main] {
 	width: 41px;
@@ -161,31 +202,44 @@
 	background-repeat: no-repeat;
 	background-position: 0 0;
 }
+
 .icon-main02 {
 	background-image: url("../../images/main/icon-m02.png");
 }
+
 .icon-main03 {
 	background-image: url("../../images/main/icon-m03.png");
 }
+
 .icon-main04 {
 	background-image: url("../../images/main/icon-m04.png");
 }
+
 .icon-main05 {
 	background-image: url("../../images/main/icon-m05.png");
 }
+
 .icon-main06 {
 	background-image: url("../../images/main/icon-m06.png");
 }
+
 .icon-main07 {
 	background-image: url("../../images/main/icon-m07.png");
 }
+
 .icon-main08 {
 	background-image: url("../../images/main/icon-m08.png");
 }
+
 /* table-notice */
+.main-group .table-notice table {
+	table-layout: fixed;
+}
+
 .table-notice table {
 	border: 0;
 }
+
 .table-notice thead {
 	overflow: hidden;
 	position: absolute;
@@ -193,8 +247,9 @@
 	height: 1px;
 	border: none;
 	clip: rect(1px 1px 1px 1px);
-	clip: rect(1px,1px,1px,1px);
+	clip: rect(1px, 1px, 1px, 1px);
 }
+
 .table-notice td {
 	height: 30px;
 	padding: 0;
@@ -202,12 +257,15 @@
 	color: #898989;
 	font-size: 14px;
 }
+
 .table-notice td:first-child {
 	text-align: left;
 }
+
 .table-notice td:last-child {
 	text-align: right;
 }
+
 .table-notice td a {
 	display: block;
 	overflow: hidden;
@@ -215,6 +273,7 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
 .table-notice td a:hover {
 	color: #000;
 }
