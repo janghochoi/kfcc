@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* main */
-.main {
+.main-page {
+	padding-bottom: 96px;
+	background-color: #f8fcfe;
+}
+.main-page .content {
 	display: flex;
 	justify-content: space-between;
 	padding-top: 17px;

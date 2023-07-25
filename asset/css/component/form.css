@@ -121,6 +121,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .inner-button .inner-text {
 	flex: 1;
 }
+.inner-button .button-icon {
+	border: 1px solid #ddd;
+}
 /* radio, checkbox */
 .radio,
 .checkbox {
