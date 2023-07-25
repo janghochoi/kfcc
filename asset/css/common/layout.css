@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* skipContent */
 .skip-content {
 	position: absolute;
@@ -15,11 +16,13 @@
 	background-color: #0c8fd2;
 	transition: .1s ease-in-out;
 }
+
 .skip-content:focus,
 .skip-content:hover {
 	top: 0;
 	text-decoration: none;
 }
+
 /* wrap */
 .wrap {
 	display: flex;
@@ -27,10 +30,12 @@
 	flex-direction: column;
 	min-width: 1300px;
 }
+
 .inner {
 	margin: 0 auto;
 	padding: 0 20px;
 }
+
 /* header */
 .header {
 	position: sticky;
@@ -38,6 +43,7 @@
 	z-index: 10;
 	background-color: #fff;
 }
+
 .header .header-top {
 	display: flex;
 	align-items: center;
@@ -45,23 +51,28 @@
 	padding: 12px 0;
 	background-color: #fff;
 }
+
 .header .header-top .right {
 	display: flex;
 
 	gap: 10px;
 }
+
 .header .header-top .user-info {
 	display: flex;
 	align-items: center;
 }
+
 .header .header-top li {
 	color: #000;
 	font-size: 14px;
 }
+
 .header .header-top .bar:before {
 	height: 12px;
 	background-color: #000;
 }
+
 .header .search {
 	display: flex;
 	justify-content: space-around;
@@ -71,33 +82,40 @@
 
 	gap: 5px;
 }
+
 .header .search input {
 	margin: 0;
 	border: 0;
 	font-size: 14px;
 	background-color: #efefef;
 }
+
 .header .search button {
 	width: 20px;
 }
+
 .header .search .icon-search {
 	display: inline-block;
 	width: 15px;
 	height: 15px;
 	background: url("../../images/common/icon-search.png") no-repeat 0 0;
 }
+
 /* nav */
 .header .inner .nav {
 	margin: 0 -20px;
 	padding: 0 20px;
 }
+
 .nav {
 	background-color: #0c8fd2;
 }
+
 .nav ul {
 	display: flex;
 	justify-content: space-around;
 }
+
 .nav li a {
 	display: block;
 	height: 44px;
@@ -105,28 +123,34 @@
 	color: #fff;
 	white-space: nowrap;
 }
+
 /* container */
 .container {
 	min-height: calc(100vh - 160px);
 	background-color: #f6f6f6;
 }
+
 /* footer */
 .footer {
 	padding: 15px 0;
 	background-color: #ddd;
 }
+
 .footer .inner {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
+
 .footer p {
 	color: #000;
 	font-size: 14px;
 }
+
 .footer-link {
 	position: relative;
 }
+
 .footer-link button {
 	display: flex;
 	align-items: center;
@@ -140,6 +164,7 @@
 	line-height: 32px;
 	background-color: #efefef;
 }
+
 .footer-link ul {
 	display: none;
 	position: absolute;
@@ -148,31 +173,37 @@
 	width: 100%;
 	background-color: #efefef;
 }
+
 .footer-link li a {
 	display: block;
 	padding: 5px 16px 5px 21px;
 	color: #898989;
 	font-size: 14px;
 }
+
 .sub-page {
 	display: flex;
 	padding: 0;
 	background-color: #f6f6f6;
 }
+
 /* lnb */
 .lnb {
 	width: 300px;
 	height: 100vh;
 	background-color: #fff;
 }
-.lnb .lnb-depth01 > ul {
+
+.lnb .lnb-depth01>ul {
 	border-bottom: 1px solid #ddd;
 }
-.lnb .lnb-depth01 > ul > li {
+
+.lnb .lnb-depth01>ul>li {
 	position: relative;
 	border-color: #ddd;
 }
-.lnb .lnb-depth01 > ul > li::after {
+
+.lnb .lnb-depth01>ul>li::after {
 	content: "";
 	display: none;
 	position: absolute;
@@ -182,34 +213,42 @@
 	height: 100%;
 	background-color: #0c8fd2;
 }
-.lnb .lnb-depth01 > ul > .active::after {
+
+.lnb .lnb-depth01>ul>.active::after {
 	display: block;
 }
+
 .lnb .lnb-depth01 .accordion-name .name {
 	color: #3c4043;
 	font-size: 18px;
 }
+
 .lnb .lnb-depth01 .accordion-content {
 	padding: 0 0 0 35px;
 	border-left: 3px solid #0c8fd2;
 	background-color: #fff;
 }
-.lnb .lnb-depth02 > ul > li {
+
+.lnb .lnb-depth02>ul>li {
 	border-top: 0;
 }
+
 .lnb .lnb-depth02 .accordion-content {
 	margin: 10px 0 10px 30px;
 	padding: 5px 10px;
 	border-left: 2px solid #aad8ef;
 }
+
 .lnb .lnb-depth02 .accordion-name {
 	position: relative;
 	height: 33px;
 	padding-left: 13px;
 }
+
 .lnb .lnb-depth02 .accordion-name.active::after {
 	background-color: #0c8fd2;
 }
+
 .lnb .lnb-depth02 .accordion-name::after {
 	content: "";
 	display: block;
@@ -221,23 +260,28 @@
 	background-color: #ddd;
 	transform: translateY(-50%);
 }
+
 .lnb .lnb-depth02 .accordion-name .name {
 	font-size: 16px;
 	font-weight: 400;
 }
+
 .lnb .lnb-depth02 .active .name {
 	color: #0c8fd2;
 }
-.lnb .lnb-depth03 li ~ li {
+
+.lnb .lnb-depth03 li~li {
 	margin-top: 10px;
 }
+
 .lnb .lnb-depth03 .active {
 	color: #0c8fd2;
 }
+
 /* sub-page content */
 .sub-page .content {
 	flex: 1;
-	margin: 30px;
+	margin: 30px 0 30px 30px;
 	padding: 20px;
 	background-color: #fff;
 	box-shadow: 1px 3px 10px 0 #cbcbcb;
