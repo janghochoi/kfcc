@@ -108,9 +108,12 @@
 	background-color: #0c8fd2;
 }
 
-.nav ul {
+.nav .inner > ul {
 	display: flex;
 	justify-content: space-around;
+}
+.nav li {
+	position: relative;
 }
 
 .nav li a {
@@ -119,6 +122,10 @@
 	padding: 12px 10px;
 	color: #fff;
 	white-space: nowrap;
+}
+.depth {
+	position: absolute;
+	width: 100%;
 }
 
 /* container */
