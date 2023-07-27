@@ -45,8 +45,8 @@
 	border: 1px solid #ddd;
 }
 
-.table + .scroll-warp {
-	margin-top: 12px;;
+.table + .scroll-wrap {
+	margin-top: 12px;
 }
 .scroll-wrap {
 	overflow-x: scroll;

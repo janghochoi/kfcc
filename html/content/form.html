@@ -108,6 +108,65 @@
 										</td>
 									</tr>
 									<tr>
+										<th scope="row">체크박스</th>
+										<td colspan="7">
+											<label class="checkbox">
+												<input type="checkbox" name="test2" checked>
+												<i></i>
+												<span>체크1</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox" name="test2">
+												<i></i>
+												<span>체크2</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox" name="test2">
+												<i></i>
+												<span>체크3</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox" name="test2" disabled>
+												<i></i>
+												<span>체크3</span>
+											</label>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">날짜검색</th>
+										<td colspan="7">
+											<div class="date-wrap">
+												<div class="input">
+													<input type="text" title="시작 날짜" placeholder="YY-MM-DD">
+												</div>
+												<em>~</em>
+												<div class="input">
+													<input type="text" title="종료 날짜" placeholder="YY-MM-DD">
+												</div>
+											</div>
+										</td>
+									</tr>
+									<script>
+										$(function () {
+											$(".date-wrap input").datepicker({
+												dateFormat: 'yy-mm-dd',
+												showOtherMonths: true,
+												showMonthAfterYear: true,
+												changeYear: true,
+												changeMonth: true,
+												yearSuffix: ".",
+												showOn: "both",
+												buttonImage: "../../asset/images/common/img-datepicker.svg",
+												buttonImageOnly: true,
+												buttonText: "선택",
+												monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+												monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+												dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+												dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+											});
+										});
+									</script>
+									<tr>
 										<th scope="row">문서번호</th>
 										<td colspan="3">안전보건관리-협동안전보건 점검표2020호</td>
 										<th scope="row">문서보안</th>
@@ -146,12 +205,56 @@
 												<div class="input">
 													<input type="text" class="input" title="참조자" placeholder="참조자 입력하세요." readonly>
 												</div>
-												<button type="button" class="button-icon button-border01"><i class="icon icon-person"></i></button>
+												<button type="button" class="button-icon button-border02"><i class="fa-solid fa-users fa-color03"></i></button>
 											</div>
 										</td>
 									</tr>
 								</tbody>
 							</table>
+						</div>
+						<div class="scroll-wrap">
+							<div class="table" style="width:150%;">
+								<table>
+									<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
+									<colgroup>
+										<col style="width: 91px;">
+										<col>
+										<col style="width: 91px;">
+										<col style="width: 91px;">
+										<col style="width: 91px;">
+										<col style="width: 91px;">
+										<col style="width: 91px;">
+										<col style="width: 91px;">
+										<col style="width: 91px;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">구분</th>
+											<th scope="col">점검사항</th>
+											<th scope="col">양호</th>
+											<th scope="col">보통</th>
+											<th scope="col">미흡</th>
+											<th scope="col">해당무</th>
+											<th scope="col">내용</th>
+											<th scope="col">내용</th>
+											<th scope="col">내용</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>테이블 내부 가로스크롤</td>
+											<td>필요시</td>
+											<td>scroll-wrap</td>
+											<td>필요</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 
 						<div class="table type-row">

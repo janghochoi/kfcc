@@ -11,7 +11,7 @@ document.write(
 					</ul>
 					<div class="search">
 						<input type="text" title="검색어" placeholder="검색어를 입력하세요.">
-						<button type="button" aria-label="검색"><i class="icon icon-search"></i></button>
+						<button type="button" aria-label="검색"><i class="fa-solid fa-magnifying-glass fa-color03"></i></button>
 					</div>
 				</div>
 			</div>
