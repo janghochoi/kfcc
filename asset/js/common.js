@@ -74,14 +74,9 @@
 			});
 
 			$button.off().on('click', function () {
-				var $this = $(this),
-					typeOption = $this.closest('.accordion').hasClass('type-option');
+				var $this = $(this);
 
 				if ($button.next().is(':animated') > 0) return false;
-
-				if (typeOption) {
-					$this.closest('li').toggleClass(activeClass);
-				}
 
 				if (parentType == 'one') {
 					$content.not($(this).next()).stop().slideUp(aniSpeed);
