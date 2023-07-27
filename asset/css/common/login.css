@@ -26,6 +26,7 @@
 .login-form .item {
 	display: flex;
 	align-items: center;
+	padding-left: 10px;
 	border-bottom: 1px solid #fff;
 
 	gap: 28px;

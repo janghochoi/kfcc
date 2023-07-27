@@ -375,3 +375,29 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .form-text.type-readonly {
 	background-color: #f8f8f8;
 }
+/* */
+.date-wrap {
+	display: flex;
+	align-items: center;
+
+	gap: 5px;
+}
+
+.date-wrap .input {
+	width: auto;
+}
+
+.date-wrap input {
+	padding-right: 30px;
+	cursor: pointer;
+}
+
+.date-wrap img {
+	position: absolute;
+	top: 50%;
+	right: 9px;
+	cursor: pointer;
+	width: 14px;
+	height: 14px;
+	margin-top: -7px;
+}

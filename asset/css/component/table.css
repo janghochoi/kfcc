@@ -44,3 +44,10 @@
 .table.type-all-borde td {
 	border: 1px solid #ddd;
 }
+
+.table + .scroll-warp {
+	margin-top: 12px;;
+}
+.scroll-wrap {
+	overflow-x: scroll;
+}

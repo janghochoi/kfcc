@@ -57,3 +57,16 @@
 	height: 20px;
 	background-image: url("../../images/common/icon-search-20x20.png");
 }
+/* fontawesome */
+.fa-color01:before {
+	color: #0c8fd2;
+}
+.fa-color02:before {
+	color: #666;
+}
+.fa-color03:before {
+	color: #8989;
+}
+.fa-color04:before {
+	color: #fff;
+}

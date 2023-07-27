@@ -41,6 +41,10 @@
 	border: 1px solid #0c8fd3;
 	color: #0c8fd3;
 }
+.button-border02 {
+	border: 1px solid #ddd;
+	color: #ddd;
+}
 /* button size */
 .button-size-lage {
 	height: 40px;
@@ -206,7 +210,7 @@
 	display: inline-flex;
 	padding: 0 1px;
 }
-.button-icon.button-border01 {
+.button-icon.button-border02 {
 	align-items: center;
 	justify-content: center;
 	width: 36px;

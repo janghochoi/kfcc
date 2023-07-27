@@ -81,7 +81,7 @@
 	display: flex;
 	justify-content: space-between;
 }
-.user-box .icon-user {
+.user-box [class*=fa-] {
 	margin-right: 5px;
 }
 .user-box .work-list .badge {
