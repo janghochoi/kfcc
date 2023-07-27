@@ -1,8 +1,8 @@
 document.write(
 	`
 	<header class="header">
-		<div class="inner">
-			<div class="header-top">
+		<div class="header-top">
+			<div class="inner">
 				<h1><a href="#" class="logo"><img src="../../asset/images/main/img-logo.png" alt="새마을 준법지원시스템"></a></h1>
 				<div class="right">
 					<ul class="user-info">
@@ -15,7 +15,9 @@ document.write(
 					</div>
 				</div>
 			</div>
-			<nav class="nav">
+		</div>
+		<nav class="nav">
+			<div class="inner">
 				<ul>
 					<li><a href="#">통합결재</a></li>
 					<li><a href="#">사전검토</a></li>
@@ -26,8 +28,8 @@ document.write(
 					<li><a href="#">관리자</a></li>
 					<li><a href="#">준법일반</a></li>
 				</ul>
-			</nav>
-		</div>
+			</div>
+		</nav>
 	</header>
 	`
 )
