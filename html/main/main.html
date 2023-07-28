@@ -9,7 +9,6 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../asset/css/common/package.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<!-- jquery -->
 	<script src="../../asset/js/jquery-3.7.0.js"></script>
 	<script src="../../asset/js/jquery-ui.js"></script>
@@ -21,8 +20,6 @@
 	<script defer src="../../asset/js/common.js"></script>
 	<script defer src="../../asset/js/dialog.js"></script>
 	<script>
-
-
 		function changeMainGroup(windowWidth) {
 			if (windowWidth > 1500) {
 				const gridHeight = $('.main-group.center').outerHeight(true);
@@ -44,8 +41,7 @@
 		});
 		$(window).resize(function () {
 			changeMainGroup($(window).outerWidth(true));
-
-		})
+		});
 	</script>
 </head>
 <body>

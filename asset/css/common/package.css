@@ -6,6 +6,7 @@
 /* Plugin */
 @import url(../plugin/jquery-ui.css);
 @import url(../plugin/swiper-bundle.css);
+@import url(../plugin/fontawesome_all.css);
 /* Component */
 @import url(../component/accordion.css);
 @import url(../component/badge.css);
