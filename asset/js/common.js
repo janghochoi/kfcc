@@ -49,56 +49,40 @@
 
 	// accordion
 	function _accordion() {
-		var $accordion = $('.accordion');
+		const $accordions = $('.accordion');
 
-		if (!$accordion.length) return false;
+		if (!$accordions.length) return;
 
-		$accordion.each(function () {
-			var $this = $(this),
-				$button = $this.find('.accordion-name'),
-				$parent = $this.closest('.accordion'),
-				$content = $parent.find('.accordion-content'),
-				parentType = $parent.data('toggle');
+		$accordions.each(function () {
+			const $this = $(this);
+			const $buttons = $this.find('.accordion-name');
+			const $contents = $this.find('.accordion-content');
+			const parentType = $this.data('toggle');
 
-			$button.each(function () {
-				var $this = $(this);
+			function updateAriaLabel($button) {
+				const isOpen = $button.hasClass(activeClass);
+				const ariaLabel = isOpen ? '닫기' : '펼치기';
+				$button.attr('aria-label', ariaLabel);
+				$button.attr('aria-expanded', isOpen.toString());
+			}
 
-				if ($this.hasClass(activeClass)) {
-					$this.attr('aria-label', '닫기');
-					$this.attr('aria-expanded', 'true');
-					$this.next().show();
-				} else {
-					$this.attr('aria-label', '펼치기');
-					$this.attr('aria-expanded', 'false');
-				}
-			});
+			$buttons.each(function () {
+				const $this = $(this);
+				updateAriaLabel($this);
 
-			$button.off().on('click', function () {
-				var $this = $(this);
+				$this.off().on('click', function () {
+					if ($buttons.next().is(':animated') > 0) return false;
 
-				if ($button.next().is(':animated') > 0) return false;
-
-				if (parentType == 'one') {
-					$content.not($(this).next()).stop().slideUp(aniSpeed);
-					$this.toggleClass(activeClass);
-					$button.not($(this)).removeClass(activeClass).attr('aria-label', '펼치기');
-					$this.next().stop().slideToggle(aniSpeed);
-					aria();
-				} else {
-					$this.toggleClass(activeClass);
-					$this.next().slideToggle(aniSpeed);
-					aria();
-				}
-
-				function aria() {
-					if ($this.attr('aria-label') == '펼치기') {
-						$this.attr('aria-label', '닫기');
-						$this.attr('aria-expanded', 'true');
-					} else {
-						$this.attr('aria-label', '펼치기');
-						$this.attr('aria-expanded', 'false');
+					if (parentType === 'one') {
+						$contents.not($this.next()).stop().slideUp(aniSpeed);
+						$buttons.not($this).removeClass(activeClass);
+						updateAriaLabel($buttons.not($this));
 					}
-				};
+
+					$this.toggleClass(activeClass);
+					$this.next().stop().slideToggle(aniSpeed);
+					updateAriaLabel($this);
+				});
 			});
 		});
 	};
@@ -106,56 +90,59 @@
 
 	// btnTop
 	function _btnTop() {
-		var $topBtn = $('.button-top');
+		const $topBtn = $('.button-top');
 
-		if (!$topBtn.length) return false;
+		if (!$topBtn.length) return;
+
+		function scrollToTopSmoothly() {
+			const animationDuration = 500;
+			$('html, body').animate({ scrollTop: 0 }, animationDuration);
+		}
 
 		$topBtn.off().on('click', function (e) {
 			e.preventDefault();
-			$('html, body').animate({
-				scrollTop: 0
-			}, 500)
+			scrollToTopSmoothly();
 		});
-	};
+	}
 	_btnTop();
 
 	// checkbox all
 	function _checkbox() {
-		var $checkAll = $body.find('.checkbox-all'),
-			$checkBox = $body.find('.checkbox').not('.checkbox-all').not(':disabled').find('input');
+		const $checkAll = $body.find('.checkbox-all');
+		const $checkBoxes = $body.find('.checkbox').not('.checkbox-all').not(':disabled').find('input');
 
-		function checkAll() {
-			$checkAll.on('change', function () {
-				var $this = $(this),
-					checked = $this.prop('checked'),
-					myData = $this.data('group');
+		function handleCheckAllChange() {
+			const $this = $(this);
+			const checked = $this.prop('checked');
+			const group = $this.data('group');
+			const $groupCheckboxes = $(`input[data-group="${group}"]`).not(':disabled');
 
-				$('input[data-group="' + myData + '"]').not(':disabled').prop('checked', checked);
-			});
+			$groupCheckboxes.prop('checked', checked);
 		}
-		checkAll();
 
-		function check() {
-			$checkBox.on('change', function () {
-				var $this = $(this),
-					myData = $this.data('trigger'),
-					boxLength = $('input[data-trigger="' + myData + '"]').not(':disabled').length,
-					checkedLength = $('input[data-trigger="' + myData + '"]:checked').length,
-					selectAll = (boxLength == checkedLength);
+		function handleCheckboxChange() {
+			const $this = $(this);
+			const trigger = $this.data('trigger');
+			const $groupCheckboxes = $(`input[data-trigger="${trigger}"]`).not(':disabled');
+			const boxLength = $groupCheckboxes.length;
+			const checkedLength = $groupCheckboxes.filter(':checked').length;
+			const selectAll = boxLength === checkedLength;
 
-				$('input[data-group="' + myData + '"].checkbox-all').prop('checked', selectAll);
-			});
+			$(`input[data-group="${trigger}"].checkbox-all`).prop('checked', selectAll);
 		}
-		check();
+
+		$checkAll.on('change', handleCheckAllChange);
+		$checkBoxes.on('change', handleCheckboxChange);
 	};
 	_checkbox();
 
 	// Disable invalid alert
 	function _disableInvalid() {
-		var $requiredEl = $content.find('[required]');
+		const $requiredElements = $content.find('[required]');
 
-		if (!$requiredEl.length) return false;
-		$requiredEl.on('invalid', function (e) {
+		if (!$requiredElements.length) return;
+
+		$requiredElements.on('invalid', function (e) {
 			e.preventDefault();
 		});
 	};
@@ -163,116 +150,122 @@
 
 	// Document tile
 	function _documentTitle() {
-		var $headerTitle = $header.find('.title'),
-			$conTitle = $container.find('.heading.depth01 .title'),
-			headerTitleValue = $headerTitle.text(),
-			conTitleValue = $conTitle.text(),
-			docTitle = $document.attr('title');
+		const $headerTitle = $header.find('.title');
+		const $conTitle = $container.find('.heading.depth01 .title');
+		const headerTitleValue = $headerTitle.text();
+		const conTitleValue = $conTitle.text();
+		const docTitle = $document.attr('title');
 
-		if (!$headerTitle.length) {
-			$document.attr('title', docTitle);
+		let newTitle = docTitle;
+
+		if ($headerTitle.length) {
+			newTitle = headerTitleValue + ' | ' + newTitle;
 		} else if ($conTitle.length) {
-			$document.attr('title', conTitleValue + ' | ' + docTitle);
-		} else {
-			$document.attr('title', headerTitleValue + ' | ' + docTitle);
+			newTitle = conTitleValue + ' | ' + newTitle;
 		}
+
+		$document.attr('title', newTitle);
 	};
 	_documentTitle();
 
 	// input [X] 설정
 	function _input() {
-		var $input = $('.input');
+		const $inputs = $('.input');
 
-		if (!$input.length) return false;
+		if (!$inputs.length) return;
 
-		$input.each(function () {
-			var $this = $(this);
+		function updateInputState($input) {
+			const $inputElement = $input.find('input');
+			const hasValue = $inputElement.val() !== '';
 
-			if (!$this.hasClass('button-clean') && !$this.find('input').attr('readonly') && !$this.find('input').attr('disabled')) {
-				$this.append('<button type="button" class="button-clean" aria-label="내용 삭제"><i class="icon-input-clear"></i></button>');
-			}
-			if ($this.find('input').val() == undefined || $this.find('input').val() == '') {
-				$this.removeClass(activeClass);
+			if (!hasValue) {
+				$input.removeClass(activeClass);
 			} else {
-				$this.addClass(activeClass);
+				$input.addClass(activeClass);
 			}
+		}
+
+		function onInput(e) {
+			const $this = $(this);
+			const $parent = $this.closest('.input');
+			updateInputState($parent);
+		}
+
+		function onCleanButtonClick(e) {
+			const $this = $(this);
+			const $parent = $this.closest('.input');
+			const $inputElement = $parent.find('input');
+
+			$inputElement.val('');
+			$parent.removeClass(activeClass);
+		}
+
+		$inputs.each(function () {
+			const $this = $(this);
+
+			if (!$this.hasClass('button-clean')) {
+				const $inputElement = $this.find('input');
+				const isReadOnly = $inputElement.prop('readonly');
+				const isDisabled = $inputElement.prop('disabled');
+
+				if (!isReadOnly && !isDisabled) {
+					$this.append('<button type="button" class="button-clean" aria-label="내용 삭제"><i class="icon-input-clear"></i></button>');
+				}
+			}
+
+			updateInputState($this);
 		});
 
-		$document
-			.on('input', '.input input', function (e) {
-				var $this = $(this),
-					$parent = $this.closest('.input');
-
-				if ($this.val() == undefined || $this.val() == '') {
-					$parent.removeClass(activeClass);
-				} else {
-					$parent.addClass(activeClass);
-				}
-			})
-			.on('click', '.button-clean', function (e) {
-				var $this = $(this),
-					$parent = $this.closest('.input');
-
-				$parent.find('input').val('');
-				$parent.removeClass(activeClass);
-			});
+		$(document)
+			.on('input', '.input input', onInput)
+			.on('click', '.button-clean', onCleanButtonClick);
 	};
 	_input();
 
 	function _inputFocus() {
-		var $input = $('.inner-button input');
-		$input.on('focus', function () {
-			$(this).closest('.inner-button').addClass(activeClass);
-		});
-		$input.on('focusout', function () {
-			$(this).closest('.inner-button').removeClass(activeClass);
+		const $input = $('.inner-button input');
+		$input.on({
+			focus: function () {
+				$(this).closest('.inner-button').addClass(activeClass);
+			},
+			focusout: function () {
+				$(this).closest('.inner-button').removeClass(activeClass);
+			}
 		});
 	};
 	//_inputFocus();
 
 	// 인풋 3자리 마다 , 추가
 	function _inputComma() {
-		var $comma = $('.input .comma');
+		const $comma = $('.input .comma');
 
-		if (!$comma.length) return false;
-
-		$comma.off().on('input', function () {
-			var $this = $(this),
-				myValue;
-
-			myValue = $this.val();
-			myValue = myValue.replace(/[^0-9]/g, "");					// 입력값이 숫자가 아니면 공백
-			myValue = myValue.replace(/,/g, "");						// ,값 공백처리
-			$this.val(myValue.replace(/\B(?=(\d{3})+(?!\d))/g, ","));	// 정규식을 이용해서 3자리 마다 , 추가
+		$comma.on('input', function () {
+			this.value = this.value.replace(/[^\d]/g, ''); // 입력값이 숫자가 아닌 문자를 제거
+			this.value = this.value.replace(/,/g, ''); // 기존 쉼표 제거
+			this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ','); // 3자리 마다 쉼표 추가
 		});
 	};
 	_inputComma();
 
 	// 인풋 숫자만 입력
 	function _inputNumber() {
-		var $inputNum = $('.input .number');
-
-		if (!$inputNum.length) return false;
+		const $inputNum = $('.input .number');
 
 		$inputNum.on('input', function () {
-			var $this = $(this),
-				myValue = $this.val();
-
-			myValue = myValue.replace(/[^0-9]/g, "");	// 입력값이 숫자가 아니면 공백
-			$this.val(myValue);
+			this.value = this.value.replace(/\D/g, ''); // 숫자가 아닌 문자를 제거
 		});
 	};
 	_inputNumber();
 
 	// Skip To Content
 	function _skipToContent() {
-		var $skipNaviBtn = $body.find('a.skip-content');
+		const $skipNaviBtn = $body.find('a.skip-content');
 
-		if (!$skipNaviBtn.length) return false;
+		if (!$skipNaviBtn.length) return;
 		if (!$content.length) $skipNaviBtn.hide();
 
 		$skipNaviBtn.off().on('click', function (e) {
-			var $this = $(this),
+			const $this = $(this),
 				myId = $this.attr('href');
 
 			e.preventDefault();
@@ -286,69 +279,72 @@
 
 	// scrollLast
 	function _scrollLast() {
-		if ((window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight) {
-			$html.addClass('scroll-last');
-		} else {
-			$html.removeClass('scroll-last');
-		}
+		const isAtBottom = (window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight;
+		$html.toggleClass('scroll-last', isAtBottom);
 	};
 
 	// tab
 	function _tabs() {
-		var $tabWrap = $body.find('.tab-wrap'),
-			$tabList = $tabWrap.find('.tab-list:not(.type-link) > ul'),
-			$tabItem = $tabList.find('li a'),
-			$tabContainer = $tabWrap.find('.tab-container'),
-			$tabContent = $tabContainer.find('.tab-content');
+		const $tabWrap = $('.tab-wrap');
+		if (!$tabWrap.length) return;
 
-		if (!$tabWrap.length) return false;
+		const $tabList = $tabWrap.find('.tab-list > ul');
+		const $tabItem = $tabList.find('li a');
+		const $tabContainer = $tabWrap.find('.tab-container');
+		const $tabContent = $tabContainer.find('.tab-content');
 
-		$tabList.attr({
-			'role': 'tablist',
-		});
+		$tabList.attr('role', 'tablist');
 		$tabItem.attr({
-			'role': 'tab',
+			role: 'tab',
 			'aria-selected': false
 		});
-		$tabItem.closest('li').attr({
-			'role': 'none presentation'
-		})
-		$tabWrap.find('.tab-list li:first-child a').attr({
-			'aria-selected': true
-		});
-		$tabContent.attr({
-			'role': 'tabpanel'
-		});
+		$tabItem.closest('li').attr('role', 'none presentation');
+		$tabWrap.find('.tab-list li:first-child a').attr('aria-selected', true);
+		$tabContent.attr('role', 'tabpanel');
 
 		$tabItem.off().on('click', function (e) {
-			var $this = $(this),
-				$myWrap = $this.closest('.tab-wrap'),
-				$myList = $myWrap.find('> .tab-list li'),
-				$myContent = $myWrap.find('> .tab-container > .tab-content'),
-				myIndex = $this.parent().index();
-
 			e.preventDefault();
 
-			$myList.removeClass(activeClass).find('a').attr('aria-selected', 'false');
-			$this.parent().addClass(activeClass).find('a').attr('aria-selected', 'true');
+			const $this = $(this);
+			const $myWrap = $this.closest('.tab-wrap');
+			const $myList = $myWrap.find('> .tab-list li');
+			const $myContent = $myWrap.find('> .tab-container > .tab-content');
+			const myIndex = $this.parent().index();
+
+			$myList.removeClass(activeClass).find('a').attr('aria-selected', false);
+			$this.parent().addClass(activeClass).find('a').attr('aria-selected', true);
 			$myContent.hide().removeAttr('tabindex');
 			$myContent.eq(myIndex).show().attr('tabindex', 0);
-
 		});
 	};
 	_tabs();
 
 	// toggleButton 단독 연결
 	function _toggleButton() {
-		var $toggleButton = $('.button-toggle');
+		const $toggleButtons = $('.button-toggle');
 
-		if (!$toggleButton.length) return false;
+		if (!$toggleButtons.length) return false;
 
-		$toggleButton.each(function () {
-			var $this = $(this),
-				myOpen = $this.data('open'),
-				myPressed = $this.attr('aria-pressed'),
-				myTarget = $this.data('toggle');
+		$toggleButtons.each(function () {
+			const $this = $(this);
+			const myOpen = $this.data('open');
+			const myTarget = $this.data('toggle');
+
+			function toggleButton() {
+				const isOpen = $this.hasClass(activeClass);
+				const isPressed = $this.attr('aria-pressed') === 'true';
+
+				$this.attr('aria-pressed', !isPressed);
+				$this.toggleClass(activeClass, !isOpen);
+				$('[data-target="' + myTarget + '"]').slideToggle(aniSpeed);
+
+				const newAriaLabel = isOpen ? '펼치기' : '닫기';
+				$this.attr('aria-label', newAriaLabel);
+
+				if ($this.hasClass('accordion-name')) {
+					$this.attr('aria-expanded', !isOpen);
+				}
+			}
 
 			if (myOpen) {
 				$this.addClass(activeClass);
@@ -356,47 +352,24 @@
 				if ($this.hasClass('accordion-name')) {
 					$this.attr('aria-expanded', 'true');
 				}
-			} else if (!myOpen) {
+			} else {
 				$this.removeClass(activeClass);
 				$('[data-target="' + myTarget + '"]').hide();
 				if ($this.hasClass('accordion-name')) {
 					$this.attr('aria-expanded', 'false');
 				}
 			}
-			if (myPressed == 'true') {
-				$this.addClass(activeClass);
-			}
 
-			$this.off().on('click', function () {
-				var myToggle = $this.data('toggle');
-
-				if ($this.hasClass(activeClass) && $this.attr('aria-pressed')) {
-					$this.attr('aria-pressed', 'false');
-				} else if (!$this.hasClass(activeClass) && $this.attr('aria-pressed')) {
-					$this.attr('aria-pressed', 'true');
-				}
-
-				if ($this.attr('aria-label') == '펼치기') {
-					$this.attr('aria-label', '닫기');
-					$this.attr('aria-expanded', 'true');
-				} else if ($this.attr('aria-label') == '닫기') {
-					$this.attr('aria-label', '펼치기');
-					$this.attr('aria-expanded', 'false');
-				}
-
-				$this.toggleClass(activeClass);
-				$('[data-target="' + myToggle + '"]').slideToggle(aniSpeed);
-
-			});
+			$this.off().on('click', toggleButton);
 		});
-	};
+	}
 	_toggleButton();
 
 	//footer link
 	function _footerLink() {
-		const $footerLink = $footer.find('.footer-link'),
-			$button = $footerLink.find('.button-link'),
-			$tgLink = $footer.find('.footer-link ul');
+		const $footerLink = $('.footer-link');
+		const $button = $footerLink.find('.button-link');
+		const $tgLink = $footerLink.find('ul');
 
 		$button.off().on('click', function () {
 			$tgLink.stop().slideToggle(aniSpeed);
@@ -405,67 +378,75 @@
 	};
 	_footerLink();
 
-	function count() {
-		var $formCount = $('.form-count');
+	function _setupFormCount() {
+		const $formCounts = $('.form-count');
 
-		if (!$formCount.length) return false;
+		if (!$formCounts.length) return;
 
-		$document.off().on('click', '.form-count [class*=button-]', function () {
-			var $this = $(this),
-				$parent = $this.closest('.form-count'),
-				$val = $parent.find('.val'),
-				count = Number($val.text()),
-				total = Number($parent.data('total'));
+		$formCounts.on('click', '[class*=button-]', function () {
+			const $this = $(this);
+			const $parent = $this.closest('.form-count');
+			const $val = $parent.find('.val');
+			const count = Number($val.text());
+			const total = Number($parent.data('total'));
+			let newCount;
 
 			if ($this.hasClass('button-plus')) {
-				count = Number(count + 1);
+				newCount = count + 1;
 
-				if (total == count) {
-					$this.attr("disabled", true);
-				};
+				if (newCount === total) {
+					$this.attr('disabled', true);
+				}
 
-				$val.text(count);
+				$val.text(newCount);
 			} else {
-				count = Number(count - 1);
-				$parent.find('.button-plus').attr("disabled", false);
-				if (count == 0) return false;
-				$val.text(count);
+				newCount = count - 1;
+				$parent.find('.button-plus').attr('disabled', false);
+
+				if (newCount === 0) return;
+
+				$val.text(newCount);
 			}
-			if (count > 1) {
-				$parent.find('.button-minus').attr("disabled", false);
-			} else {
-				$parent.find('.button-minus').attr("disabled", true);
-			}
+
+			const $buttonMinus = $parent.find('.button-minus');
+			$buttonMinus.attr('disabled', newCount <= 1);
 		});
 	}
-	//count();
+	//_setupFormCount();
 
 	// scrollUpDown
 	function scrollUpDown() {
-		if (scrollTopPos > lastScroll && scrollTopPos > 80) {
-			$html.removeClass('scroll-up').addClass('scroll-down');
+		const SCROLL_THRESHOLD = 80;
+		const scrollDownClass = 'scroll-down';
+		const scrollUpClass = 'scroll-up';
+
+		const currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (currentScrollPos > lastScroll && currentScrollPos > SCROLL_THRESHOLD) {
+			$html.removeClass(scrollUpClass).addClass(scrollDownClass);
 		} else {
-			$html.removeClass('scroll-down').addClass('scroll-up');
+			$html.removeClass(scrollDownClass).addClass(scrollUpClass);
 		}
-		lastScroll = scrollTopPos;
+
+		lastScroll = currentScrollPos;
 	};
 
 	window.ui = {
-		accordion: _accordion, 				// accordion
-		btnTop: _btnTop,					// btnTop
-		checkbox: _checkbox,				// checkbox all
-		disableInvalid: _disableInvalid,	// Disable invalid alert
-		documentTitle: _documentTitle,		// Document tile
-		input: _input,						// input [X] 설정
-		inputFocus: _inputFocus,			// inner-button input focus
-		inputComma: _inputComma,			// 인풋 3자리 마다 , 추가
-		inputNumber: _inputNumber,			// 인풋 숫자만 입력
-		skipToContent: _skipToContent,		// Skip To Content
-		scrollLast: _scrollLast,			// 스크롤 마지막
-		tabs: _tabs,						// tab
-		toggleButton: _toggleButton,		// toggleButton 단독 연결
-		userAgent: _userAgent,				// userAgent 단말기 체크 [android, iphone]
-		footerLink: _footerLink,			// footer link
+		accordion: _accordion, 					// accordion
+		btnTop: _btnTop,						// btnTop
+		checkbox: _checkbox,					// checkbox all
+		disableInvalid: _disableInvalid,		// Disable invalid alert
+		documentTitle: _documentTitle,			// Document tile
+		input: _input,							// input [X] 설정
+		inputFocus: _inputFocus,				// inner-button input focus
+		inputComma: _inputComma,				// 인풋 3자리 마다 , 추가
+		inputNumber: _inputNumber,				// 인풋 숫자만 입력
+		skipToContent: _skipToContent,			// Skip To Content
+		scrollLast: _scrollLast,				// 스크롤 마지막
+		tabs: _tabs,							// tab
+		toggleButton: _toggleButton,			// toggleButton 단독 연결
+		userAgent: _userAgent,					// userAgent 단말기 체크 [android, iphone]
+		footerLink: _footerLink,				// footer link
 	}
 
 	// Window Event
