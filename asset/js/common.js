@@ -394,10 +394,13 @@
 
 	//footer link
 	function _footerLink() {
-		var $button = $footer.find('.button-link'),
+		const $footerLink = $footer.find('.footer-link'),
+			$button = $footerLink.find('.button-link'),
 			$tgLink = $footer.find('.footer-link ul');
+
 		$button.off().on('click', function () {
-			$tgLink.slideToggle(aniSpeed);
+			$tgLink.stop().slideToggle(aniSpeed);
+			$footerLink.toggleClass(activeClass);
 		});
 	};
 	_footerLink();
@@ -448,20 +451,21 @@
 	};
 
 	window.ui = {
-		accordion: _accordion, 						// accordion
-		btnTop: _btnTop,									// btnTop
-		checkbox: _checkbox,							// checkbox all
+		accordion: _accordion, 				// accordion
+		btnTop: _btnTop,					// btnTop
+		checkbox: _checkbox,				// checkbox all
 		disableInvalid: _disableInvalid,	// Disable invalid alert
 		documentTitle: _documentTitle,		// Document tile
-		input: _input,										// input [X] 설정
-		inputFocus: _inputFocus,					// inner-button input focus
-		inputComma: _inputComma,					// 인풋 3자리 마다 , 추가
-		inputNumber: _inputNumber,				// 인풋 숫자만 입력
+		input: _input,						// input [X] 설정
+		inputFocus: _inputFocus,			// inner-button input focus
+		inputComma: _inputComma,			// 인풋 3자리 마다 , 추가
+		inputNumber: _inputNumber,			// 인풋 숫자만 입력
 		skipToContent: _skipToContent,		// Skip To Content
-		scrollLast: _scrollLast,					// 스크롤 마지막
-		tabs: _tabs,											// tab
-		toggleButton: _toggleButton,			// toggleButton 단독 연결
-		userAgent: _userAgent,						// userAgent 단말기 체크 [android, iphone]
+		scrollLast: _scrollLast,			// 스크롤 마지막
+		tabs: _tabs,						// tab
+		toggleButton: _toggleButton,		// toggleButton 단독 연결
+		userAgent: _userAgent,				// userAgent 단말기 체크 [android, iphone]
+		footerLink: _footerLink,			// footer link
 	}
 
 	// Window Event
