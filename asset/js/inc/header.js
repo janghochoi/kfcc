@@ -1,6 +1,6 @@
 document.write(
 	`
-	<header class="header">
+	<div class="header">
 		<div class="header-top">
 			<div class="inner">
 				<h1><a href="#" class="logo"><img src="../../asset/images/main/img-logo.png" alt="새마을 준법지원시스템"></a></h1>
@@ -16,7 +16,7 @@ document.write(
 				</div>
 			</div>
 		</div>
-		<nav class="nav">
+		<div class="nav">
 			<div class="inner">
 				<ul>
 					<li><a href="#">통합결재</a></li>
@@ -29,7 +29,7 @@ document.write(
 					<li><a href="#">준법일반</a></li>
 				</ul>
 			</div>
-		</nav>
-	</header>
+		</div>
+	</div>
 	`
 )

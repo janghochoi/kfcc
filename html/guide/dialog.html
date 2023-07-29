@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<title>TITLE</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>새마을 준법지원 시스템</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="mobile-web-app-capable" content="yes">
@@ -10,14 +10,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../asset/css/common/package.css">
 	<!-- jquery -->
-	<script src="../../asset/js/jquery-3.7.0.js"></script>
-	<script src="../../asset/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
+	<!-- plugin -->
+	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
 	<!-- webfont js -->
-	<script src="../../asset/js/webfont.js"></script>
+	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
 	<!-- common js -->
-	<script defer src="../../asset/js/common.js"></script>
-	<script defer src="../../asset/js/dialog.js"></script>
-	<style>
+	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
+	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
+	<style type="text/css">
 		body {
 			padding: 30px;
 		}
@@ -73,31 +75,21 @@
 			ex) 호출대상 Class 명 : sample01, this : 필수입력
 		</li>
 		<li>dialog-wrap 에 호출대상 Class 명 연결 ex)<span class="color01">sample01</span></li>
-		<li>data-align="center" / 화면 중앙 정렬</li>
-		<li>data-lock="none" / 화면 스크롤 고정 X</li>
-		<li>aria-labelledby="" / title 'ID' 랑 매칭 (접근성)</li>
-		<li>aria-describedby="" / dialog-body 'ID' 랑 매칭 (접근성)</li>
 	</ul>
 
 	<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample01', this)">dialog</button>
-		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample02', this)">dialog Full</button>
-		<button type="button" class="button button-border01" aria-haspopup="dialog" onclick="dialogUI.dialog.__init('sample03', this)">dialog alert</button>
+		<button type="button" class="button button-border01" onclick="dialogUI.dialog.__init('sample01', this)">dialog</button>
+		<button type="button" class="button button-border01" onclick="dialogUI.dialog.__init('sample02', this)">dialog alert</button>
 	</div>
 
 	<!-- sample01 -->
 	<div class="dialog-wrap sample01">
 		<!-- dialog -->
-		<!--
-			DESC
-			중앙 정렬
-			data-align="center"
-		 -->
-		<section class="dialog" aria-labelledby="title01" aria-describedby="dialog-body01" data-align="center">
+		<div class="dialog">
 			<!-- dialog-head -->
-			<header class="dialog-head">
-				<h2 id="title01" class="title">기본 팝업</h2>
-			</header>
+			<div class="dialog-head">
+				<h2 class="title">기본 팝업</h2>
+			</div>
 			<!-- //dialog-head -->
 			<!-- dialog-body -->
 			<div id="dialog-body01" class="dialog-body">
@@ -114,58 +106,28 @@
 				<!-- //button-wrap -->
 			</div>
 			<!-- //dialog-foot -->
-			<button type="button" class="close" aria-label="dialog 닫기"></button>
-		</section>
+			<button type="button" class="close"></button>
+		</div>
 		<!-- //dialog -->
 	</div>
 	<!-- //sample01 -->
 
 	<!-- sample02 -->
-	<div class="dialog-wrap sample02">
-		<!-- dialog -->
-		<section class="dialog" aria-labelledby="title02" aria-describedby="dialog-body02" data-full>
-			<!-- dialog-head -->
-			<header class="dialog-head">
-				<h2 id="title02" class="title">기본 팝업</h2>
-			</header>
-			<!-- //dialog-head -->
-			<!-- dialog-body -->
-			<div id="dialog-body02" class="dialog-body">
-				<p class="desc">desc</p>
-			</div>
-			<!-- //dialog-body -->
-			<!-- dialog-foot -->
-			<div class="dialog-foot">
-				<!-- button-wrap -->
-				<div class="button-wrap">
-					<button type="button" class="button button-size-lage button-bg01 cancle">저장</button>
-					<button type="button" class="button button-size-lage button-border01 cancle">취소</button>
-				</div>
-				<!-- //button-wrap -->
-			</div>
-			<!-- //dialog-foot -->
-			<button type="button" class="close" aria-label="dialog 닫기"></button>
-		</section>
-		<!-- //dialog -->
-	</div>
-	<!-- //sample02 -->
-
-	<!-- sample03 -->
 	<!--
 			DESC
 			dimmed X : data-dimmed="none"
 			scrolllock X :data-lock="none"
 		-->
-	<div class="dialog-wrap sample03">
+	<div class="dialog-wrap sample02">
 		<!-- dialog -->
-		<section class="dialog" aria-labelledby="title03" aria-describedby="dialog-body03" data-align="center" data-alert style="width: 400px;">
+		<div class="dialog" style="width: 400px;">
 			<!-- dialog-head -->
-			<header class="dialog-head">
-				<h2 id="title03" class="title">기본 팝업</h2>
-			</header>
+			<div class="dialog-head">
+				<h2 class="title">기본 팝업</h2>
+			</div>
 			<!-- //dialog-head -->
 			<!-- dialog-body -->
-			<div id="dialog-body03" class="dialog-body">
+			<div class="dialog-body">
 				<p class="desc">text area</p>
 				<!-- button-wrap -->
 				<div class="button-wrap align-right auto">
@@ -175,13 +137,12 @@
 				<!-- //button-wrap -->
 			</div>
 			<!-- //dialog-body -->
-		</section>
+		</div>
 		<!-- //dialog -->
 	</div>
-	<!-- //sample03 -->
+	<!-- //sample02 -->
 
-	<script>
-
+	<script type="text/javascript">
 		$('.calendar').datepicker({
 			dateFormat: 'yy.mm.dd',
 			showOtherMonths: true,

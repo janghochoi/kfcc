@@ -1,6 +1,6 @@
 document.write(
 	`
-	<nav class="lnb">
+	<div class="lnb">
 		<div class="accordion lnb-depth01" data-toggle="one">
 			<ul>
 				<li>
@@ -8,7 +8,7 @@ document.write(
 						<span class="name">메뉴1</span>
 						<i class="icon-menu rotate"></i>
 					</button>
-					<div class="accordion-content" role="region">
+					<div class="accordion-content">
 						<div class="accordion lnb-depth02" data-toggle="one">
 							<ul>
 								<li>
@@ -16,7 +16,7 @@ document.write(
 										<span class="name">메뉴 1-1</span>
 										<i class="icon-menu rotate"></i>
 									</button>
-									<div class="accordion-content" role="region">
+									<div class="accordion-content">
 										<ul class="lnb-depth03">
 											<li><a href="#">메뉴 1-1-1</a></li><!-- 활성화 class [active] -->
 											<li><a href="#">메뉴 1-1-2</a></li>
@@ -30,7 +30,7 @@ document.write(
 										<span class="name">메뉴1-2</span>
 										<i class="icon-menu rotate"></i>
 									</button>
-									<div class="accordion-content" role="region">
+									<div class="accordion-content">
 										<ul class="lnb-depth03">
 											<li><a href="#">메뉴 1-1-1</a></li>
 											<li><a href="#">메뉴 1-1-2</a></li>
@@ -46,7 +46,7 @@ document.write(
 						<span class="name">메뉴2</span>
 						<i class="icon-menu rotate"></i>
 					</button>
-					<div class="accordion-content" role="region">
+					<div class="accordion-content">
 						<div class="accordion lnb-depth02" data-toggle="one">
 							<ul>
 								<li>
@@ -54,7 +54,7 @@ document.write(
 										<span class="name">메뉴 1-1</span>
 										<i class="icon-menu rotate"></i>
 									</button>
-									<div class="accordion-content" role="region">
+									<div class="accordion-content">
 										<ul class="lnb-depth03">
 											<li><a href="#">메뉴 1-1-1</a></li>
 										</ul>
@@ -71,6 +71,6 @@ document.write(
 				</li>
 			</ul>
 		</div>
-	</nav>
+	</div>
 	`
 )

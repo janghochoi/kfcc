@@ -57,31 +57,20 @@
 			const $this = $(this);
 			const $buttons = $this.find('.accordion-name');
 			const $contents = $this.find('.accordion-content');
-			const parentType = $this.data('toggle');
-
-			function updateAriaLabel($button) {
-				const isOpen = $button.hasClass(activeClass);
-				const ariaLabel = isOpen ? '닫기' : '펼치기';
-				$button.attr('aria-label', ariaLabel);
-				$button.attr('aria-expanded', isOpen.toString());
-			}
+			const parentType = $this.hasClass('is-type-one');
 
 			$buttons.each(function () {
 				const $this = $(this);
-				updateAriaLabel($this);
 
 				$this.off().on('click', function () {
 					if ($buttons.next().is(':animated') > 0) return false;
 
-					if (parentType === 'one') {
+					if (parentType) {
 						$contents.not($this.next()).stop().slideUp(aniSpeed);
 						$buttons.not($this).removeClass(activeClass);
-						updateAriaLabel($buttons.not($this));
 					}
-
 					$this.toggleClass(activeClass);
 					$this.next().stop().slideToggle(aniSpeed);
-					updateAriaLabel($this);
 				});
 			});
 		});
@@ -106,35 +95,6 @@
 	}
 	_btnTop();
 
-	// checkbox all
-	function _checkbox() {
-		const $checkAll = $body.find('.checkbox-all');
-		const $checkBoxes = $body.find('.checkbox').not('.checkbox-all').not(':disabled').find('input');
-
-		function handleCheckAllChange() {
-			const $this = $(this);
-			const checked = $this.prop('checked');
-			const group = $this.data('group');
-			const $groupCheckboxes = $(`input[data-group="${group}"]`).not(':disabled');
-
-			$groupCheckboxes.prop('checked', checked);
-		}
-
-		function handleCheckboxChange() {
-			const $this = $(this);
-			const trigger = $this.data('trigger');
-			const $groupCheckboxes = $(`input[data-trigger="${trigger}"]`).not(':disabled');
-			const boxLength = $groupCheckboxes.length;
-			const checkedLength = $groupCheckboxes.filter(':checked').length;
-			const selectAll = boxLength === checkedLength;
-
-			$(`input[data-group="${trigger}"].checkbox-all`).prop('checked', selectAll);
-		}
-
-		$checkAll.on('change', handleCheckAllChange);
-		$checkBoxes.on('change', handleCheckboxChange);
-	};
-	_checkbox();
 
 	// Disable invalid alert
 	function _disableInvalid() {
@@ -209,7 +169,7 @@
 				const isDisabled = $inputElement.prop('disabled');
 
 				if (!isReadOnly && !isDisabled) {
-					$this.append('<button type="button" class="button-clean" aria-label="내용 삭제"><i class="icon-input-clear"></i></button>');
+					$this.append('<button type="button" class="button-clean"><i class="icon-input-clear"></i></button>');
 				}
 			}
 
@@ -293,15 +253,6 @@
 		const $tabContainer = $tabWrap.find('.tab-container');
 		const $tabContent = $tabContainer.find('.tab-content');
 
-		$tabList.attr('role', 'tablist');
-		$tabItem.attr({
-			role: 'tab',
-			'aria-selected': false
-		});
-		$tabItem.closest('li').attr('role', 'none presentation');
-		$tabWrap.find('.tab-list li:first-child a').attr('aria-selected', true);
-		$tabContent.attr('role', 'tabpanel');
-
 		$tabItem.off().on('click', function (e) {
 			e.preventDefault();
 
@@ -311,8 +262,8 @@
 			const $myContent = $myWrap.find('> .tab-container > .tab-content');
 			const myIndex = $this.parent().index();
 
-			$myList.removeClass(activeClass).find('a').attr('aria-selected', false);
-			$this.parent().addClass(activeClass).find('a').attr('aria-selected', true);
+			$myList.removeClass(activeClass);
+			$this.parent().addClass(activeClass);
 			$myContent.hide().removeAttr('tabindex');
 			$myContent.eq(myIndex).show().attr('tabindex', 0);
 		});
@@ -332,18 +283,10 @@
 
 			function toggleButton() {
 				const isOpen = $this.hasClass(activeClass);
-				const isPressed = $this.attr('aria-pressed') === 'true';
 
-				$this.attr('aria-pressed', !isPressed);
 				$this.toggleClass(activeClass, !isOpen);
 				$('[data-target="' + myTarget + '"]').slideToggle(aniSpeed);
 
-				const newAriaLabel = isOpen ? '펼치기' : '닫기';
-				$this.attr('aria-label', newAriaLabel);
-
-				if ($this.hasClass('accordion-name')) {
-					$this.attr('aria-expanded', !isOpen);
-				}
 			}
 
 			if (myOpen) {
@@ -434,7 +377,6 @@
 	window.ui = {
 		accordion: _accordion, 					// accordion
 		btnTop: _btnTop,						// btnTop
-		checkbox: _checkbox,					// checkbox all
 		disableInvalid: _disableInvalid,		// Disable invalid alert
 		documentTitle: _documentTitle,			// Document tile
 		input: _input,							// input [X] 설정

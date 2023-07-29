@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>새마을 준법지원 시스템</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
@@ -10,15 +10,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../asset/css/common/package.css">
 	<!-- jquery -->
-	<script src="../../asset/js/jquery-3.7.0.js"></script>
-	<script src="../../asset/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
 	<!-- plugin -->
-	<script src="../../asset/js/swiper-bundle.js"></script>
+	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
 	<!-- webfont js -->
-	<script src="../../asset/js/webfont.js"></script>
+	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
 	<!-- common js -->
-	<script defer src="../../asset/js/common.js"></script>
-	<script defer src="../../asset/js/dialog.js"></script>
+	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
+	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
 </head>
 <body>
 	<!-- skipNavi -->
@@ -26,12 +26,12 @@
 	<!-- //skipNavi -->
 	<!-- wrap -->
 	<div id="wrap" class="wrap">
-		<script src="../../asset/js/inc/header.js"></script>
+		<script type="text/javascript" src="../../asset/js/inc/header.js"></script>
 		<div class="container">
 			<div class="inner">
 				<div class="sub-page">
-					<script src="../../asset/js/inc/lnb.js"></script>
-					<main class="content">
+					<script type="text/javascript" src="../../asset/js/inc/lnb.js"></script>
+					<div class="content">
 						<div class="heading depth01">
 							<h2 class="title">합동안전보건 점검표</h2>
 							<div class="right">
@@ -136,35 +136,35 @@
 										<td colspan="7">
 											<div class="date-wrap">
 												<div class="input">
-													<input type="text" title="시작 날짜" placeholder="YY-MM-DD">
+													<input type="text" title="시작 날짜">
 												</div>
 												<em>~</em>
 												<div class="input">
-													<input type="text" title="종료 날짜" placeholder="YY-MM-DD">
+													<input type="text" title="종료 날짜">
 												</div>
 											</div>
+											<script type="text/javascript">
+												$(function () {
+													$(".date-wrap input").datepicker({
+														dateFormat: 'yy-mm-dd',
+														showOtherMonths: true,
+														showMonthAfterYear: true,
+														changeYear: true,
+														changeMonth: true,
+														yearSuffix: ".",
+														showOn: "both",
+														buttonImage: "../../asset/images/common/img-datepicker.svg",
+														buttonImageOnly: true,
+														buttonText: "선택",
+														monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+														monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+														dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+														dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+													});
+												});
+											</script>
 										</td>
 									</tr>
-									<script>
-										$(function () {
-											$(".date-wrap input").datepicker({
-												dateFormat: 'yy-mm-dd',
-												showOtherMonths: true,
-												showMonthAfterYear: true,
-												changeYear: true,
-												changeMonth: true,
-												yearSuffix: ".",
-												showOn: "both",
-												buttonImage: "../../asset/images/common/img-datepicker.svg",
-												buttonImageOnly: true,
-												buttonText: "선택",
-												monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-												monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-												dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-												dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
-											});
-										});
-									</script>
 									<tr>
 										<th scope="row">문서번호</th>
 										<td colspan="3">안전보건관리-협동안전보건 점검표2020호</td>
@@ -202,7 +202,7 @@
 										<td colspan="7">
 											<div class="inner-button">
 												<div class="input">
-													<input type="text" class="input" title="참조자" placeholder="참조자 입력하세요." readonly>
+													<input type="text" class="input" title="참조자" readonly>
 												</div>
 												<button type="button" class="button-icon button-border02"><i class="fa-solid fa-users fa-color03"></i></button>
 											</div>
@@ -307,7 +307,7 @@
 										<th scope="row">점검 장소</th>
 										<td>
 											<div class="input">
-												<input type="text" class="input" title="점검 장소" placeholder="점검 장소 입력하세요.">
+												<input type="text" class="input" title="점검 장소">
 											</div>
 										</td>
 									</tr>
@@ -431,11 +431,11 @@
 								</tbody>
 							</table>
 						</div>
-					</main>
+					</div>
 				</div>
 			</div>
 		</div>
-		<script src="../../asset/js/inc/footer.js"></script>
+		<script type="text/javascript" src="../../asset/js/inc/footer.js"></script>
 	</div>
 	<!-- //wrap -->
 </body>

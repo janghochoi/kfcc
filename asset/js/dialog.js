@@ -96,11 +96,6 @@ var dialogUI = window.dialogUI = dialogUI || {};
 				};
 			}, 1000);
 
-			tgEl.$dialog.attr({
-				'role': 'dialog',
-				'aria-modal': 'true'
-			});
-
 			tgEl.$close.off().on('click', function () {
 				var $this = $(this);
 				tgEl.$dialog.removeClass('animate');

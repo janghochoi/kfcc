@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>새마을 준법지원 시스템</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
@@ -10,16 +10,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../asset/css/common/package.css">
 	<!-- jquery -->
-	<script src="../../asset/js/jquery-3.7.0.js"></script>
-	<script src="../../asset/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
 	<!-- plugin -->
-	<script src="../../asset/js/swiper-bundle.js"></script>
+	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
 	<!-- webfont js -->
-	<script src="../../asset/js/webfont.js"></script>
+	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
 	<!-- common js -->
-	<script defer src="../../asset/js/common.js"></script>
-	<script defer src="../../asset/js/dialog.js"></script>
-	<script>
+	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
+	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
+	<script type="text/javascript">
 		function changeMainGroup(windowWidth) {
 			if (windowWidth > 1500) {
 				const gridHeight = $('.main-group.center').outerHeight(true);
@@ -50,8 +50,8 @@
 	<!-- //skipNavi -->
 	<!-- wrap -->
 	<div id="wrap" class="wrap">
-		<script src="../../asset/js/inc/header.js"></script>
-		<main class="container main-page">
+		<script type="text/javascript" src="../../asset/js/inc/header.js"></script>
+		<div class="container main-page">
 			<div class="inner">
 				<div id="content" class="content">
 					<div class="main-group left">
@@ -85,13 +85,13 @@
 							<div class="heading depth02">
 								<h2 class="title">통합일정</h2>
 								<div class="right">
-									<a href="#" class="button-icon" role="button" aria-label="글쓰기"><i class="fa-solid fa-pen fa-color02"></i></a>
-									<button type="button" class="button-icon" aria-label="새로고침"><i class="fa-solid fa-rotate-right fa-color02"></i></button>
+									<a href="#" class="button-icon"><i class="fa-solid fa-pen fa-color02"></i></a>
+									<button type="button" class="button-icon"><i class="fa-solid fa-rotate-right fa-color02"></i></button>
 								</div>
 							</div>
 							<div class="sub">
 								<div class="calendar"></div>
-								<script>
+								<script type="text/javascript">
 									$('.calendar').datepicker({
 										dateFormat: 'yy.mm.dd',
 										showOtherMonths: true,
@@ -113,30 +113,30 @@
 								<ul class="schedule-list">
 									<li>
 										<a href="#">
-											<p>
+											<span>
 												<strong class="name">주간회의</strong>
 												<em class="date">2023년 0월 00일</em>
-											</p>
+											</span>
 											<span class="badge badge-bg01">15:00</span>
 											<i class="fa-solid fa-angle-right fa-color02"></i>
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<p>
+											<span>
 												<strong class="name">월간회의</strong>
 												<em class="date">2023년 0월 00일</em>
-											</p>
+											</span>
 											<span class="badge badge-bg01">15:00</span>
 											<i class="fa-solid fa-angle-right fa-color02"></i>
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<p>
+											<span>
 												<strong class="name">월간회의2</strong>
 												<em class="date">2023년 0월 00일</em>
-											</p>
+											</span>
 											<span class="badge badge-bg01">15:00</span>
 											<i class="fa-solid fa-angle-right fa-color02"></i>
 										</a>
@@ -160,20 +160,20 @@
 										</ul>
 									</div>
 									<div class="tab-container">
-										<div id="tab05" class="tab-content" aria-labelledby="tabList05">
+										<div id="tab05" class="tab-content">
 											<div class="tab-content-inner">
 												<div>
 													graph1
 												</div>
-												<button type="button" class="button-icon" aria-label="MG 준법지수 새로고침"><i class="fa-solid fa-rotate-right fa-color02"></i></button>
+												<button type="button" class="button-icon"><i class="fa-solid fa-rotate-right fa-color02"></i></button>
 											</div>
 										</div>
-										<div id="tab06" class="tab-content" aria-labelledby="tabList06">
+										<div id="tab06" class="tab-content">
 											<div class="tab-content-inner">
 												<div>
 													graph2
 												</div>
-												<button type="button" class="button-icon" aria-label="세부내역 새로고침"><i class="fa-solid fa-rotate-right fa-color02"></i></button>
+												<button type="button" class="button-icon"><i class="fa-solid fa-rotate-right fa-color02"></i></button>
 											</div>
 										</div>
 									</div>
@@ -192,7 +192,7 @@
 										</ul>
 									</div>
 									<div class="tab-container">
-										<div id="tab01" class="tab-content" aria-labelledby="tabList01">
+										<div id="tab01" class="tab-content">
 											<div class="tab-content-inner">
 												<div class="table table-notice">
 													<table>
@@ -223,10 +223,10 @@
 														</tbody>
 													</table>
 												</div>
-												<a href="#" class="button-icon" aria-label="공지사항 더보기"><i class="fa-solid fa-plus fa-color02"></i></a>
+												<a href="#" class="button-icon"><i class="fa-solid fa-plus fa-color02"></i></a>
 											</div>
 										</div>
-										<div id="tab02" class="tab-content" aria-labelledby="tabList02">
+										<div id="tab02" class="tab-content">
 											<div class="tab-content-inner">
 												<div class="table table-notice">
 													<table>
@@ -257,7 +257,7 @@
 														</tbody>
 													</table>
 												</div>
-												<a href="#" class="button-icon" aria-label="준법동향 더보기"><i class="fa-solid fa-plus fa-color02"></i></a>
+												<a href="#" class="button-icon"><i class="fa-solid fa-plus fa-color02"></i></a>
 											</div>
 										</div>
 									</div>
@@ -278,7 +278,7 @@
 										</ul>
 									</div>
 									<div class="tab-container">
-										<div id="tab03" class="tab-content" aria-labelledby="tabList03">
+										<div id="tab03" class="tab-content">
 											<div class="tab-content-inner">
 												<div class="table table-notice">
 													<table>
@@ -309,10 +309,10 @@
 														</tbody>
 													</table>
 												</div>
-												<a href="#" class="button-icon" aria-label="FAQ 더보기"><i class="fa-solid fa-plus fa-color02"></i></a>
+												<a href="#" class="button-icon"><i class="fa-solid fa-plus fa-color02"></i></a>
 											</div>
 										</div>
-										<div id="tab04" class="tab-content" aria-labelledby="tabList04">
+										<div id="tab04" class="tab-content">
 											<div class="tab-content-inner">
 												<div class="table table-notice">
 													<table>
@@ -343,7 +343,7 @@
 														</tbody>
 													</table>
 												</div>
-												<a href="#" class="button-icon" aria-label="체크리스트 더보기"><i class="fa-solid fa-plus fa-color02"></i></a>
+												<a href="#" class="button-icon"><i class="fa-solid fa-plus fa-color02"></i></a>
 											</div>
 										</div>
 									</div>
@@ -353,8 +353,8 @@
 								<div class="heading depth02">
 									<h2 class="title">할일</h2>
 									<div class="right">
-										<a href="#" class="button-icon" role="button" aria-label="글쓰기"><i class="fa-solid fa-pen fa-color02"></i></a>
-										<button type="button" class="button-icon" aria-label="새로고침"> <i class="fa-solid fa-rotate-right fa-color02"></i></button>
+										<a href="#" class="button-icon"><i class="fa-solid fa-pen fa-color02"></i></a>
+										<button type="button" class="button-icon"> <i class="fa-solid fa-rotate-right fa-color02"></i></button>
 									</div>
 								</div>
 								<div class="sub">
@@ -433,15 +433,15 @@
 							</a>
 						</div>
 						<div class="main-box main-banner">
-							<a href="#" aria-label="익명제보 바로가기">
+							<a href="#">
 								<img src="../../asset/images/main/img-banner.png" alt="">
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</main>
-		<script src="../../asset/js/inc/footer.js"></script>
+		</div>
+		<script type="text/javascript" src="../../asset/js/inc/footer.js"></script>
 	</div>
 	<!-- //wrap -->
 

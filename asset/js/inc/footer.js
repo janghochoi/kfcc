@@ -1,6 +1,6 @@
 document.write(
 	`
-	<footer class="footer">
+	<div class="footer">
 		<div class="inner">
 			<p>COPYRIGHT 2023&nbsp;&copy;MG새마을금고.&nbsp; ALL RIGHTS RESERVED.</p>
 			<div class="footer-link">
@@ -12,6 +12,6 @@ document.write(
 				</ul>
 			</div>
 		</div>
-	</footer>
+	</div>
 	`
 )
