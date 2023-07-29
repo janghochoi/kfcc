@@ -368,5 +368,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	width: 14px;
 	height: 14px;
 	margin-top: -7px;
+	opacity: .3;
 	cursor: pointer;
 }
