@@ -1,25 +1,24 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<title>IA</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>새마을 준법지원 시스템</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../asset/css/common/package.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<!-- jquery -->
-	<script src="../../asset/js/jquery-3.7.0.js"></script>
-	<script src="../../asset/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
 	<!-- plugin -->
-	<script src="../../asset/js/swiper-bundle.js"></script>
+	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
 	<!-- webfont js -->
-	<script src="../../asset/js/webfont.js"></script>
+	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
 	<!-- common js -->
-	<script defer src="../../asset/js/common.js"></script>
-	<style>
+	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
+	<style type="text/css">
 		html {
 			overflow: auto;
 		}
@@ -77,16 +76,16 @@
 			background-color: #333;
 		}
 
-		.ia-table td[data-title="1depth"],
-		.ia-table td[data-title="2depth"],
-		.ia-table td[data-title="3depth"],
-		.ia-table td[data-title="4depth"],
-		.ia-table td[data-title="ETC"] {
+		.ia-table td[title="1depth"],
+		.ia-table td[title="2depth"],
+		.ia-table td[title="3depth"],
+		.ia-table td[title="4depth"],
+		.ia-table td[title="ETC"] {
 			padding-left: 15px;
 			text-align: left;
 		}
 
-		.ia-table td[data-title="ETC"] {
+		.ia-table td[title="ETC"] {
 			font-size: 12px;
 		}
 
@@ -156,18 +155,18 @@
 				border-top: 0;
 			}
 
-			.ia-table td[data-title="No"]:before,
-			.ia-table td[data-title="1depth"]:before,
-			.ia-table td[data-title="2depth"]:before,
-			.ia-table td[data-title="3depth"]:before,
-			.ia-table td[data-title="4depth"]:before,
-			.ia-table td[data-title="Folder"]:before,
-			.ia-table td[data-title="URL"]:before,
-			.ia-table td[data-title="Date"]:before,
-			.ia-table td[data-title="Person"]:before,
-			.ia-table td[data-title="State"]:before,
-			.ia-table td[data-title="ETC"]:before {
-				content: attr(data-title);
+			.ia-table td[title="No"]:before,
+			.ia-table td[title="1depth"]:before,
+			.ia-table td[title="2depth"]:before,
+			.ia-table td[title="3depth"]:before,
+			.ia-table td[title="4depth"]:before,
+			.ia-table td[title="Folder"]:before,
+			.ia-table td[title="URL"]:before,
+			.ia-table td[title="Date"]:before,
+			.ia-table td[title="Person"]:before,
+			.ia-table td[title="State"]:before,
+			.ia-table td[title="ETC"]:before {
+				content: attr(title);
 				display: flex;
 				position: absolute;
 				top: 0;
@@ -178,14 +177,14 @@
 
 			.ia-table thead,
 			.ia-table colgroup,
-			.ia-table td[data-title="Folder"],
-			.ia-table td[data-title="Date"],
-			.ia-table td[data-title="Person"],
-			.ia-table td[data-title="ETC"] {
+			.ia-table td[title="Folder"],
+			.ia-table td[title="Date"],
+			.ia-table td[title="Person"],
+			.ia-table td[title="ETC"] {
 				display: none;
 			}
 
-			.ia-table td[data-title="URL"] a {
+			.ia-table td[title="URL"] a {
 				color: #333;
 				font-weight: 500;
 				text-decoration: underline;
@@ -214,7 +213,7 @@
 	<!-- wrap -->
 	<div id="wrap" class="wrap ia-wrap">
 		<!-- header -->
-		<header class="ia-header">
+		<div class="ia-header">
 			<h1 class="title">IA</h1>
 			<!-- ia-value -->
 			<div class="ia-value">
@@ -225,15 +224,15 @@
 				<strong>TOTAL : <span class="total"></span>건</strong>
 			</div>
 			<!-- //ia-value -->
-		</header>
+		</div>
 		<!--// header -->
 		<!-- ia-menu -->
-		<nav class="ia-menu tab-list type-inline scroll-x">
+		<div class="ia-menu tab-list type-inline scroll-x">
 			<ul>
 				<li><a href="#GUIDE">가이드</a></li>
 				<li><a href="#KFCCMA">메인</a></li>
 			</ul>
-		</nav>
+		</div>
 		<!-- //ia-menu -->
 		<!-- ia-table -->
 		<div class="table ia-table">
@@ -269,71 +268,71 @@
 				</thead>
 				<tbody>
 					<tr class="ia-del">
-						<td data-title="No"></td>
-						<td data-title="1depth">삭제</td>
-						<td data-title="2depth"></td>
-						<td data-title="3depth"></td>
-						<td data-title="4depth"></td>
-						<td data-title="Folder"></td>
-						<td data-title="URL"><a href="/" target="_blank" title="새창"></a></td>
-						<td data-title="Date"></td>
-						<td data-title="Person"></td>
-						<td data-title="State"></td>
-						<td data-title="ETC"></td>
+						<td title="No"></td>
+						<td title="1depth">삭제</td>
+						<td title="2depth"></td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder"></td>
+						<td title="URL"><a href="/" target="_blank" title="새창"></a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State"></td>
+						<td title="ETC"></td>
 					</tr>
 					<tr id="GUIDE">
-						<td data-title="No"></td>
-						<td data-title="1depth">가이드</td>
-						<td data-title="2depth"></td>
-						<td data-title="3depth"></td>
-						<td data-title="4depth"></td>
-						<td data-title="Folder">guide</td>
-						<td data-title="URL"><a href="/" target="_blank" title="새창">guide</a></td>
-						<td data-title="Date"></td>
-						<td data-title="Person"></td>
-						<td data-title="State">M</td>
-						<td data-title="ETC"></td>
+						<td title="No"></td>
+						<td title="1depth">가이드</td>
+						<td title="2depth"></td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder">guide</td>
+						<td title="URL"><a href="/" target="_blank" title="새창">guide</a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State">M</td>
+						<td title="ETC"></td>
 					</tr>
 					<tr>
-						<td data-title="No"></td>
-						<td data-title="1depth">가이드</td>
-						<td data-title="2depth">다이얼로그 샘플</td>
-						<td data-title="3depth"></td>
-						<td data-title="4depth"></td>
-						<td data-title="Folder">guide</td>
-						<td data-title="URL"><a href="/" target="_blank" title="새창">dialog</a></td>
-						<td data-title="Date"></td>
-						<td data-title="Person"></td>
-						<td data-title="State">M</td>
-						<td data-title="ETC"></td>
+						<td title="No"></td>
+						<td title="1depth">가이드</td>
+						<td title="2depth">다이얼로그 샘플</td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder">guide</td>
+						<td title="URL"><a href="/" target="_blank" title="새창">dialog</a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State">M</td>
+						<td title="ETC"></td>
 					</tr>
 
 					<tr id="KFCCMA">
-						<td data-title="No"></td>
-						<td data-title="1depth">메인</td>
-						<td data-title="2depth"></td>
-						<td data-title="3depth"></td>
-						<td data-title="4depth"></td>
-						<td data-title="Folder"></td>
-						<td data-title="URL"><a href="/" target="_blank" title="새창"></a></td>
-						<td data-title="Date"></td>
-						<td data-title="Person"></td>
-						<td data-title="State"></td>
-						<td data-title="ETC"></td>
+						<td title="No"></td>
+						<td title="1depth">메인</td>
+						<td title="2depth"></td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder"></td>
+						<td title="URL"><a href="/" target="_blank" title="새창"></a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State"></td>
+						<td title="ETC"></td>
 					</tr>
 					<!--
 					<tr>
-						<td data-title="No"></td>
-						<td data-title="1depth"></td>
-						<td data-title="2depth"></td>
-						<td data-title="3depth"></td>
-						<td data-title="4depth"></td>
-						<td data-title="Folder"></td>
-						<td data-title="URL"><a href="/" target="_blank" title="새창"></a></td>
-						<td data-title="Date">22-00-00</td>
-						<td data-title="Person"></td>
-						<td data-title="State">O</td>
-						<td data-title="ETC"></td>
+						<td title="No"></td>
+						<td title="1depth"></td>
+						<td title="2depth"></td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder"></td>
+						<td title="URL"><a href="/" target="_blank" title="새창"></a></td>
+						<td title="Date">22-00-00</td>
+						<td title="Person"></td>
+						<td title="State">O</td>
+						<td title="ETC"></td>
 					</tr>
 					-->
 				</tbody>
@@ -342,7 +341,7 @@
 		<!--// ia-table -->
 	</div>
 	<!--// wrap -->
-	<script>
+	<script type="text/javascript">
 		const iaWrap = document.querySelector('.ia-wrap');
 		const iaValueO = iaWrap.querySelector('.ia-value .o em');
 		const iaValueX = iaWrap.querySelector('.ia-value .x em');
@@ -353,15 +352,15 @@
 
 		function updateTableNo() {
 			trs.forEach((tr, i) => {
-				const tdNo = tr.querySelector('[data-title=No]');
+				const tdNo = tr.querySelector('[title=No]');
 				tdNo.textContent = i + 1;
 			});
 		}
 
 		function updateIaURL() {
 			trs.forEach((tr) => {
-				const folder = tr.querySelector('[data-title=Folder]').textContent;
-				const urlElem = tr.querySelector('[data-title=URL]');
+				const folder = tr.querySelector('[title=Folder]').textContent;
+				const urlElem = tr.querySelector('[title=URL]');
 				const url = urlElem.textContent.trim();
 				const link = urlElem.querySelector('a');
 				link.href = `${dir}${folder}/${url}.html`;
@@ -369,7 +368,7 @@
 		}
 
 		function updateIaState() {
-			const getFilteredTrs = (stateType) => Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[data-title=State]').textContent.trim() === stateType).length;
+			const getFilteredTrs = (stateType) => Array.from(trs).filter(tr => !tr.classList.contains('ia-del') && tr.querySelector('td[title=State]').textContent.trim() === stateType).length;
 
 			iaValueO.textContent = getFilteredTrs('O');
 			iaValueX.textContent = getFilteredTrs('X');
@@ -378,9 +377,9 @@
 
 			trs.forEach((tr) => {
 				if (!tr.classList.contains('ia-del')) {
-					const state = tr.querySelector('td[data-title=State]').textContent.trim();
+					const state = tr.querySelector('td[title=State]').textContent.trim();
 					const stateColor = state === 'O' ? 'blue' : state === 'X' ? 'red' : 'green';
-					tr.querySelector('td[data-title=State]').style.color = stateColor;
+					tr.querySelector('td[title=State]').style.color = stateColor;
 				}
 			});
 		}
@@ -389,7 +388,7 @@
 			const firstDepthList = ["공통", "메인", "주문방식별 매장찾기", "상품찾기", "모바일 상품권", "결제하기", "알림함", "고객센터"];
 
 			trs.forEach((tr) => {
-				const firstDepth = tr.querySelector('td[data-title="1depth"]').textContent;
+				const firstDepth = tr.querySelector('td[title="1depth"]').textContent;
 				if (firstDepthList.includes(firstDepth)) {
 					tr.classList.add('bg');
 				}
