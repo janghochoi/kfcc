@@ -92,7 +92,7 @@
 
 		h2.guide-title {
 			padding-bottom: 10px;
-			border-bottom: 1px solid #ccc;
+			border-bottom: 1px solid #ddd;
 			font-size: 30px;
 			font-weight: 700;
 		}
@@ -957,7 +957,7 @@
 							<input type="text" title="검색어">
 						</div>
 						<button type="button" class="button">
-							<i class="icon icon-search"></i>
+							<i class="fa-solid fa-magnifying-glass fa-fw"></i>
 						</button>
 					</div>
 					<pre>
@@ -967,7 +967,7 @@
 									&lt;input type=&quot;text&quot; title=&quot;검색어&quot;&gt;
 								&lt;/div&gt;
 								&lt;button type=&quot;button&quot; class=&quot;button&quot;&gt;
-									&lt;i class=&quot;icon icon-search&quot;&gt;&lt;/i&gt;
+									&lt;i class=&quot;fa-solid fa-magnifying-glass fa-fw&quot;&gt;&lt;/i&gt;
 								&lt;/button&gt;
 							&lt;/div&gt;
 						</code>
@@ -1366,15 +1366,23 @@
 					<!-- pagination-wrap -->
 					<div class="pagination-wrap">
 						<div class="pagination">
-							<button type="button" class="first"></button>
-							<button type="button" class="prev"></button>
-							<strong>1</strong>
+							<button type="button" class="first">
+								<i class="fa-solid fa-angles-left fa-fw"></i>
+							</button>
+							<button type="button" class="prev">
+								<i class="fa-solid fa-angle-left fa-fw"></i>
+							</button>
+							<strong tabindex="0">1</strong>
 							<a href="/">2</a>
 							<a href="/">3</a>
 							<a href="/">4</a>
 							<a href="/">5</a>
-							<button type="button" class="next"></button>
-							<button type="button" class="last"></button>
+							<button type="button" class="next">
+								<i class="fa-solid fa-angle-right fa-fw"></i>
+							</button>
+							<button type="button" class="last">
+								<i class="fa-solid fa-angles-right fa-fw"></i>
+							</button>
 						</div>
 					</div>
 					<!-- //pagination-wrap -->
@@ -1383,15 +1391,23 @@
 							&lt;!-- pagination-wrap --&gt;
 							&lt;div class="pagination-wrap"&gt;
 								&lt;div class="pagination"&gt;
-									&lt;button type="button" class="first"&gt;&lt;/button&gt;
-									&lt;button type="button" class="prev"&gt;&lt;/button&gt;
+									&lt;button type="button" class="first"&gt;
+										&lt;i class="fa-solid fa-angles-left fa-fw"&gt;&lt;/i&gt;
+									&lt;/button&gt;
+									&lt;button type="button" class="prev"&gt;
+										&lt;i class="fa-solid fa-angle-left fa-fw"&gt;&lt;/i&gt;
+									&lt;/button&gt;
 									&lt;strong tabindex="0"&gt;1&lt;/strong&gt;
 									&lt;a href="/"&gt;2&lt;/a&gt;
 									&lt;a href="/"&gt;3&lt;/a&gt;
 									&lt;a href="/"&gt;4&lt;/a&gt;
 									&lt;a href="/"&gt;5&lt;/a&gt;
-									&lt;button type="button" class="next"&gt;&lt;/button&gt;
-									&lt;button type="button" class="last"&gt;&lt;/button&gt;
+									&lt;button type="button" class="next"&gt;
+										&lt;i class="fa-solid fa-angle-right fa-fw"&gt;&lt;/i&gt;
+									&lt;/button&gt;
+									&lt;button type="button" class="last"&gt;
+										&lt;i class="fa-solid fa-angles-right fa-fw"&gt;&lt;/i&gt;
+									&lt;/button&gt;
 								&lt;/div&gt;
 							&lt;/div&gt;
 							&lt;!-- //pagination-wrap --&gt;
@@ -1409,13 +1425,13 @@
 						<div class="tab-list">
 							<ul>
 								<li class="active">
-									<a href="#tab01" id="tabList01">tab01</a>
+									<a href="#tab01">tab01</a>
 								</li>
 								<li>
-									<a href="#tab02" id="tabList02">tab02</a>
+									<a href="#tab02">tab02</a>
 								</li>
 								<li>
-									<a href="#tab03" id="tabList03">tab03</a>
+									<a href="#tab03">tab03</a>
 								</li>
 							</ul>
 						</div>
@@ -1442,14 +1458,14 @@
 								&lt;!-- tabList --&gt;
 								&lt;div class=&quot;tab-list&quot;&gt;
 									&lt;ul&gt;
-										&lt;li class=&quot;active&quot;&gt;
-											&lt;a href=&quot;#tab01&quot; id=&quot;tabList01&quot;&gt;tab01&lt;/a&gt;
+										&lt;li class="active"&gt;
+											&lt;a href="#tab01"&gt;tab01&lt;/a&gt;
 										&lt;/li&gt;
 										&lt;li&gt;
-											&lt;a href=&quot;#tab02&quot; id=&quot;tabList02&quot;&gt;tab02&lt;/a&gt;
+											&lt;a href="#tab02"&gt;tab02&lt;/a&gt;
 										&lt;/li&gt;
 										&lt;li&gt;
-											&lt;a href=&quot;#tab03&quot; id=&quot;tabList03&quot;&gt;tab03&lt;/a&gt;
+											&lt;a href="#tab03"&gt;tab03&lt;/a&gt;
 										&lt;/li&gt;
 									&lt;/ul&gt;
 								&lt;/div&gt;
@@ -1541,7 +1557,9 @@
 							</colgroup>
 							<tbody>
 								<tr>
-									<th scope="row">th</th>
+									<th scope="row">
+										th<i class="required">*</i>
+									</th>
 									<td>
 										<p>내용 텍스트</p>
 									</td>
@@ -1748,15 +1766,15 @@
 							<table>
 								<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
 								<colgroup>
-									<col style="width: 91px;">
+									<col style="width: 90px;">
 									<col>
-									<col style="width: 91px;">
-									<col style="width: 91px;">
-									<col style="width: 91px;">
-									<col style="width: 91px;">
-									<col style="width: 91px;">
-									<col style="width: 91px;">
-									<col style="width: 91px;">
+									<col style="width: 90px;">
+									<col style="width: 90px;">
+									<col style="width: 90px;">
+									<col style="width: 90px;">
+									<col style="width: 90px;">
+									<col style="width: 90px;">
+									<col style="width: 90px;">
 								</colgroup>
 								<thead>
 									<tr>

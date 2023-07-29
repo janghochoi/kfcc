@@ -19,7 +19,8 @@ document.write(
 		<div class="nav">
 			<div class="inner">
 				<ul>
-					<li><a href="#">통합결재</a></li>
+					<!-- 메뉴 활성화 class [active] -->
+					<li class="active"><a href="#">통합결재</a></li>
 					<li><a href="#">사전검토</a></li>
 					<li><a href="#">자기점검</a></li>
 					<li><a href="#">자금운용</a></li>

@@ -34,7 +34,7 @@
 }
 /* button border */
 [class*=button-border]:disabled {
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 	color: #ddd;
 }
 .button-border01 {
@@ -152,7 +152,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 }
 .button-toggle.active {
 	border: 1px solid #333;
@@ -188,7 +188,7 @@
 .button-filter {
 	height: 32px;
 	padding: 0 4px;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 	border-radius: 16px;
 	text-overflow: ellipsis;
 	white-space: nowrap;

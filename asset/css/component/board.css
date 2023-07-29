@@ -20,10 +20,19 @@
 
 	gap: 5px;
 }
+.board-head.type-column {
+	align-items: flex-start;
+	flex-direction: column;
+}
+.board-head .item {
+	display: flex;
+	align-items: center;
+	height: 36px;
+}
 /* board-view */
 .board-view .view-top {
 	padding-bottom: 20px;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ddd;
 }
 .board-view .title {
 	color: #333;

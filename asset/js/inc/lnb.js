@@ -1,7 +1,7 @@
 document.write(
 	`
 	<div class="lnb">
-		<div class="accordion lnb-depth01" data-toggle="one">
+		<div class="accordion lnb-depth01 is-type-one">
 			<ul>
 				<li>
 					<button type="button" class="accordion-name"><!-- 활성화 class [active] -->
@@ -9,7 +9,7 @@ document.write(
 						<i class="icon-menu rotate"></i>
 					</button>
 					<div class="accordion-content">
-						<div class="accordion lnb-depth02" data-toggle="one">
+						<div class="accordion lnb-depth02 is-type-one">
 							<ul>
 								<li>
 									<button type="button" class="accordion-name type-dot"><!-- 활성화 class [active] -->
@@ -47,7 +47,7 @@ document.write(
 						<i class="icon-menu rotate"></i>
 					</button>
 					<div class="accordion-content">
-						<div class="accordion lnb-depth02" data-toggle="one">
+						<div class="accordion lnb-depth02 is-type-one">
 							<ul>
 								<li>
 									<button type="button" class="accordion-name type-dot">

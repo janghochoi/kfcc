@@ -169,12 +169,15 @@ button.underline {
 /* 필수사항 */
 .required {
 	vertical-align: super;
+	color: red;
 }
 .scroll-x {
 	overflow-x: auto;
+	margin-top: 15px;
 }
 .scroll-y {
 	overflow-y: auto;
+	margin-top: 15px;
 }
 /* flex */
 .flex {

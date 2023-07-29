@@ -28,7 +28,6 @@
 	min-width: 1300px;
 }
 .inner {
-	max-width: 1600px;
 	margin: 0 auto;
 	padding: 0 20px;
 }
@@ -38,6 +37,10 @@
 	top: 0;
 	z-index: 10;
 	background-color: #fff;
+}
+.header .inner {
+	max-width: 1600px;
+	margin: auto;
 }
 .header .header-top .inner {
 	display: flex;
@@ -49,7 +52,6 @@
 }
 .header .header-top .right {
 	display: flex;
-
 	gap: 10px;
 }
 .header .header-top .user-info {
@@ -70,7 +72,6 @@
 	padding: 2px 10px;
 	border-radius: 10px;
 	background-color: #efefef;
-
 	gap: 5px;
 }
 .header .search input {
@@ -99,8 +100,31 @@
 .nav li {
 	position: relative;
 }
+.nav .inner > ul > li.active {
+	background-color: #fff;
+}
+.nav .inner > ul > li.active a {
+	color: #0c8fd2;
+	font-weight: 700;
+}
+.nav .inner > ul > li.active a::before,
+.nav .inner > ul > li.active a::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	left: 0;
+	height: 4px;
+	background-color: #0c8fd2;
+}
+.nav .inner > ul > li.active a::before {
+	top: 0;
+}
+.nav .inner > ul > li.active a::after {
+	bottom: 0;
+}
 .nav li a {
 	display: block;
+	position: relative;
 	height: 44px;
 	padding: 12px 10px;
 	color: #fff;
@@ -132,7 +156,6 @@
 .footer-link {
 	position: relative;
 }
-
 .footer-link .button-link {
 	display: flex;
 	align-items: center;
@@ -163,6 +186,7 @@
 }
 .sub-page {
 	display: flex;
+	flex-wrap: wrap;
 	padding: 0;
 	background-color: #f6f6f6;
 }
@@ -243,8 +267,16 @@
 /* sub-page content */
 .sub-page .content {
 	flex: 1;
+	max-width: calc(100% - 300px - 30px);
 	margin: 30px 0 30px 30px;
 	padding: 20px;
 	background-color: #fff;
 	box-shadow: 1px 3px 10px 0 #cbcbcb;
+}
+/* row */
+.row {
+	display: flex;
+}
+.row.type-between {
+	justify-content: space-between;
 }

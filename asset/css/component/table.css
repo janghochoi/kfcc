@@ -4,17 +4,19 @@
 	margin-top: 0;
 }
 .table {
+	overflow: auto;
 	position: relative;
-	margin-top: 12px;
+	margin-top: 15px;
 }
 .table table {
+	table-layout: fixed;
 	border-top: 2px solid #0b90d3;
 }
 .table th,
 .table td {
 	vertical-align: middle;
 	height: 38px;
-	padding: 4px;
+	padding: 5px;
 	border-bottom: 1px solid #ddd;
 	font-size: 13px;
 	text-align: center;
@@ -39,15 +41,16 @@
 	padding-left: 15px;
 	text-align: left;
 }
+.table.type-row .table th,
+.table.type-row .table td {
+	padding: 5px;
+	text-align: center;
+}
+.table.type-row .table .align-left {
+	padding-left: 15px;
+}
 /* table all border */
 .table.type-all-borde th,
 .table.type-all-borde td {
 	border: 1px solid #ddd;
-}
-
-.table + .scroll-wrap {
-	margin-top: 12px;
-}
-.scroll-wrap {
-	overflow-x: scroll;
 }

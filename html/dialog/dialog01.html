@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
 	<!-- plugin -->
 	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
+	<script type="text/javascript" src="../../asset/js/tree.js"></script>
 	<!-- webfont js -->
 	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
 	<!-- common js -->
@@ -71,7 +72,7 @@
 	<h2 class="guide-title">기본 팝업 샘플</h2>
 	<ul class="guide-list">
 		<li>
-			팝업 호출할 대상에 onclick="dialogUI.dialog.__init('<span class="color01">sample01:target</span>', this:버튼 포커스, dialog addClass 'animate' 추가, true: dimmed click close none)" 선언<br>
+			팝업 호출할 대상에 onclick="dialogUI.dialog.__init('<span class="color01">sample01:target</span>', this')<br>
 			ex) 호출대상 Class 명 : sample01, this : 필수입력
 		</li>
 		<li>dialog-wrap 에 호출대상 Class 명 연결 ex)<span class="color01">sample01</span></li>
@@ -100,7 +101,7 @@
 									<input type="text" title="검색어">
 								</div>
 								<button type="button" class="button">
-									<i class="icon icon-search"></i>
+									<i class="fa-solid fa-magnifying-glass fa-fw"></i>
 								</button>
 							</div>
 						</div>

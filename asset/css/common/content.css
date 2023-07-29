@@ -39,3 +39,47 @@
 	font-size: 13px;
 	text-align: center;
 }
+/* search-group-box */
+.search-group-box {
+	padding: 20px;
+	background-color: #ececec;
+}
+.search-group-box table {
+	table-layout: fixed;
+}
+.search-group-box th,
+.search-group-box td {
+	padding: 3px;
+	font-size: 14px;
+}
+/* tree */
+.tree {
+	overflow-y: auto;
+	height: 370px;
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+.tree > .treejs > .treejs-nodes {
+	padding-left: 0;
+}
+.tree > .treejs > .treejs-nodes::before {
+	display: none;
+}
+.tree .treejs-nodes {
+	position: relative;
+}
+/*.tree .treejs-nodes::before {
+	content: "";
+	position: absolute;
+	top: 5px;
+	bottom: 5px;
+	left: 10px;
+	width: 1px;
+	background-color: #1890ff;
+	opacity: .4;
+}
+*/
+.tree .treejs-node {
+	position: relative;
+	padding: 4px 0;
+}

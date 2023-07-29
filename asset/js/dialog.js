@@ -78,7 +78,7 @@ var dialogUI = window.dialogUI = dialogUI || {};
 					$(this).find('.dialog').addClass('animate');
 				});
 			} else {
-				tgEl.$dialogWrap.fadeIn(aniSpeed, 'linear', function () {
+				tgEl.$dialogWrap.fadeIn('aniSpeed', 'linear', function () {
 					$(this).css('display', 'flex');
 				});
 			};

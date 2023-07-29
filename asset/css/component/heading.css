@@ -9,7 +9,7 @@
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 .heading .title {
 	flex: 1;
@@ -23,6 +23,7 @@
 	gap: 5px;
 }
 .heading .right table {
+	table-layout: auto;
 	border-top: 0;
 }
 .heading .desc {
@@ -30,6 +31,9 @@
 	margin-top: 6px;
 }
 /* depth01 */
+.heading.depth01 {
+	margin-top: 35px;
+}
 .heading.depth01 .title {
 	padding-left: 25px;
 	font-size: 30px;
@@ -38,7 +42,7 @@
 }
 /* depth02 */
 .heading.depth02 {
-	margin-top: 24px;
+	margin-top: 25px;
 }
 .heading.depth02 .title {
 	font-size: 16px;

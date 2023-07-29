@@ -32,12 +32,6 @@
 .pagination strong {
 	color: #333;
 }
-.pagination .first,
-.pagination .prev,
-.pagination .next,
-.pagination .last {
-	background: red;
-}
 .pagination .first {
 	background-position: 0 0;
 }
