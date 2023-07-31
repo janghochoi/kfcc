@@ -108,7 +108,7 @@
 }
 .nav .inner > ul > li,
 .nav .inner > ul > li a {
-	transition: .2s;
+	transition: .3s;
 }
 .nav .inner > ul > li a::before,
 .nav .inner > ul > li a::after {
@@ -117,7 +117,7 @@
 	right: 50%;
 	left: 50%;
 	height: 4px;
-	transition: .2s;
+	transition: .3s;
 }
 .nav .inner > ul > li a::before {
 	top: 0;
