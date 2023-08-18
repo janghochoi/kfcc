@@ -1,0 +1,407 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>새마을 준법지원 시스템</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../asset/css/common/package.css">
+	<!-- jquery -->
+	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
+	<!-- plugin -->
+	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
+	<script type="text/javascript" src="../../asset/js/tree.js"></script>
+	<!-- webfont js -->
+	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
+	<!-- common js -->
+	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
+	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
+	<style type="text/css">
+		body {
+			padding: 30px;
+		}
+
+		.guide-title {
+			margin: 20px 0 10px;
+			color: #000;
+			font-size: 18px;
+		}
+
+		.guide-title::before {
+			content: "·";
+			display: inline-block;
+			margin-right: 4px;
+			color: #222;
+		}
+
+		.guide-list {
+			margin: 10px 0 30px;
+		}
+
+		.guide-list li {
+			position: relative;
+			margin: 5px 0;
+			color: #222;
+		}
+
+		.guide-list>li {
+			padding-left: 8px;
+		}
+
+		.guide-list>li::before {
+			content: "";
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 2px;
+			height: 2px;
+			background-color: #333;
+		}
+
+		.guide-list ul {
+			padding-left: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<h2 class="guide-title">기본 팝업 샘플</h2>
+	<ul class="guide-list">
+		<li>
+			팝업 호출할 대상에 onclick="dialogUI.dialog.__init('<span class="color01">sample01:target</span>', this')<br>
+			ex) 호출대상 Class 명 : sample01, this : 필수입력
+		</li>
+		<li>dialog-wrap 에 호출대상 Class 명 연결 ex)<span class="color01">sample01</span></li>
+	</ul>
+
+	<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+		<button type="button" class="button button-border01" onclick="dialogUI.dialog.__init('sample01', this)">Tree 구조</button>
+	</div>
+
+	<!-- sample01 -->
+	<div class="dialog-wrap sample01">
+		<!-- dialog -->
+		<div class="dialog">
+			<!-- dialog-head -->
+			<div class="dialog-head">
+				<h2 class="title">Tree 구조</h2>
+			</div>
+			<!-- //dialog-head -->
+			<!-- dialog-body -->
+			<div class="dialog-body">
+				<!-- row -->
+				<div class="switch-box"><!-- TODO: 20230819 class명 변경 row => switch -->
+					<!-- left -->
+					<div class="left">
+						<!-- board-head -->
+						<div class="board-head type-column">
+							<!-- item -->
+							<div class="item">
+								<div class="form-list">
+									<label class="radio">
+										<input type="radio" name="radio00" checked>
+										<i></i>
+										<span>사용자 검색</span>
+									</label>
+
+									<label class="radio">
+										<input type="radio" name="radio00">
+										<i></i>
+										<span>부서 검색</span>
+									</label>
+								</div>
+							</div>
+							<!-- //item -->
+							<!-- item -->
+							<div class="item">
+								<div class="input-search">
+									<div class="input">
+										<input type="text" title="검색어">
+									</div>
+									<button type="button" class="button">
+										<i class="fa-solid fa-magnifying-glass fa-fw"></i>
+									</button>
+								</div>
+							</div>
+							<!-- //item -->
+							<!-- item -->
+							<div class="item">
+								<div class="form-list">
+									<label class="radio">
+										<input type="radio" name="radio01">
+										<i></i>
+										<span>하위부서 포함</span>
+									</label>
+
+									<label class="radio">
+										<input type="radio" name="radio01">
+										<i></i>
+										<span>선택된 부서</span>
+									</label>
+								</div>
+							</div>
+							<!-- //item -->
+						</div>
+						<!-- // -->
+						<div class="tree"></div>
+
+					</div>
+					<!-- //left -->
+					<div class="button-group"><!-- TODO: 20230819 추가삭제 버튼 추가 -->
+						<button type="button" class="button button-right button-action-add"></button>
+					</div>
+					<!-- right -->
+					<div class="right" style="width: 560px;">
+						<!-- board-head -->
+						<div class="board-head">
+							<div class="right">
+								<button type="button" class="button button-size-lage button-border01 button-clear-list">모두삭제</button><!-- TODO : button clear 추가-->
+							</div>
+						</div>
+						<!-- //board-head -->
+						<!-- scroll-y -->
+						<div class="scroll-y" style="height: 435px; border: 1px solid #eee;" id="showPanel"><!-- TODO: 20230819 ID 추가 -->
+							<table class="switch-table">
+								<caption>결제선지정자 (No, 팀명, 직급, 이름, 결재여부) 구성 표 입니다.</caption>
+								<colgroup>
+									<col style="width: 10%;">
+									<col style="width: 20%;">
+									<col style="width: 15%;">
+									<col style="width: 15%;">
+									<col style="width: 10%;">
+									<col>
+								</colgroup>
+								<!--TODO : 20230819 thead 추가-->
+								<thead>
+									<tr>
+										<th scope="col">No.</th>
+										<th scope="col">소속</th>
+										<th scope="col">직위</th>
+										<th scope="col">성명</th>
+										<th scope="col">타입</th>
+										<th scope="col">삭제</th>
+									</tr>
+								</thead>
+								<!--//TODO : 20230819 thead 추가-->
+								<tbody></tbody>
+							</table>
+						</div>
+						<!-- //scroll-y -->
+					</div>
+					<!-- //right -->
+				</div>
+				<!-- //row -->
+			</div>
+			<!-- //dialog-body -->
+			<!-- dialog-foot -->
+			<div class="dialog-foot">
+				<!-- button-wrap -->
+				<div class="button-wrap">
+					<button type="button" class="button button-size-lage button-bg01 cancle">확인</button>
+					<button type="button" class="button button-size-lage button-border01 cancle">취소</button>
+				</div>
+				<!-- //button-wrap -->
+			</div>
+			<!-- //dialog-foot -->
+			<button type="button" class="close"></button>
+		</div>
+		<!-- //dialog -->
+	</div>
+	<!-- //sample01 -->
+
+</body>
+
+<!-- TODO: 20230819 스크립트 위치 변경 -->
+<script type="text/javascript">
+
+	let treeData = [
+		{
+			"id": "0",
+			"text": "외부직원",
+			"children": [
+				{
+					"id": "0-0",
+					"text": "SM",
+					"children":
+						[
+							{
+								"id": "0-0-0",
+								"text": "이OO 직원",
+								"attribute": {
+									/*
+										1. 유선상 user가 모든 정보를 갖고 있는 조건으로 만들기로 협의 된 기반으로 만들어졌습니다,
+										2. 하단의 스크립트에서 Value와 selected node를 대조하여 커스텀시킨 후 진행됩니다.
+									*/
+									"position": "사원",
+									"membergroup": "SM",
+									"name": "이OO"
+								}
+							},
+							{
+								"id": "0-0-1",
+								"text": "박OO 직원",
+								"attribute": {
+									"position": "대리",
+									"membergroup": "SM",
+									"name": "박OO"
+								}
+							},
+							{
+								"id": "0-0-2",
+								"text": "고OO 직원",
+								"attribute": {
+									"position": "주임",
+									"membergroup": "SM",
+									"name": "고OO"
+								}
+							}
+						]
+				},
+				{
+					"id": "0-1",
+					"text": "SI",
+					"children": [
+						{
+							"id": "0-1-0",
+							"text": "최OO 직원",
+							"attribute": {
+								"position": "사원",
+								"membergroup": "SI",
+								"name": "최OO 직원"
+							}
+						},
+						{
+							"id": "0-1-1",
+							"text": "최OO 직원",
+							"attribute": {
+								"position": "부장",
+								"membergroup": "SI",
+								"name": "최OO 직원"
+							}
+						},
+					]
+				},
+			]
+		},
+		{
+			"id": "1",
+			"text": "내부직원",
+			"children": [
+				{
+					"id": "1-0",
+					"text": "현업",
+					"children": [
+						{
+							"id": "1-0-0",
+							"text": "현OO 대리",
+							"attribute": {
+								"position": "대리",
+								"membergroup": "현업",
+								"name": "최OO"
+							}
+						},
+						{
+							"id": "1-0-1",
+							"text": "김OO 대리",
+							"attribute": {
+								"position": "대리",
+								"membergroup": "현업",
+								"name": "김OO"
+							}
+						},
+					]
+				},
+			]
+		},
+	]
+
+
+	let activeCustomData = []; //TODO : tree button action 시 필요한 data 모음
+	const showPanel = $('#showPanel'); // TODO : 우측 패널 기준 id
+	const tree = new Tree('.tree', {
+		data: treeData,
+		closeDepth: 3,
+		loaded: function () {
+			this.values = ['0-0-0'];
+			this.disables = ['0-0-2'];
+			let selectData = this.selectedNodes;
+			let activeValue = this.values;
+			activeCustomData = []; //active custom data 초기화
+			selectData.forEach(data => {
+				activeValue.forEach(active => {
+					if (data.id == active) activeCustomData.push(data);
+				})
+			});
+			const html = createTableRow(activeCustomData);
+			showPanel.find('tbody > *').remove();
+			showPanel.find('tbody').append(html);
+		},
+		onChange: function () {
+			//console.log(this.values);
+			let selectData = this.selectedNodes;
+			let activeValue = this.values;
+			activeCustomData = []; //active custom data 초기화
+			selectData.forEach(data => {
+				activeValue.forEach(active => {
+					if (data.id == active) activeCustomData.push(data);
+				})
+			});
+		}
+	})
+
+	function createTableRow(data, html) {
+		let htmlTag;
+		if (html && html.trim() != '') {
+			htmlTag = html;
+		} else {
+			htmlTag = '';
+		}
+
+
+		data.forEach((data, index) => {
+			htmlTag += `<tr>`;
+			htmlTag += `<td>${index + 1}</td>`;
+			htmlTag += `<td>${data.attribute.membergroup}</td>`;
+			htmlTag += `<td>${data.attribute.position}</td>`;
+			htmlTag += `<td>${data.attribute.name}</td>`;
+			htmlTag += `<td><select class="select" title="결재 구분"><option>결재</option></select></td>`; //TODO : 각 상황별로 여러 옵션이 필요 한 경우 상단 data쪽 attribute에서 key를 부여 한 후 다양한 액션을 key값을 기준으로 만들수 있습니다. 다만 현재는 임시로 공통 select만 추가 되었습니다.
+			htmlTag += `<td><button class="button button-size-small button-border01 button-remove-row" data-target="${data.id}">삭제</button></td>`;
+			htmlTag += `</tr>`
+		});
+		return htmlTag;
+	}
+
+	$(document).ready(function () {
+		//TODO : 트리 이벤트 확인을 위해 임시로 강제 열기
+		dialogUI.dialog.__init('sample01', this)
+
+	})
+		.on('click', '.button-clear-list', function (e) {
+			//TODO : 모두삭제
+			e.preventDefault();
+			tree.values = [];
+			$('.button-action-add').trigger('click');
+		})
+		.on('click', '.button-action-add', function (e) {
+			//TODO : showPanel에 추가
+			e.preventDefault();
+			const html = createTableRow(activeCustomData);
+			showPanel.find('tbody > *').remove();
+			showPanel.find('tbody').append(html);
+			showPanel.find('thead input[name="allcheck"]').prop('checked', false)
+		})
+		.on('click','.button-remove-row',function(e){
+			e.preventDefault();
+			const tbody = showPanel.find('tbody');
+			const targetId= $(this).data('target');
+			let cloneValues = [...tree.values];
+			cloneValues = cloneValues.filter(x => x !== targetId);
+			tree.values = cloneValues;
+			$('.button-action-add').trigger('click');
+		})
+</script>
+</html>
