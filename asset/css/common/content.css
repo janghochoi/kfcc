@@ -28,14 +28,12 @@
 .switch-box .switch-right {
 	flex: 1;
 }
-.switch-table tr:first-child td {
-	border-top: 0;
-}
+.switch-table th,
 .switch-table td {
 	vertical-align: middle;
 	height: 50px;
 	padding: 8px 4px;
-	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 	font-size: 13px;
 	text-align: center;
 }

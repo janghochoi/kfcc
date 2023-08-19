@@ -168,11 +168,11 @@
 							<table class="switch-table">
 								<caption>결제선지정자 (No, 팀명, 직급, 이름, 결재여부) 구성 표 입니다.</caption>
 								<colgroup>
-									<col style="width: 10%;">
-									<col style="width: 20%;">
-									<col style="width: 15%;">
-									<col style="width: 15%;">
-									<col style="width: 10%;">
+									<col style="width: 50px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
 									<col>
 								</colgroup>
 								<!--TODO : 20230819 thead 추가-->
@@ -216,7 +216,7 @@
 </body>
 
 <!-- TODO: 20230819 스크립트 위치 변경 -->
-<script type="text/javascript">
+<script>
 
 	let treeData = [
 		{
@@ -361,23 +361,31 @@
 			htmlTag = '';
 		}
 
-
 		data.forEach((data, index) => {
-			htmlTag += `<tr>`;
-			htmlTag += `<td>${index + 1}</td>`;
-			htmlTag += `<td>${data.attribute.membergroup}</td>`;
-			htmlTag += `<td>${data.attribute.position}</td>`;
-			htmlTag += `<td>${data.attribute.name}</td>`;
-			htmlTag += `<td><select class="select" title="결재 구분"><option>결재</option></select></td>`; //TODO : 각 상황별로 여러 옵션이 필요 한 경우 상단 data쪽 attribute에서 key를 부여 한 후 다양한 액션을 key값을 기준으로 만들수 있습니다. 다만 현재는 임시로 공통 select만 추가 되었습니다.
-			htmlTag += `<td><button class="button button-size-small button-border01 button-remove-row" data-target="${data.id}">삭제</button></td>`;
-			htmlTag += `</tr>`
+			htmlTag += `
+				<tr>
+					<td>${index + 1}</td>
+					<td>${data.attribute.membergroup}</td>
+					<td>${data.attribute.position}</td>
+					<td>${data.attribute.name}</td>
+					<td>
+						<select class="select" title="결재 구분">
+							<option>결재</option>
+						</select>
+					</td>
+					<td>
+						<button type=""button class="button button-border01 button-remove-row" data-target="${data.id}">삭제</button>
+					</td>
+				</tr>
+			`;
+			//TODO : 각 상황별로 여러 옵션이 필요 한 경우 상단 data쪽 attribute에서 key를 부여 한 후 다양한 액션을 key값을 기준으로 만들수 있습니다. 다만 현재는 임시로 공통 select만 추가 되었습니다.
 		});
 		return htmlTag;
 	}
 
 	$(document).ready(function () {
 		//TODO : 트리 이벤트 확인을 위해 임시로 강제 열기
-		dialogUI.dialog.__init('sample01', this)
+		dialogUI.dialog.__init('sample01')
 
 	})
 		.on('click', '.button-clear-list', function (e) {
