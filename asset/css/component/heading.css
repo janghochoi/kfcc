@@ -47,3 +47,47 @@
 .heading.depth02 .title {
 	font-size: 16px;
 }
+
+
+.group-payment {
+	display: flex;
+	justify-content: end;
+}
+.group-payment .table {
+	width: 256px;
+}
+.heading-payment {
+	align-items: end;
+}
+
+.heading-payment .right {
+	flex-direction: column;
+}
+.heading-payment .controls {
+	display: flex;
+	align-items: end;
+	justify-content: end;
+	flex-direction: column;
+	width: 100%;
+
+	gap: 7px;
+}
+.heading-payment .controls .button-group {
+	display: flex;
+
+	gap: 4px;
+}
+.heading-payment .controls .button-group .button:not(.btn-payment-status) i {
+	font-size: 16px;
+}
+.heading-payment .controls .button .fa-chevron-up {
+	transition: transform .3s;
+	transform: rotate(-180deg);
+}
+.heading-payment .controls .button.active .fa-chevron-up {
+	transform: rotate(0);
+}
+
+.heading-payment .controls .table {
+	margin-top: 0;
+}

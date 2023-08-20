@@ -410,4 +410,21 @@
 		'load': function () {
 		}
 	});
+
+
+	$(document).ready(function () {
+
+	})
+	.on('click', '.heading-payment .btn-payment-status', function () {
+		const controls = $(this).closest('.controls');
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+			controls.find('.table').hide();
+			$(this).find('.text').text('열기');
+		} else {
+			$(this).addClass('active');
+			controls.find('.table').show();
+			$(this).find('.text').text('접기');
+		}
+	})
 })(jQuery, window, document);
