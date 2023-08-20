@@ -57,7 +57,7 @@
 	width: 256px;
 }
 .heading-payment {
-	align-items: end;
+	align-items: start;
 }
 
 .heading-payment .right {
