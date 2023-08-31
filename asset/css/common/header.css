@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* header */
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background-color: #fff;
+}
+.header .inner {
+	max-width: 1600px;
+	margin: auto;
+}
+.header .header-top .inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #fff;
+}
+.header .header-top .right {
+	display: flex;
+
+	gap: 10px;
+}
+.header .header-top .user-info {
+	display: flex;
+	align-items: center;
+}
+.header .header-top li {
+	color: #000;
+	font-size: 14px;
+}
+.header .header-top .bar:before {
+	height: 12px;
+	background-color: #000;
+}
+.header .search {
+	display: flex;
+	justify-content: space-around;
+	padding: 2px 10px;
+	border-radius: 10px;
+	background-color: #efefef;
+
+	gap: 5px;
+}
+.header .search input {
+	margin: 0;
+	border: 0;
+	font-size: 14px;
+	background-color: #efefef;
+}
+.header .search button {
+	width: 20px;
+}
+.header .search .icon-search {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+}
+/* nav */
+.nav {
+	background-color: #0c8fd2;
+}
+.nav .inner > ul {
+	display: flex;
+	justify-content: space-around;
+}
+.nav li {
+	position: relative;
+}
+.nav .inner > ul > li.active,
+.nav .inner > ul > li:hover {
+	background-color: #fff;
+}
+.nav .inner > ul > li,
+.nav .inner > ul > li a {
+	transition: .3s;
+}
+.nav .inner > ul > li a::before,
+.nav .inner > ul > li a::after {
+	content: "";
+	position: absolute;
+	right: 50%;
+	left: 50%;
+	height: 4px;
+	transition: .3s;
+}
+.nav .inner > ul > li a::before {
+	top: 0;
+}
+.nav .inner > ul > li a::after {
+	bottom: 0;
+}
+.nav .inner > ul > li:hover a,
+.nav .inner > ul > li.active a {
+	color: #0c8fd2;
+	font-weight: 700;
+}
+.nav .inner > ul > li.active a::before,
+.nav .inner > ul > li.active a::after,
+.nav .inner > ul > li:hover a::before,
+.nav .inner > ul > li:hover a::after {
+	right: 0;
+	left: 0;
+	background-color: #0c8fd2;
+}
+.nav li a {
+	display: block;
+	position: relative;
+	height: 44px;
+	padding: 12px 10px;
+	color: #fff;
+	white-space: nowrap;
+}
+.depth {
+	position: absolute;
+	width: 100%;
+}

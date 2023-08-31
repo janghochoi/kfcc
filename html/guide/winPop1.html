@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>새마을 준법지원 시스템</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../asset/css/common/package.css">
+	<!-- jquery -->
+	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
+	<!-- plugin -->
+	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
+	<script type="text/javascript" src="../../asset/js/tree.js"></script>
+	<!-- webfont js -->
+	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
+	<!-- common js -->
+	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
+	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
+	<script>
+		function openWindowPop(url, name) {
+				var options = 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+				window.open(url, name, options);
+			}
+	</script>
+</head>
+<body>
+	<!-- window-pop -->
+	<div class="window-pop">
+		<!-- window-body -->
+		<div class="window-body">
+			<!-- heading -->
+			<div class="heading depth02">
+				<h3 class="title">검색조건</h3>
+			</div>
+			<!-- //heading -->
+			<!-- search-group-box -->
+			<div class="search-group-box">
+				<table>
+					<caption>검색조건 (대상, 방법, 기간, 상태, 제목) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width: 110px;">
+						<col>
+						<col style="width: 110px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">대상</th>
+							<td>
+								<select class="select" title="대상 구분">
+									<option>선택</option>
+								</select>
+							</td>
+							<th scope="row">방법</th>
+							<td>
+								<select class="select" title="방법 구분">
+									<option>선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">기간</th>
+							<td>
+								<div class="date-wrap">
+									<div class="input">
+										<input type="text" title="시작 날짜">
+									</div>
+									<em>~</em>
+									<div class="input">
+										<input type="text" title="종료 날짜">
+									</div>
+								</div>
+								<script type="text/javascript">
+									$(function () {
+										$(".date-wrap input").datepicker({
+											dateFormat: 'yy-mm-dd',
+											showOtherMonths: true,
+											showMonthAfterYear: true,
+											changeYear: true,
+											changeMonth: true,
+											yearSuffix: ".",
+											showOn: "both",
+											buttonImage: "../../asset/images/common/img-datepicker.svg",
+											buttonImageOnly: true,
+											buttonText: "선택",
+											monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+											monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+											dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+											dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+										});
+									});
+								</script>
+							</td>
+							<th scope="row">상태</th>
+							<td>
+								<select class="select" title="상태 구분">
+									<option>선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">제목</th>
+							<td colspan="3">
+								<div class="input">
+									<input type="text" title="제목">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //search-group-box -->
+			<!-- button-wrap -->
+			<div class="button-wrap">
+				<button type="button" class="button button-border01">초기화</button>
+				<button type="button" class="button button-bg01">검색</button>
+			</div>
+			<!-- //button-wrap -->
+
+			<!-- heading -->
+			<div class="heading depth02">
+				<h3 class="title">교육시행 내역</h3>
+			</div>
+			<!-- //heading -->
+			<!-- scroll-x -->
+			<div class="scroll-x">
+				<div class="table">
+					<table>
+						<caption>합동안전보건 점검표 (문서번호, 대상, 방법, 제목, 기간, 기안자, 상태) 구성 표 입니다.</caption>
+						<colgroup>
+							<col style="width: 120px;">
+							<col style="width: 90px;">
+							<col style="width: 90px;">
+							<col>
+							<col style="width: 170px;">
+							<col style="width: 90px;">
+							<col style="width: 90px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">문서번호</th>
+								<th scope="col">대상</th>
+								<th scope="col">방법</th>
+								<th scope="col">제목</th>
+								<th scope="col">기간</th>
+								<th scope="col">기안자</th>
+								<th scope="col">상태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="7">
+									<div class="no-data">
+										상단 점검표 분류 항목을 선택하십시요.
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>윤리경영-00-000</td>
+								<td>공통</td>
+								<td>개별</td>
+								<td class="align-left">
+									<a href="#">test</a>
+								</td>
+								<td>0000-00-00 ~ 0000-00-00</td>
+								<td>홍길동</td>
+								<td>취소</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //scroll-x -->
+			<!-- pagination-wrap -->
+			<div class="pagination-wrap">
+				<div class="pagination">
+					<button type="button" class="first">
+						<i class="fa-solid fa-angles-left fa-fw"></i>
+					</button>
+					<button type="button" class="prev">
+						<i class="fa-solid fa-angle-left fa-fw"></i>
+					</button>
+					<strong tabindex="0">1</strong>
+					<a href="/">2</a>
+					<a href="/">3</a>
+					<a href="/">4</a>
+					<a href="/">5</a>
+					<button type="button" class="next">
+						<i class="fa-solid fa-angle-right fa-fw"></i>
+					</button>
+					<button type="button" class="last">
+						<i class="fa-solid fa-angles-right fa-fw"></i>
+					</button>
+				</div>
+			</div>
+			<!-- //pagination-wrap -->
+		</div>
+		<!-- //window-body -->
+		<button type="button" class="close"></button>
+	</div>
+	<!-- //window-pop -->
+
+</body>
+</html>

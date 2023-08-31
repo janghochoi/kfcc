@@ -54,3 +54,8 @@
 .table.type-all-borde td {
 	border: 1px solid #ddd;
 }
+
+/* scroll-wrap */
+.scroll-wrap {
+	overflow-y: scroll;
+}

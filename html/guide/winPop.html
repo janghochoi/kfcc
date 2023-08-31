@@ -20,22 +20,50 @@
 	<!-- common js -->
 	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
 	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
+	<script>
+		function openWindowPop1(url, name) {
+				var options = 'top=10, left=10, width=800, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+				window.open(url, name, options);
+			}
+			function openWindowPop2(url, name) {
+					var options = 'top=10, left=10, width=350, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+					window.open(url, name, options);
+			}
+			function openWindowPop3(url, name) {
+					var options = 'top=10, left=10, width=500, height=300, status=no, menubar=no, toolbar=no, resizable=no';
+					window.open(url, name, options);
+			}
+			function openWindowPop3(url, name) {
+					var options = 'top=10, left=10, width=900, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+					window.open(url, name, options);
+				}
+			function openWindowPop4(url, name) {
+					var options = 'top=10, left=10, width=600, height=500, status=no, menubar=no, toolbar=no, resizable=no';
+					window.open(url, name, options);
+				}
+			function openWindowPop5(url, name) {
+					var options = 'top=10, left=10, width=800, height=800, status=no, menubar=no, toolbar=no, resizable=no';
+					window.open(url, name, options);
+				}
+	</script>
+	<style>
+		body {
+			padding: 20px;
+		}
+	</style>
 </head>
 <body>
-	<!-- window-pop -->
-	<div class="window-pop">
-		<!-- window-head -->
-		<div class="window-head">
-			<h2 id="title01" class="title">제목</h2>
-		</div>
-		<!-- //window-head -->
-		<!-- window-body -->
-		<div id="content01" class="window-body">
-			내용
-		</div>
-		<!-- //window-body -->
-		<button type="button" class="close"></button>
-	</div>
-	<!-- //window-pop -->
+	<p>윈도우 팝업 예</p>
+	<br><br>
+	<a href="javascript:openWindowPop1('winPop1.html', 'popup');">search 윈도우팝업 열기</a>
+	<br><br>
+	<a href="javascript:openWindowPop2('winPop2.html', 'popup');">tree 윈도우팝업 열기</a>
+	<br><br>
+	<a href="javascript:openWindowPop3('winPop3.html', 'popup');">form 윈도우팝업 열기</a>
+	<br><br>
+	<a href="javascript:openWindowPop4('winPop4.html', 'popup');">view 윈도우팝업 열기</a>
+	<br><br>
+	<a href="javascript:openWindowPop5('winPop5.html', 'popup');">write 윈도우팝업 열기</a>
+
 </body>
 </html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>새마을 준법지원 시스템</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../asset/css/common/package.css">
+	<!-- jquery -->
+	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
+	<!-- plugin -->
+	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
+	<script type="text/javascript" src="../../asset/js/tree.js"></script>
+	<!-- webfont js -->
+	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
+	<!-- common js -->
+	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
+	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
+	<script>
+		function openWindowPop(url, name) {
+				var options = 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+				window.open(url, name, options);
+			}
+	</script>
+</head>
+<body>
+	<!-- window-pop -->
+	<div class="window-pop">
+		<!-- window-body -->
+		<div class="window-body">
+			<!-- table -->
+			<div class="table type-row">
+				<table>
+					<caption>합동안전보건 점검표 (점검표 분류, 전검 장소) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">점검표 분류</th>
+							<td>
+								<div class="inner-button">
+									<select class="select full" title="점검표 분류 구분">
+										<option>선택</option>
+									</select>
+									<button type="button" class="button button-bg01">화면출력</button>
+								</div>
+							</td>
+							<th scope="row">점검 장소</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="점검 장소">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="border-top: 0;">
+					<caption>합동안전보건 점검표 (점검시간, 수급업체명, 현장대리인, 수급인 근로자) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">점검시간</th>
+							<td colspan="5">0000-00-00 ~ 0000-00-00</td>
+						</tr>
+						<tr>
+							<th scope="row">수급업체명1</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="수급업체명1">
+								</div>
+							</td>
+							<th scope="row">현장대리인1</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="현장대리인1">
+								</div>
+							</td>
+							<th scope="row">수급인 근로자1</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="수급인 근로자1">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">수급업체명2</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="수급업체명2">
+								</div>
+							</td>
+							<th scope="row">현장대리인2</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="현장대리인2">
+								</div>
+							</td>
+							<th scope="row">수급인 근로자2</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="수급인 근로자2">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+			<!-- button-wrap -->
+			<div class="button-wrap">
+				<button type="button" class="button button-size-lage button-bg01 cancle">확인</button>
+				<button type="button" class="button button-size-lage button-border01 cancle">취소</button>
+			</div>
+			<!-- //button-wrap -->
+		</div>
+		<!-- //window-body -->
+		<button type="button" class="close"></button>
+	</div>
+	<!-- //window-pop -->
+
+</body>
+</html>

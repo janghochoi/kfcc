@@ -1,4 +1,111 @@
 @charset "utf-8";
+/* skipContent */
+.skip-content {
+	position: absolute;
+	top: -60px;
+	right: 0;
+	left: 0;
+	z-index: 1000;
+	height: 60px;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: -1.5px;
+	line-height: 60px;
+	background-color: #0c8fd2;
+	transition: .1s ease-in-out;
+}
+.skip-content:focus,
+.skip-content:hover {
+	top: 0;
+	text-decoration: none;
+}
+/* wrap */
+.wrap {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	min-width: 1300px;
+}
+.inner {
+	margin: 0 auto;
+	padding: 0 20px;
+}
+/* container */
+.container {
+	min-height: calc(100vh - 160px);
+	background-color: #f6f6f6;
+}
+
+.sub-page {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	background-color: #f6f6f6;
+}
+
+/* sub-page content */
+.sub-page .content {
+	flex: 1;
+	max-width: calc(100% - 300px - 30px);
+	margin: 30px 0 30px 30px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 1px 3px 10px 0 #cbcbcb;
+}
+/* footer */
+.footer {
+	padding: 15px 0;
+	background-color: #ddd;
+}
+.footer .inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.footer p {
+	color: #000;
+	font-size: 14px;
+}
+.footer-link {
+	position: relative;
+}
+.footer-link .button-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 190px;
+	padding: 0 16px 0 21px;
+	border-radius: 25px;
+	color: #898989;
+	font-size: 14px;
+	text-align: left;
+	line-height: 32px;
+	background-color: #efefef;
+}
+.footer-link ul {
+	display: none;
+	position: absolute;
+	bottom: 40px;
+	left: 0;
+	width: 100%;
+	border-radius: 15px;
+	background-color: #efefef;
+}
+.footer-link li a {
+	display: block;
+	padding: 10px 15px;
+	color: #898989;
+	font-size: 14px;
+}
+/* row */
+.row {
+	display: flex;
+}
+.row.type-between {
+	justify-content: space-between;
+}
+
 /* switch-box */
 .switch-box {
 	display: flex;
@@ -80,4 +187,22 @@
 .tree .treejs-node {
 	position: relative;
 	padding: 4px 0;
+}
+
+/* col-group */
+.col-group {
+	display: flex;
+	gap: 30px;
+}
+.col.center {
+	display: flex;
+	align-items: center;
+}
+
+/* window-pop */
+.window-pop {
+	padding: 20px;
+}
+.window-pop .search-group-box {
+	padding: 10px;
 }

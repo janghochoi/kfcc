@@ -2,7 +2,8 @@
 /* reset */
 @import url(base.css);
 /* Layout */
-@import url(layout.css);
+@import url(header.css);
+@import url(lnb.css);
 /* Plugin */
 @import url(../plugin/jquery-ui.css);
 @import url(../plugin/swiper-bundle.css);
