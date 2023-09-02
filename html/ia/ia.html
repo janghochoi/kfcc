@@ -19,193 +19,209 @@
 	<!-- common js -->
 	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
 	<style type="text/css">
-		html {
-			overflow: auto;
-		}
+html {
+	overflow: auto;
+}
 
-		.ia-wrap {
-			min-width: 1500px;
-			max-width: none !important;
-			margin: auto;
-			padding: 30px;
-		}
+.ia-wrap {
+	min-width: 1500px;
+	max-width: none !important;
+	margin: auto;
+	padding: 30px;
+}
 
-		.ia-header {
-			position: relative;
-		}
+.ia-header {
+	position: relative;
+}
 
-		.ia-header .title {
-			margin-bottom: 30px;
-			color: #222;
-			font-size: 40px;
-			line-height: 50px;
-		}
+.ia-header .title {
+	margin-bottom: 30px;
+	color: #222;
+	font-size: 40px;
+	line-height: 50px;
+}
 
-		.ia-header .ia-value {
-			display: flex;
-			position: absolute;
-			right: 0;
-			bottom: 0;
-			color: #222;
-			font-size: 14px;
+.ia-header .ia-value {
+	display: flex;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: #222;
+	font-size: 14px;
 
-			gap: 10px;
-		}
+	gap: 10px;
+}
 
-		.ia-table {
-			border-top: 0;
-		}
+.ia-table {
+	border-top: 0;
+}
 
-		.ia-table table {
-			border-top: 2px solid #707685;
-		}
+.ia-table table {
+	border-top: 2px solid #707685;
+}
 
-		.ia-table td {
-			font-size: 14px;
-		}
+.ia-table td {
+	font-size: 14px;
+}
 
-		.ia-table tr th,
-		.ia-table tr td {
-			border: 1px solid #ddd;
-			color: #222;
-			word-break: keep-all;
-		}
+.ia-table tr th,
+.ia-table tr td {
+	border: 1px solid #ddd;
+	color: #222;
+	word-break: keep-all;
+}
 
-		.ia-table tr:hover:not(.ia-del) td {
-			color: #fff !important;
-			background-color: #333;
-		}
+.ia-table tr:hover:not(.ia-del) td {
+	color: #fff !important;
+	background-color: #333;
+}
 
-		.ia-table td[title="1depth"],
-		.ia-table td[title="2depth"],
-		.ia-table td[title="3depth"],
-		.ia-table td[title="4depth"],
-		.ia-table td[title="ETC"] {
-			padding-left: 15px;
-			text-align: left;
-		}
+.ia-table td[title="1depth"],
+.ia-table td[title="2depth"],
+.ia-table td[title="3depth"],
+.ia-table td[title="4depth"],
+.ia-table td[title="ETC"] {
+	padding-left: 15px;
+	text-align: left;
+}
 
-		.ia-table td[title="ETC"] {
-			font-size: 12px;
-		}
+.ia-table td[title="ETC"] {
+	font-size: 12px;
+}
 
-		.ia-table .bg td {
-			background-color: #eee;
-		}
+.ia-table .bg td {
+	background-color: #eee;
+}
 
-		.ia-del td,
-		.ia-del a {
-			text-decoration: line-through;
-			text-decoration-color: red;
-			background-color: initial;
-			cursor: default;
-		}
+.ia-del td,
+.ia-del a {
+	text-decoration: line-through;
+	text-decoration-color: red;
+	background-color: initial;
+	cursor: default;
+}
 
-		@media (max-width: 767px) {
-			.ia-wrap {
-				min-width: 0;
-				padding: 10px;
-			}
+@media (max-width: 767px) {
+	.ia-wrap {
+		min-width: 0;
+		padding: 10px;
+	}
 
-			.ia-header {
-				display: flex;
-				flex-direction: column;
-			}
+	.ia-header {
+		display: flex;
+		flex-direction: column;
+	}
 
-			.ia-header .ia-value {
-				display: flex;
-				position: static;
-				flex-wrap: wrap;
-				font-size: 12px;
+	.ia-header .ia-value {
+		display: flex;
+		position: static;
+		flex-wrap: wrap;
+		font-size: 12px;
 
-				gap: 0 8px;
-			}
+		gap: 0 8px;
+	}
 
-			.ia-table {
-				position: relative;
-				z-index: 0;
-			}
+	.ia-table {
+		position: relative;
+		z-index: 0;
+	}
 
-			.ia-table table,
-			.ia-table thead,
-			.ia-table tbody,
-			.ia-table tr,
-			.ia-table td {
-				display: flex;
-			}
+	.ia-table table,
+	.ia-table thead,
+	.ia-table tbody,
+	.ia-table tr,
+	.ia-table td {
+		display: flex;
+	}
 
-			.ia-table tbody {
-				gap: 20px;
-			}
+	.ia-table tbody {
+		gap: 20px;
+	}
 
-			.ia-table tbody,
-			.ia-table tr {
-				flex: 1;
-				flex-direction: column;
-			}
+	.ia-table tbody,
+	.ia-table tr {
+		flex: 1;
+		flex-direction: column;
+	}
 
-			.ia-table td {
-				position: relative;
-				height: 40px;
-				padding: 0 0 0 50% !important;
-				line-height: 40px;
-			}
+	.ia-table td {
+		position: relative;
+		height: 40px;
+		padding: 0 0 0 50% !important;
+		line-height: 40px;
+	}
 
-			.ia-table td+td {
-				border-top: 0;
-			}
+	.ia-table td + td {
+		border-top: 0;
+	}
 
-			.ia-table td[title="No"]:before,
-			.ia-table td[title="1depth"]:before,
-			.ia-table td[title="2depth"]:before,
-			.ia-table td[title="3depth"]:before,
-			.ia-table td[title="4depth"]:before,
-			.ia-table td[title="Folder"]:before,
-			.ia-table td[title="URL"]:before,
-			.ia-table td[title="Date"]:before,
-			.ia-table td[title="Person"]:before,
-			.ia-table td[title="State"]:before,
-			.ia-table td[title="ETC"]:before {
-				content: attr(title);
-				display: flex;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 50%;
-				padding-left: 20px;
-			}
+	.ia-table td[title="No"]:before,
+	.ia-table td[title="1depth"]:before,
+	.ia-table td[title="2depth"]:before,
+	.ia-table td[title="3depth"]:before,
+	.ia-table td[title="4depth"]:before,
+	.ia-table td[title="Folder"]:before,
+	.ia-table td[title="URL"]:before,
+	.ia-table td[title="Date"]:before,
+	.ia-table td[title="Person"]:before,
+	.ia-table td[title="State"]:before,
+	.ia-table td[title="ETC"]:before {
+		content: attr(title);
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		padding-left: 20px;
+	}
 
-			.ia-table thead,
-			.ia-table colgroup,
-			.ia-table td[title="Folder"],
-			.ia-table td[title="Date"],
-			.ia-table td[title="Person"],
-			.ia-table td[title="ETC"] {
-				display: none;
-			}
+	.ia-table thead,
+	.ia-table colgroup,
+	.ia-table td[title="Folder"],
+	.ia-table td[title="Date"],
+	.ia-table td[title="Person"],
+	.ia-table td[title="ETC"] {
+		display: none;
+	}
 
-			.ia-table td[title="URL"] a {
-				color: #333;
-				font-weight: 500;
-				text-decoration: underline;
-			}
-		}
+	.ia-table td[title="URL"] a {
+		color: #333;
+		font-weight: 500;
+		text-decoration: underline;
+	}
+}
 
-		.ia-menu {
-			position: -webkit-sticky;
-			position: sticky;
-			top: 0;
-			left: 0;
-			z-index: 50;
-			border-bottom: 1px solid #ddd;
-			background-color: #fff;
-			-webkit-transform: translateZ(0);
-			transform: translateZ(0);
-		}
+.ia-menu {
+	position: -webkit-sticky;
+	position:         sticky;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff;
+	-webkit-transform: translateZ(0);
+	        transform: translateZ(0);
+}
 
-		.ia-menu li {
-			background-color: #fff;
-		}
+.ia-menu li {
+	background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	</style>
 </head>
@@ -271,6 +287,45 @@
 						TODO:
 						삭제 tr class name [ia-del] 추가
 					 -->
+					<tr id="GUIDE">
+						<td title="No"></td>
+						<td title="1depth">공통</td>
+						<td title="2depth">상단(header)</td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder">guide</td>
+						<td title="URL"><a href="../guide/header.html" target="_blank" title="새창">header</a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State">O</td>
+						<td title="ETC"></td>
+					</tr>
+					<tr>
+						<td title="No"></td>
+						<td title="1depth"></td>
+						<td title="2depth">좌측메뉴(lnb)</td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder">guide</td>
+						<td title="URL"><a href="../guide/lnb.html" target="_blank" title="새창">lnb</a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State">O</td>
+						<td title="ETC"></td>
+					</tr>
+					<tr>
+						<td title="No"></td>
+						<td title="1depth"></td>
+						<td title="2depth">컨텐츠(layout)</td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder">guide</td>
+						<td title="URL"><a href="../guide/content.html" target="_blank" title="새창">layout</a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State">O</td>
+						<td title="ETC"></td>
+					</tr>
 					<tr>
 						<td title="No"></td>
 						<td title="1depth">로그인</td>
@@ -284,7 +339,8 @@
 						<td title="State">O</td>
 						<td title="ETC"></td>
 					</tr>
-					<tr id="GUIDE">
+
+					<tr>
 						<td title="No"></td>
 						<td title="1depth">메인</td>
 						<td title="2depth"></td>
@@ -429,6 +485,19 @@
 						<td title="State">O</td>
 						<td title="ETC"></td>
 					</tr>
+					<tr>
+						<td title="No"></td>
+						<td title="1depth">시스템팝업</td>
+						<td title="2depth">리스트</td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder">guide</td>
+						<td title="URL"><a href="../guide/winPop.html" target="_blank" title="새창">winPop</a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State">O</td>
+						<td title="ETC"></td>
+					</tr>
 					<!--
 					<tr>
 						<td title="No"></td>
@@ -494,7 +563,7 @@
 		}
 
 		function updateBgColor() {
-			const firstDepthList = ["공통", "메인", "주문방식별 매장찾기", "상품찾기", "모바일 상품권", "결제하기", "알림함", "고객센터"];
+			const firstDepthList = [''];
 
 			trs.forEach((tr) => {
 				const firstDepth = tr.querySelector('td[title="1depth"]').textContent;
