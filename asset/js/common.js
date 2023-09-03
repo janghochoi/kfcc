@@ -62,6 +62,10 @@
 			$buttons.each(function () {
 				const $this = $(this);
 
+				if ($this.hasClass(activeClass)) {
+					$this.next().show();
+				}
+
 				$this.off().on('click', function () {
 					if ($buttons.next().is(':animated') > 0) return false;
 
@@ -69,6 +73,7 @@
 						$contents.not($this.next()).stop().slideUp(aniSpeed);
 						$buttons.not($this).removeClass(activeClass);
 					}
+
 					$this.toggleClass(activeClass);
 					$this.next().stop().slideToggle(aniSpeed);
 				});
@@ -415,16 +420,16 @@
 	$(document).ready(function () {
 
 	})
-	.on('click', '.heading-payment .btn-payment-status', function () {
-		const controls = $(this).closest('.controls');
-		if ($(this).hasClass('active')) {
-			$(this).removeClass('active');
-			controls.find('.table').hide();
-			$(this).find('.text').text('열기');
-		} else {
-			$(this).addClass('active');
-			controls.find('.table').show();
-			$(this).find('.text').text('접기');
-		}
-	})
+		.on('click', '.heading-payment .btn-payment-status', function () {
+			const controls = $(this).closest('.controls');
+			if ($(this).hasClass('active')) {
+				$(this).removeClass('active');
+				controls.find('.table').hide();
+				$(this).find('.text').text('열기');
+			} else {
+				$(this).addClass('active');
+				controls.find('.table').show();
+				$(this).find('.text').text('접기');
+			}
+		})
 })(jQuery, window, document);

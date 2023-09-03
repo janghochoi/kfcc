@@ -24,6 +24,7 @@
 	background-color: #fff;
 }
 .table th {
+	white-space: nowrap;
 	background-color: #ebf6fc;
 }
 .table td .desc:first-child {
