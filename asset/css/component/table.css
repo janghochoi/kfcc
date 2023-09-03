@@ -59,3 +59,16 @@
 .scroll-wrap {
 	overflow-y: scroll;
 }
+
+.table-sticky thead {
+	position: sticky;
+	top: 0;
+}
+.table-sticky thead::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background-color: #0b90d3;
+}
