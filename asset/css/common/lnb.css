@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* lnb */
 .wrap-lnb {
+	overflow-y: auto;
 	width: 320px;
 	min-height: 100vh;
 	padding-left: 20px;
