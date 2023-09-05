@@ -79,11 +79,24 @@
 .dialog-body img {
 	max-height: none;
 }
+.dialog-body .sub-page {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	background-color: #f6f6f6;
+}
+
+.dialog-body .sub-page .content {
+	flex: 1;
+	max-width: calc(100% - 200px - 60px);
+	margin: 30px 0 30px 30px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 1px 3px 10px 0 #cbcbcb;
+}
 .dialog-body .lnb {
 	width: 200px;
-}
-.dialog-body .sub-page .content {
-	max-width: calc(100% - 200px - 60px);
+	height: auto;
 }
 /* dialog-foot */
 .dialog-foot {

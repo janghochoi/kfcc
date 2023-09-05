@@ -1,58 +1,42 @@
 document.write(
 	`
 	<div class="lnb">
+    <div class="title_wrap">
+        <h2>제목</h2>
+    </div>
 		<div class="accordion lnb-depth01 is-type-one">
 			<ul>
 				<li>
-					<button type="button" class="accordion-name active"><!-- 활성화 class [active] -->
-						<span class="name">첫번째메뉴</span>
+					<button type="button" class="accordion-name"><!-- 활성화 class [active] -->
+						<span class="name">메뉴1</span>
 						<i class="icon-menu rotate"></i>
 					</button>
 					<div class="accordion-content">
 						<div class="accordion lnb-depth02 is-type-one">
 							<ul>
 								<li>
-									<button type="button" class="accordion-name type-dot active"><!-- 활성화 class [active] -->
-										<span class="name">두번째메뉴</span>
+									<button type="button" class="accordion-name type-dot"><!-- 활성화 class [active] -->
+										<span class="name">메뉴 1-1</span>
 										<i class="icon-menu rotate"></i>
 									</button>
 									<div class="accordion-content">
 										<ul class="lnb-depth03">
-											<li><a href="#" class="active">세번째메뉴</a></li><!-- 활성화 class [active] -->
-											<li><a href="#">세번째메뉴</a></li>
-											<li><a href="#">세번째메뉴</a></li>
-											<li>
-												<div class="accordion lnb-depth03 is-type-one">
-													<ul>
-														<li>
-															<button type="button" class="accordion-name type-dot active"><!-- 활성화 class [active] -->
-																<span class="name">세번째메뉴</span>
-																<i class="icon-menu rotate"></i>
-															</button>
-															<div class="accordion-content">
-																<ul class="lnb-depth04">
-																	<li><a href="#" class="active">네번째메뉴</a></li><!-- 활성화 class [active] -->
-																	<li><a href="#">네번째메뉴</a></li>
-																	<li><a href="#">네번째메뉴</a></li>
-																	<li><a href="#">네번째메뉴</a></li>
-																</ul>
-															</div>
-														</li>
-													</ul>
-												</div>
-											</li>
+											<li><a href="#">메뉴 1-1-1</a></li><!-- 활성화 class [active] -->
+											<li><a href="#">메뉴 1-1-2</a></li>
+											<li><a href="#">메뉴 1-1-3</a></li>
+											<li><a href="#">메뉴 1-1-4</a></li>
 										</ul>
 									</div>
 								</li>
 								<li>
 									<button type="button" class="accordion-name type-dot">
-										<span class="name">두번째메뉴</span>
+										<span class="name">메뉴1-2</span>
 										<i class="icon-menu rotate"></i>
 									</button>
 									<div class="accordion-content">
 										<ul class="lnb-depth03">
-											<li><a href="#">세번째메뉴</a></li>
-											<li><a href="#">세번째메뉴</a></li>
+											<li><a href="#">메뉴 1-1-1</a></li>
+											<li><a href="#">메뉴 1-1-2</a></li>
 										</ul>
 									</div>
 								</li>

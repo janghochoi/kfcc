@@ -22,503 +22,481 @@
 	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
 </head>
 <body>
-	<!-- skipNavi -->
-	<a href="#content" class="skip-content">본문으로 바로가기</a>
-	<!-- //skipNavi -->
-	<!-- wrap -->
-	<div id="wrap" class="wrap">
-		<!-- header -->
-		<script type="text/javascript" src="../../asset/js/inc/header.js"></script>
-		<!-- //header -->
-		<!-- container -->
-		<div class="container">
-			<!-- inner -->
-			<div class="inner">
-				<!-- sub-page -->
-				<div class="sub-page">
-					<script type="text/javascript" src="../../asset/js/inc/lnb.js"></script>
-					<!-- content -->
-					<div class="content">
-						<!-- heading -->
-						<div class="heading depth01 heading-payment">
-							<h2 class="title">합동안전보건 점검표</h2>
-							<div class="right">
-								<!-- TOOD : 20230819 복사 인쇄 접기 버튼 추가 -->
-								<div class="controls">
-									<div class="button-group">
-										<button type="button" class="button button-border01" onclick="copyClipboard()">
-											<span class="text">복사</span>
-										</button>
-										<button type="button" class="button button-border01" onclick="printPage()">
-											<span class="text">인쇄</span>
-										</button>
-										<button type="button" class="button button-border01 btn-payment-status active" onclick="paylistStatusCallback()">
-											<i class="fa-solid fa-chevron-up"></i>
-											<span class="text">접기</span>
-										</button>
+	<!-- container -->
+	<div class="container">
+		<!-- content -->
+		<div class="content">
+			<!-- heading -->
+			<div class="heading depth01 heading-payment">
+				<h2 class="title">합동안전보건 점검표</h2>
+				<div class="right">
+					<!-- TOOD : 20230819 복사 인쇄 접기 버튼 추가 -->
+					<div class="controls">
+						<div class="button-group">
+							<button type="button" class="button button-border01" onclick="copyClipboard()">
+								<span class="text">복사</span>
+							</button>
+							<button type="button" class="button button-border01" onclick="printPage()">
+								<span class="text">인쇄</span>
+							</button>
+							<button type="button" class="button button-border01 btn-payment-status active" onclick="paylistStatusCallback()">
+								<i class="fa-solid fa-chevron-up"></i>
+								<span class="text">접기</span>
+							</button>
+						</div>
+						<div class="table type-all-borde">
+							<table>
+								<caption>합동안전보건 점검표 결제 (담당, 팀장, 사장) 정보 표 입니다.</caption>
+								<colgroup>
+									<col style="width: 30px;">
+									<col style="width: 75px;">
+									<col style="width: 75px;">
+									<col style="width: 75px;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" rowspan="3">결<br>제</th>
+										<th scope="col">담당자</th>
+										<th scope="col">팀장</th>
+										<th scope="col">사장</th>
+									</tr>
+									<tr>
+										<td>장그래</td>
+										<td>성과장</td>
+										<td>강사장</td>
+									</tr>
+									<tr>
+										<td>
+											23-00-00<br>
+											00:00
+										</td>
+										<td>
+											23-00-00<br>
+											00:00
+										</td>
+										<td>
+											23-00-00<br>
+											00:00
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- //TOOD : 20230819 복사 인쇄 접기 버튼 추가 -->
+				</div>
+			</div>
+			<!-- //heading -->
+
+			<!-- table -->
+			<div class="table type-row">
+				<table>
+					<caption>합동안전보건 점검표 (긴급결재, 문서번호, 문서보안, 보존권한, 기안자, 기안부서, 작성일자, 기안일자, 완료일자, 폐기일자, 참조자) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">긴급결재</th>
+							<td colspan="7">
+								<label class="radio">
+									<input type="radio" name="test1">
+									<i></i>
+									<span>사용안함</span>
+								</label>
+								<label class="radio">
+									<input type="radio" name="test1">
+									<i></i>
+									<span>사용</span>
+								</label>
+								<span class="color01">(긴급 아이콘(!) 표시와 함께 결재할 문서 목록의 상단에 위치)</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">체크박스</th>
+							<td colspan="7">
+								<label class="checkbox">
+									<input type="checkbox" name="test2" checked>
+									<i></i>
+									<span>체크1</span>
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="test2">
+									<i></i>
+									<span>체크2</span>
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="test2">
+									<i></i>
+									<span>체크3</span>
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="test2" disabled>
+									<i></i>
+									<span>체크3</span>
+								</label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">날짜검색</th>
+							<td colspan="7">
+								<div class="date-wrap">
+									<div class="input">
+										<input type="text" title="시작 날짜">
 									</div>
-									<div class="table type-all-borde">
-										<table>
-											<caption>합동안전보건 점검표 결제 (담당, 팀장, 사장) 정보 표 입니다.</caption>
-											<colgroup>
-												<col style="width: 30px;">
-												<col style="width: 75px;">
-												<col style="width: 75px;">
-												<col style="width: 75px;">
-											</colgroup>
-											<tbody>
-												<tr>
-													<th scope="row" rowspan="3">결<br>제</th>
-													<th scope="col">담당자</th>
-													<th scope="col">팀장</th>
-													<th scope="col">사장</th>
-												</tr>
-												<tr>
-													<td>장그래</td>
-													<td>성과장</td>
-													<td>강사장</td>
-												</tr>
-												<tr>
-													<td>
-														23-00-00<br>
-														00:00
-													</td>
-													<td>
-														23-00-00<br>
-														00:00
-													</td>
-													<td>
-														23-00-00<br>
-														00:00
-													</td>
-												</tr>
-											</tbody>
-										</table>
+									<em>~</em>
+									<div class="input">
+										<input type="text" title="종료 날짜">
 									</div>
 								</div>
-								<!-- //TOOD : 20230819 복사 인쇄 접기 버튼 추가 -->
-							</div>
-						</div>
-						<!-- //heading -->
-
-						<!-- table -->
-						<div class="table type-row">
-							<table>
-								<caption>합동안전보건 점검표 (긴급결재, 문서번호, 문서보안, 보존권한, 기안자, 기안부서, 작성일자, 기안일자, 완료일자, 폐기일자, 참조자) 구성 표 입니다.</caption>
-								<colgroup>
-									<col style="width:100px;">
-									<col>
-									<col style="width:100px;">
-									<col>
-									<col style="width:100px;">
-									<col>
-									<col style="width:100px;">
-									<col>
-								</colgroup>
-								<tbody>
-									<tr>
-										<th scope="row">긴급결재</th>
-										<td colspan="7">
-											<label class="radio">
-												<input type="radio" name="test1">
-												<i></i>
-												<span>사용안함</span>
-											</label>
-											<label class="radio">
-												<input type="radio" name="test1">
-												<i></i>
-												<span>사용</span>
-											</label>
-											<span class="color01">(긴급 아이콘(!) 표시와 함께 결재할 문서 목록의 상단에 위치)</span>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row">체크박스</th>
-										<td colspan="7">
-											<label class="checkbox">
-												<input type="checkbox" name="test2" checked>
-												<i></i>
-												<span>체크1</span>
-											</label>
-											<label class="checkbox">
-												<input type="checkbox" name="test2">
-												<i></i>
-												<span>체크2</span>
-											</label>
-											<label class="checkbox">
-												<input type="checkbox" name="test2">
-												<i></i>
-												<span>체크3</span>
-											</label>
-											<label class="checkbox">
-												<input type="checkbox" name="test2" disabled>
-												<i></i>
-												<span>체크3</span>
-											</label>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row">날짜검색</th>
-										<td colspan="7">
-											<div class="date-wrap">
-												<div class="input">
-													<input type="text" title="시작 날짜">
-												</div>
-												<em>~</em>
-												<div class="input">
-													<input type="text" title="종료 날짜">
-												</div>
-											</div>
-											<script type="text/javascript">
-												$(function () {
-													$(".date-wrap input").datepicker({
-														dateFormat: 'yy-mm-dd',
-														showOtherMonths: true,
-														showMonthAfterYear: true,
-														changeYear: true,
-														changeMonth: true,
-														yearSuffix: ".",
-														showOn: "both",
-														buttonImage: "../../asset/images/common/img-datepicker.svg",
-														buttonImageOnly: true,
-														buttonText: "선택",
-														monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-														monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-														dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-														dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
-													});
-												});
-											</script>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row">문서번호</th>
-										<td colspan="3">안전보건관리-협동안전보건 점검표2020호</td>
-										<th scope="row">문서보안</th>
-										<td>
-											<select class="select full" title="문서보안 구분">
-												<option>선택</option>
-											</select>
-										</td>
-										<th scope="row">보존권한</th>
-										<td>
-											<select class="select full" title="보존권한 구분">
-												<option>선택</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row">기안자</th>
-										<td colspan="3">관리자 담당(내선번호 222)</td>
-										<th scope="row">기안부서</th>
-										<td colspan="3">(주)TCC아이엔에스-운영팀</td>
-									</tr>
-									<tr>
-										<th scope="row">작성일자</th>
-										<td>2022.00.00</td>
-										<th scope="row">기안일자</th>
-										<td>2022.00.00</td>
-										<th scope="row">완료일자</th>
-										<td>2022.00.00</td>
-										<th scope="row">폐기일자</th>
-										<td>2022.00.00</td>
-									</tr>
-									<tr>
-										<th scope="row">참조자</th>
-										<td colspan="7">
-											<div class="inner-button">
-												<div class="input">
-													<input type="text" class="input" title="참조자" readonly>
-												</div>
-												<button type="button" class="button-icon button-border02"><i class="fa-solid fa-users fa-color03"></i></button>
-											</div>
-										</td>
-									</tr>
-									<!-- TOOD : 20230830 첨부파일영역 추가 -->
-									<tr>
-										<th scope="row">첨부</th>
-										<td colspan="7">
-											<div class="table type-row">
-												<table>
-													<caption>첨부파일리스트</caption>
-													<colgroup>
-														<col style="width:auto">
-														<col style="width:10%">
-														<col style="width:10%">
-														<col style="width:10%">
-													</colgroup>
-													<thead>
-														<tr>
-															<th scope="col">파일명</th>
-															<th scope="col">사이즈</th>
-															<th scope="col">다운로드 수</th>
-															<th scope="col">다운로드</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>발표자료.pdf</td>
-															<td>000KB</td>
-															<td>8</td>
-															<td><button type="button"><i class="fa-solid fa-download"></i></button></td>
-														</tr>
-														<tr>
-															<td>발표자료2.pdf</td>
-															<td>000KB</td>
-															<td>0</td>
-															<td><button type="button"><i class="fa-solid fa-download"></i></button></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- //table -->
-
-						<!-- table -->
-						<div class="table">
-							<table>
-								<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
-								<colgroup>
-									<col style="width: 90px;">
-									<col style="width: 400px;">
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col">구분</th>
-										<th scope="col">점검사항</th>
-										<th scope="col">양호</th>
-										<th scope="col">보통</th>
-										<th scope="col">미흡</th>
-										<th scope="col">해당무</th>
-										<th scope="col">내용</th>
-										<th scope="col">내용</th>
-										<th scope="col">내용</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>테이블 내부 가로스크롤</td>
-										<td>필요시</td>
-										<td>scroll-wrap</td>
-										<td>필요</td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- //table -->
-
-						<!-- table -->
-						<div class="table type-row">
-							<table>
-								<caption>합동안전보건 점검표 (제목, 의견) 구성 표 입니다.</caption>
-								<colgroup>
-									<col style="width:100px;">
-									<col>
-								</colgroup>
-								<tbody>
-									<tr>
-										<th scope="row">제목</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="제목">
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row">의견</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="의견">
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- //table -->
-
-						<!-- table -->
-						<div class="table type-row">
-							<table>
-								<caption>합동안전보건 점검표 (점검표 분류, 전검 장소) 구성 표 입니다.</caption>
-								<colgroup>
-									<col style="width:100px;">
-									<col>
-									<col style="width:100px;">
-									<col>
-								</colgroup>
-								<tbody>
-									<tr>
-										<th scope="row">점검표 분류</th>
-										<td>
-											<div class="inner-button">
-												<select class="select full" title="점검표 분류 구분">
-													<option>선택</option>
-												</select>
-												<button type="button" class="button button-bg01">화면출력</button>
-											</div>
-										</td>
-										<th scope="row">점검 장소</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="점검 장소">
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<table style="border-top: 0;">
-								<caption>합동안전보건 점검표 (점검시간, 수급업체명, 현장대리인, 수급인 근로자) 구성 표 입니다.</caption>
-								<colgroup>
-									<col style="width:100px;">
-									<col>
-									<col style="width:100px;">
-									<col>
-									<col style="width:100px;">
-									<col>
-								</colgroup>
-								<tbody>
-									<tr>
-										<th scope="row">점검시간</th>
-										<td colspan="5">0000-00-00 ~ 0000-00-00</td>
-									</tr>
-									<tr>
-										<th scope="row">수급업체명1</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="수급업체명1">
-											</div>
-										</td>
-										<th scope="row">현장대리인1</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="현장대리인1">
-											</div>
-										</td>
-										<th scope="row">수급인 근로자1</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="수급인 근로자1">
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row">수급업체명2</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="수급업체명2">
-											</div>
-										</td>
-										<th scope="row">현장대리인2</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="현장대리인2">
-											</div>
-										</td>
-										<th scope="row">수급인 근로자2</th>
-										<td>
-											<div class="input">
-												<input type="text" class="input" title="수급인 근로자2">
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- //table -->
-
-						<!-- table -->
-						<div class="table">
-							<table>
-								<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
-								<colgroup>
-									<col style="width: 90px;">
-									<col>
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-									<col style="width: 90px;">
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col">구분</th>
-										<th scope="col">점검사항</th>
-										<th scope="col">양호</th>
-										<th scope="col">보통</th>
-										<th scope="col">미흡</th>
-										<th scope="col">해당무</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td colspan="6">
-											<div class="no-data">
-												상단 점검표 분류 항목을 선택하십시요.
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td></td>
-										<td class="align-left"></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- //table -->
-
-						<!-- table -->
-						<div class="table">
-							<table>
-								<caption>합동안전보건 점검표 (미흡 시 조치사항 (기타 특이사항)) 구성 표 입니다.</caption>
-								<colgroup>
-									<col>
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col" class="align-left">[미흡 시 조치사항 (기타 특이사항)]</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td class="align-left"></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- //table -->
-					</div>
-					<!-- //content -->
-				</div>
-				<!-- //sub-page -->
+								<script type="text/javascript">
+									$(function () {
+										$(".date-wrap input").datepicker({
+											dateFormat: 'yy-mm-dd',
+											showOtherMonths: true,
+											showMonthAfterYear: true,
+											changeYear: true,
+											changeMonth: true,
+											yearSuffix: ".",
+											showOn: "both",
+											buttonImage: "../../asset/images/common/img-datepicker.svg",
+											buttonImageOnly: true,
+											buttonText: "선택",
+											monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+											monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+											dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+											dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+										});
+									});
+								</script>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">문서번호</th>
+							<td colspan="3">안전보건관리-협동안전보건 점검표2020호</td>
+							<th scope="row">문서보안</th>
+							<td>
+								<select class="select full" title="문서보안 구분">
+									<option>선택</option>
+								</select>
+							</td>
+							<th scope="row">보존권한</th>
+							<td>
+								<select class="select full" title="보존권한 구분">
+									<option>선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">기안자</th>
+							<td colspan="3">관리자 담당(내선번호 222)</td>
+							<th scope="row">기안부서</th>
+							<td colspan="3">(주)TCC아이엔에스-운영팀</td>
+						</tr>
+						<tr>
+							<th scope="row">작성일자</th>
+							<td>2022.00.00</td>
+							<th scope="row">기안일자</th>
+							<td>2022.00.00</td>
+							<th scope="row">완료일자</th>
+							<td>2022.00.00</td>
+							<th scope="row">폐기일자</th>
+							<td>2022.00.00</td>
+						</tr>
+						<tr>
+							<th scope="row">참조자</th>
+							<td colspan="7">
+								<div class="inner-button">
+									<div class="input">
+										<input type="text" class="input" title="참조자" readonly>
+									</div>
+									<button type="button" class="button-icon button-border02"><i class="fa-solid fa-users fa-color03"></i></button>
+								</div>
+							</td>
+						</tr>
+						<!-- TOOD : 20230830 첨부파일영역 추가 -->
+						<tr>
+							<th scope="row">첨부</th>
+							<td colspan="7">
+								<div class="table type-row">
+									<table>
+										<caption>첨부파일리스트</caption>
+										<colgroup>
+											<col style="width:auto">
+											<col style="width:10%">
+											<col style="width:10%">
+											<col style="width:10%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">파일명</th>
+												<th scope="col">사이즈</th>
+												<th scope="col">다운로드 수</th>
+												<th scope="col">다운로드</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>발표자료.pdf</td>
+												<td>000KB</td>
+												<td>8</td>
+												<td><button type="button"><i class="fa-solid fa-download"></i></button></td>
+											</tr>
+											<tr>
+												<td>발표자료2.pdf</td>
+												<td>000KB</td>
+												<td>0</td>
+												<td><button type="button"><i class="fa-solid fa-download"></i></button></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-			<!-- //inner -->
+			<!-- //table -->
+
+			<!-- table -->
+			<div class="table">
+				<table>
+					<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width: 90px;">
+						<col style="width: 400px;">
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">점검사항</th>
+							<th scope="col">양호</th>
+							<th scope="col">보통</th>
+							<th scope="col">미흡</th>
+							<th scope="col">해당무</th>
+							<th scope="col">내용</th>
+							<th scope="col">내용</th>
+							<th scope="col">내용</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>테이블 내부 가로스크롤</td>
+							<td>필요시</td>
+							<td>scroll-wrap</td>
+							<td>필요</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+
+			<!-- table -->
+			<div class="table type-row">
+				<table>
+					<caption>합동안전보건 점검표 (제목, 의견) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width:100px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">제목</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="제목">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">의견</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="의견">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+
+			<!-- table -->
+			<div class="table type-row">
+				<table>
+					<caption>합동안전보건 점검표 (점검표 분류, 전검 장소) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">점검표 분류</th>
+							<td>
+								<div class="inner-button">
+									<select class="select full" title="점검표 분류 구분">
+										<option>선택</option>
+									</select>
+									<button type="button" class="button button-bg01">화면출력</button>
+								</div>
+							</td>
+							<th scope="row">점검 장소</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="점검 장소">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="border-top: 0;">
+					<caption>합동안전보건 점검표 (점검시간, 수급업체명, 현장대리인, 수급인 근로자) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr style="border-top:0;"><!-- TODO : 20230905 table + table 인경우 보더 없애는법 -->
+							<th scope="row">점검시간</th>
+							<td colspan="5">0000-00-00 ~ 0000-00-00</td>
+						</tr>
+						<tr>
+							<th scope="row">수급업체명1</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="수급업체명1">
+								</div>
+							</td>
+							<th scope="row">현장대리인1</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="현장대리인1">
+								</div>
+							</td>
+							<th scope="row">수급인 근로자1</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="수급인 근로자1">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">수급업체명2</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="수급업체명2">
+								</div>
+							</td>
+							<th scope="row">현장대리인2</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="현장대리인2">
+								</div>
+							</td>
+							<th scope="row">수급인 근로자2</th>
+							<td>
+								<div class="input">
+									<input type="text" class="input" title="수급인 근로자2">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+
+			<!-- table -->
+			<div class="table">
+				<table>
+					<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
+					<colgroup>
+						<col style="width: 90px;">
+						<col>
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+						<col style="width: 90px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">점검사항</th>
+							<th scope="col">양호</th>
+							<th scope="col">보통</th>
+							<th scope="col">미흡</th>
+							<th scope="col">해당무</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="6">
+								<div class="no-data">
+									상단 점검표 분류 항목을 선택하십시요.
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="align-left"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+
+			<!-- table -->
+			<div class="table">
+				<table>
+					<caption>합동안전보건 점검표 (미흡 시 조치사항 (기타 특이사항)) 구성 표 입니다.</caption>
+					<colgroup>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="align-left">[미흡 시 조치사항 (기타 특이사항)]</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="align-left"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
 		</div>
-		<!-- //container -->
-		<!-- footer -->
-		<script type="text/javascript" src="../../asset/js/inc/footer.js"></script>
-		<!-- //footer -->
+		<!-- //content -->
 	</div>
-	<!-- //wrap -->
+	<!-- //container -->
 </body>
 <script type="text/javascript">
 	function copyClipboard() {

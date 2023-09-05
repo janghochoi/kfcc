@@ -230,6 +230,11 @@ html {
 
 
 
+
+
+
+
+
 	</style>
 </head>
 <body>
@@ -297,11 +302,11 @@ html {
 					<tr id="GUIDE">
 						<td title="No"></td>
 						<td title="1depth">공통</td>
-						<td title="2depth">상단(header)</td>
+						<td title="2depth">frame샘플</td>
 						<td title="3depth"></td>
 						<td title="4depth"></td>
 						<td title="Folder">guide</td>
-						<td title="URL"><a href="../guide/header.html" target="_blank" title="새창">header</a></td>
+						<td title="URL"><a href="../guide/frame.html" target="_blank" title="새창">frame</a></td>
 						<td title="Date"></td>
 						<td title="Person"></td>
 						<td title="State">O</td>
@@ -552,7 +557,13 @@ html {
 				const urlElem = tr.querySelector('[title=URL]');
 				const url = urlElem.textContent.trim();
 				const link = urlElem.querySelector('a');
-				link.href = `${dir}${folder}/${url}.html`;
+				if(url == 'form' || url == 'search' || url == 'view' || url == 'write'){
+					link.href = `../guide/frame.html#${url}`;
+				}else{
+					link.href = `${dir}${folder}/${url}.html`;
+				}
+
+
 			});
 		}
 
