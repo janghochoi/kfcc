@@ -33,7 +33,6 @@
 			if(frameUrl[url]){
 				frame.setAttribute('src', frameUrl[url]);
 			}
-
 		})
 	</script>
 </head>
@@ -45,12 +44,12 @@
 			frame lnb 로 변경 한 후 구조변화
 			.lnb => .wrap-lnb > .lnb 로 변경
 		-->
-		<frame id="frame" name="content" src="../content/form.html" noresize>
+		<frame id="frame" name="content" src="../content/form.html" noresize />
 		<!-- TODO : 20230905
 			frame content 로 변경 한 후 구조변화
 			.wrap > .conatiner > .... > .content 구조 => .container > .content 형태로 변경
 		-->
 	</frameset>
-	<frame name="header" src="footer.html" noresize scrolling="no" frameborder="0" marginheight="0" marginwidth="0" />
+	<frame name="footer" src="footer.html" noresize scrolling="no" frameborder="0" marginheight="0" marginwidth="0" />
 </frameset>
 </html>
