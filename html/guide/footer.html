@@ -20,37 +20,12 @@
 	<!-- common js -->
 	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
 	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
-	<script>
-		const frameUrl = {
-			form: '../content/form.html',
-			view: '../content/view.html',
-			search: '../content/search.html',
-			write: '../content/write.html'
-		}
-		window.addEventListener('load',function(){
-			const url = window.location.hash.replace('#', '');
-			const frame = document.querySelector('#frame');
-			if(frameUrl[url]){
-				frame.setAttribute('src', frameUrl[url]);
-			}
-
-		})
-	</script>
 </head>
-<frameset rows="98, *, 47" marginheight="0" marginwidth="0" border="0">
-	<frame name="header" src="header.html" noresize scrolling="no" frameborder="0" marginheight="0" marginwidth="0" />
-	<frameset cols="320, *" scrolling="yes">
-		<frame name="lnb" src="lnb.html" noresize scrolling="no" />
-		<!-- TODO : 20230905
-			frame lnb 로 변경 한 후 구조변화
-			.lnb => .wrap-lnb > .lnb 로 변경
-		-->
-		<frame id="frame" name="content" src="../content/form.html" noresize>
-		<!-- TODO : 20230905
-			frame content 로 변경 한 후 구조변화
-			.wrap > .conatiner > .... > .content 구조 => .container > .content 형태로 변경
-		-->
-	</frameset>
-	<frame name="header" src="footer.html" noresize scrolling="no" frameborder="0" marginheight="0" marginwidth="0" />
-</frameset>
+<body>
+	<div class="footer">
+		<div class="inner">
+			<p>COPYRIGHT 2023&nbsp;&copy;MG새마을금고.&nbsp; ALL RIGHTS RESERVED.</p>
+		</div>
+	</div>
+</body>
 </html>
