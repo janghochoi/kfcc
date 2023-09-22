@@ -31,24 +31,21 @@
 	margin: 0 auto;
 	padding: 0 20px;
 }
-/* container */
+
 .container {
 	min-height: calc(100vh - 160px);
 	background-color: #f6f6f6;
 }
-
-.sub-page {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 0;
+/* container */
+.container:not(.main-page) {
+	padding: 30px 20px 30px 30px;
 	background-color: #f6f6f6;
 }
 
 /* sub-page content */
-.sub-page .content {
+.container:not(.main-page) .content {
 	flex: 1;
-	max-width: calc(100% - 300px - 30px);
-	margin: 30px 0 30px 30px;
+	max-width: 100%;
 	padding: 20px;
 	background-color: #fff;
 	box-shadow: 1px 3px 10px 0 #cbcbcb;
@@ -192,11 +189,30 @@
 /* col-group */
 .col-group {
 	display: flex;
+
 	gap: 30px;
+}
+.col-group .heading.depth02 {
+	min-height: 34px;
 }
 .col.center {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	gap: 10px;
+}
+
+.col.center .button {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #eee;
+	background: url(../../images/common/icon-switch-arrow.png) no-repeat center;
+}
+
+.col.center .button-left {
+	transform: rotate(-180deg);
 }
 
 /* window-pop */

@@ -1,6 +1,9 @@
 document.write(
 	`
 	<div class="lnb">
+    <div class="title_wrap">
+        <h2>제목</h2>
+    </div>
 		<div class="accordion lnb-depth01 is-type-one">
 			<ul>
 				<li>

@@ -20,33 +20,36 @@
 	<!-- common js -->
 	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
 	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
+	<script>
+		const frameUrl = {
+			form: '../content/form.html',
+			view: '../content/view.html',
+			search: '../content/search.html',
+			write: '../content/write.html'
+		}
+		window.addEventListener('load',function(){
+			const url = window.location.hash.replace('#', '');
+			const frame = document.querySelector('#frame');
+			if(frameUrl[url]){
+				frame.setAttribute('src', frameUrl[url]);
+			}
+		})
+	</script>
 </head>
-<body>
-	<!-- skipNavi -->
-	<a href="#content" class="skip-content">본문으로 바로가기</a>
-	<!-- //skipNavi -->
-	<!-- wrap -->
-	<div id="wrap" class="wrap">
-		<!-- header -->
-		<script type="text/javascript" src="../../asset/js/inc/header.js"></script>
-		<!-- //header -->
-		<!-- container -->
-		<div class="container">
-			<!-- inner -->
-			<div class="inner">
-				<!-- content -->
-				<div id="content" class="content">
-					content
-				</div>
-				<!-- //content -->
-			</div>
-			<!-- //inner -->
-		</div>
-		<!-- //container -->
-		<!-- footer -->
-		<script type="text/javascript" src="../../asset/js/inc/footer.js"></script>
-		<!-- //footer -->
-	</div>
-	<!-- //wrap -->
-</body>
+<frameset rows="98, *, 47" marginheight="0" marginwidth="0" border="0">
+	<frame name="header" src="header.html" noresize scrolling="no" frameborder="0" marginheight="0" marginwidth="0" />
+	<frameset cols="320, *" scrolling="yes">
+		<frame name="lnb" src="lnb.html" noresize scrolling="no" />
+		<!-- TODO : 20230905
+			frame lnb 로 변경 한 후 구조변화
+			.lnb => .wrap-lnb > .lnb 로 변경
+		-->
+		<frame id="frame" name="content" src="../content/form.html" noresize />
+		<!-- TODO : 20230905
+			frame content 로 변경 한 후 구조변화
+			.wrap > .conatiner > .... > .content 구조 => .container > .content 형태로 변경
+		-->
+	</frameset>
+	<frame name="footer" src="footer.html" noresize scrolling="no" frameborder="0" marginheight="0" marginwidth="0" />
+</frameset>
 </html>
