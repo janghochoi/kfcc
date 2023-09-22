@@ -75,16 +75,12 @@
 	margin-top: 0;
 }
 .button-wrap {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
 	margin-top: 20px;
-
-	gap: 10px;
+	text-align: center;
 }
 .button-wrap .button {
 	min-width: 85px;
+	margin: 0 5px;
 }
 .button-wrap.align-left {
 	justify-content: flex-start;
@@ -213,6 +209,7 @@
 .button-icon.button-border02 {
 	align-items: center;
 	justify-content: center;
-	width: 36px;
-	height: 36px;
+	width: 34px;
+	height: 34px;
+	margin-left: 10px;
 }

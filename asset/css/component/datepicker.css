@@ -20,7 +20,7 @@
 	margin: 0 25px;
 	color: #000;
 	text-align: center;
-	line-height: auto;
+	white-space: nowrap;
 }
 .ui-datepicker .ui-datepicker-title select {
 	-webkit-appearance: none;
@@ -32,6 +32,9 @@
 	border: 0;
 	color: #000;
 	font-weight: 700;
+}
+.ui-datepicker .ui-datepicker-title select::-ms-expand {
+	display: none;
 }
 .ui-datepicker .ui-datepicker-prev span,
 .ui-datepicker .ui-datepicker-next span {

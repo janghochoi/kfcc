@@ -117,26 +117,29 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 /* inner button */
 .inner-button {
-	display: flex;
-	align-items: center;
+	/*display: flex;*/
+	/*align-items: center;*/
 
-	gap: 5px;
+	/*gap: 5px;*/
+}
+.inner-button::after {
+	display: table;
+	clear: both;
 }
 .inner-button .input,
 .inner-button .inner-text {
-	flex: 1;
+	float: left;
 }
 .inner-button .button-icon {
+	float: left;
 	border: 1px solid #ddd;
 }
 /* radio, checkbox */
 .radio,
 .checkbox {
-	display: inline-flex;
-	align-items: center;
-	flex-wrap: wrap;
-
-	gap: 4px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 2px;
 }
 .radio input[type=radio],
 .checkbox input[type=checkbox] {
@@ -156,7 +159,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .radio span,
 .checkbox span {
-	flex: 1;
+	vertical-align: middle;
 	font-size: 13px;
 }
 .radio i,
@@ -261,11 +264,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	background: url("../../images/common/icon-select.png") no-repeat right 7px center #fff;
 	transition: border-color .2s;
 }
+.select::-ms-expand {
+	display: none;
+}
 .select:disabled {
 	background-color: #eee;
-}
-.select.full {
-	width: 100%;
 }
 /* textarea */
 .textarea {
@@ -348,18 +351,20 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	flex-direction: column;
 }
 /* date-wrap */
-.date-wrap {
-	display: flex;
-	align-items: center;
-
-	gap: 5px;
+.date-wrap > em {
+	margin: 0 3px;
 }
 .date-wrap .input {
-	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	width: 200px;
 }
 .date-wrap input {
-	padding-right: 30px;
+	padding-right: 60px;
 	cursor: pointer;
+}
+.date-wrap .input .button-clean {
+	right: 30px;
 }
 .date-wrap img {
 	position: absolute;
