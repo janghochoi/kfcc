@@ -22,15 +22,10 @@
 	margin-top: 0;
 }
 .box .title {
-	display: flex;
-	align-items: center;
 	margin: 20px 0 6px;
 	font-weight: 700;
-
-	gap: 6px;
 }
 .box .sub-title {
-	display: flex;
 	align-items: center;
 	margin: 8px 0 0;
 	font-weight: 500;
@@ -45,11 +40,7 @@
 	margin-bottom: 0;
 }
 .box .terms-list {
-	display: flex;
-	flex-direction: column;
 	margin: 6px 0;
-
-	gap: 4px;
 }
 .box .terms-list .terms-list {
 	margin: 6px 0;
@@ -57,8 +48,6 @@
 }
 .box .bullet {
 	margin: 4px 0;
-
-	gap: 4px 0;
 }
 .box .bullet .bullet {
 	margin: 0;

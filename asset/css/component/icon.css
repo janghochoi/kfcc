@@ -8,14 +8,14 @@
 	background-position: center;
 }
 /* rotate */
-[class*=icon-].rotate {
+/*[class*=icon-].rotate {
 	transition: transform .2s;
 	transform: rotate(0);
 	transform-origin: center;
 }
 .active [class*=icon-].rotate {
 	transform: rotate(-180deg);
-}
+}*/
 /* icon- */
 .icon-modify {
 	width: 17px;

@@ -12,9 +12,6 @@
 .table table {
 	table-layout: fixed;
 }
-.table table thead th {
-	border-top: 2px solid #0b90d3;
-}
 .table table thead + tbody > tr:first-child {
 	border-top: 0 none;
 }
@@ -69,12 +66,4 @@
 .table-sticky thead {
 	position: sticky;
 	top: 0;
-}
-.table-sticky thead::before {
-	content: "";
-	position: absolute;
-	right: 0;
-	left: 0;
-	height: 2px;
-	background-color: #0b90d3;
 }

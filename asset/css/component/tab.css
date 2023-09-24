@@ -19,25 +19,21 @@
 	right: 21px;
 }
 .tab-list ul {
-	display: inline-flex;
 	position: relative;
 }
 .tab-list li {
+	display: inline-block;
 	white-space: nowrap;
 }
 .tab-list a {
-	display: flex;
+	display: block;
 	position: relative;
-	align-items: center;
-	justify-content: center;
 	height: 40px;
 	padding: 0 12px;
 	font-size: 14px;
 	font-weight: 700;
 	text-align: center;
 	line-height: 42px;
-
-	gap: 22px;
 }
 .tab-list .active a {
 	z-index: 1;
@@ -65,18 +61,18 @@
 .tab-list.type-box {
 	padding: 0;
 	border: 1px solid #ddd;
-	border-width: 1px 1px 0 0;
+	border-width: 1px 0 0 1px;
 }
-.tab-list.type-box ul {
-	display: flex;
-	flex-wrap: wrap;
+.tab-list.type-box::after {
+	content: "";
+	display: table;
+	clear: both;
 }
-
 .tab-list.type-box li {
-	flex: 1;
+	float: left;
 	min-width: 16.6666%;
 	border: 1px solid #ddd;
-	border-width: 0 0 1px 1px;
+	border-width: 0 1px 1px 0;
 }
 .tab-list.type-box li a {
 	padding: 0 5px;

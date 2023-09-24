@@ -5,30 +5,31 @@
 	background-color: #f8fcfe;
 }
 .main-page .content {
-	display: flex;
-	justify-content: space-between;
+	position: relative;
 	max-width: 1600px;
 	margin: auto;
-	padding: 17px 0 0;
-	gap: 15px;
+	padding: 17px 245px 0;
 }
-/* main-group */
+.main-page .content::after {
+	content: "";
+	display: table;
+	clear: both;
+}
 .main-group.left,
 .main-group.right {
-	flex-basis: 230px;
-	flex-shrink: 0;
+	position: absolute;
+	top: 17px;
+}
+.main-group.left {
+	left: 0;
+}
+.main-group.right {
+	right: 0;
 }
 .main-group.center {
-	flex: 1;
+	/*float: left;*/
 }
-.main-inner-group.full-wide {
-	display: flex;
-	justify-content: space-between;
-	gap: 20px;
-}
-.main-inner-group.full-wide > * {
-	flex: 1;
-}
+/* main-group */
 .main-box {
 	margin-bottom: 15px;
 	border: 1px solid #e5e5e5;
@@ -84,19 +85,19 @@
 	font-size: 20px;
 	font-weight: 700;
 }
-.user-box .work-list {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-}
-.user-box .work-list .item {
-	display: flex;
-	justify-content: space-between;
-}
 .user-box [class*=fa-] {
 	margin-right: 5px;
 }
+.user-box .work-list li ~ li {
+	margin-top: 5px;
+}
+.user-box .work-list .item::after {
+	content: "";
+	display: table;
+	clear: both;
+}
 .user-box .work-list .badge {
+	float: right;
 	font-weight: 700;
 }
 .user-box .name span {
@@ -106,20 +107,20 @@
 }
 /* main-schedule (통합일정) */
 .schedule-list {
-	display: flex;
-	flex-direction: column;
 	padding: 10px 0;
 	background-color: #f4f4f4;
-	gap: 10px;
 }
 .schedule-list li {
 	position: relative;
 	padding: 0 10px 0 20px;
 }
+.schedule-list li ~ li {
+	margin-top: 10px;
+}
 .schedule-list li a {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	display: block;
+	position: relative;
+	padding-right: 20px;
 }
 .schedule-list li:before {
 	content: "";
@@ -131,24 +132,34 @@
 	border-radius: 50%;
 	background-color: #0c8fd2;
 }
+.schedule-list a > span {
+	display: inline-block;
+	vertical-align: middle;
+}
 .schedule-list .name {
 	display: block;
 	margin-bottom: -3px;
 }
 .schedule-list .badge {
+	margin-left: 20px;
 	font-size: 12px;
 }
 .schedule-list .date {
 	display: inline-block;
+	vertical-align: middle;
 	color: #898989;
 	font-size: 12px;
 }
+.schedule-list .fa-angle-right {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
 /* main-link */
 .main-link {
-	display: flex;
-	align-items: center;
+	display: block;
 	padding: 5px 10px 6px;
-	gap: 15px;
 }
 /* main-banner */
 .main-banner {
@@ -161,8 +172,11 @@
 }
 /* icon */
 [class*=icon-main] {
+	display: inline-block;
+	vertical-align: middle;
 	width: 41px;
 	height: 41px;
+	margin-right: 15px;
 	background-image: url("../../images/main/icon-m01.png");
 	background-repeat: no-repeat;
 	background-position: 0 0;
@@ -192,7 +206,7 @@
 .main-group .table-notice table {
 	table-layout: fixed;
 }
-.table-notice table {
+.table-notice {
 	border: 0;
 }
 .table-notice thead {

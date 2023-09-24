@@ -11,23 +11,22 @@
 	margin: auto;
 }
 .header .header-top .inner {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	padding-top: 12px;
 	padding-bottom: 12px;
 	background-color: #fff;
 }
+.header .header-top .inner h1 {
+	float: left;
+}
 .header .header-top .right {
-	display: flex;
-
-	gap: 10px;
+	float: right;
 }
 .header .header-top .user-info {
-	display: flex;
-	align-items: center;
+	display: inline-block;
 }
 .header .header-top li {
+	display: inline-block;
+	vertical-align: middle;
 	color: #000;
 	font-size: 14px;
 }
@@ -36,13 +35,11 @@
 	background-color: #000;
 }
 .header .search {
-	display: flex;
-	justify-content: space-around;
+	display: inline-block;
+	margin-left: 10px;
 	padding: 2px 10px;
 	border-radius: 10px;
 	background-color: #efefef;
-
-	gap: 5px;
 }
 .header .search input {
 	margin: 0;
@@ -63,11 +60,12 @@
 	background-color: #0c8fd2;
 }
 .nav .inner > ul {
-	display: flex;
-	justify-content: space-around;
+	text-align: center;
 }
-.nav li {
+.nav .inner > ul > li {
 	position: relative;
+	display: inline-block;
+	margin: 0 35px;
 }
 .nav .inner > ul > li.active,
 .nav .inner > ul > li:hover {

@@ -7,32 +7,40 @@
 	border-top: 1px solid #ddd;
 }
 .accordion .accordion-name {
+	position: relative;
 	height: 50px;
-	padding: 0 21px;
+	padding: 0 50px 0 20px;
+	text-align: left;
+	line-height: 50px;
 }
 .accordion .accordion-name .name {
 	font-weight: 700;
 }
 .accordion .icon-menu {
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: center;
+	position: absolute;
+	top: 50%;
+	right: 18px;
 	width: 15px;
 	height: 15px;
+	transform: translateY(-50%);
+}
+.accordion .icon-menu::before,
+.accordion .icon-menu::after {
+	content: "";
+	position: absolute;
+	background-color: #ddd;
 }
 .accordion .icon-menu::before {
-	content: "";
-	flex: 1;
+	top: 7px;
+	width: 15px;
 	height: 1px;
 	background-color: #ddd;
 }
 .accordion .icon-menu::after {
-	content: "";
 	position: absolute;
+	left: 7px;
 	width: 1px;
-	height: 100%;
-	background-color: #ddd;
+	height: 15px;
 	transition: .2s;
 	opacity: 1;
 }
@@ -50,54 +58,26 @@
 	background-color: #ddd;
 }
 .accordion-name {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex: 1;
-	flex-wrap: wrap;
 	width: 100%;
 }
-.accordion-name .name {
-	display: flex;
-	align-items: center;
-}
-.accordion-name .right {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-
-	gap: 0 16px;
-}
 .accordion-name .list-item {
-	display: flex;
-	flex-wrap: wrap;
 	min-width: 100%;
-
-	gap: 0 8px;
 }
 /* type-faq */
 .accordion.type-faq {
 	border-bottom: 1px solid #ddd;
 }
 .accordion.type-faq .accordion-name {
-	align-items: flex-start;
 	height: auto;
 	padding: 21px;
 
 	gap: 5px;
-}
-.accordion.type-faq .icon-title {
-	display: flex;
-	flex: 1;
-
-	gap: 8px;
 }
 .accordion.type-faq .name {
 	font-weight: 400;
 	text-align: left;
 }
 .accordion.type-faq .ask {
-	flex-shrink: 0;
 	width: 24px;
 	height: 24px;
 	border-radius: 50%;
@@ -125,11 +105,10 @@
 	background-color: #fff;
 }
 .accordion.type-tree .check-list li {
-	display: flex;
-	align-items: center;
 	height: 30px;
 	padding-left: 45px;
 	font-size: 13px;
+	line-height: 30px;
 }
 .accordion.tree-depth01 .accordion-name {
 	position: relative;
@@ -159,6 +138,7 @@
 	height: 35px;
 	padding-left: 30px;
 	font-size: 13px;
+	line-height: 35px;
 	background-color: #fff;
 }
 .accordion.tree-depth02 .accordion-name::before {

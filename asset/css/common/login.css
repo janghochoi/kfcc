@@ -1,6 +1,5 @@
 @charset "utf-8";
 .login-wrap {
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-width: 1300px;
@@ -17,14 +16,7 @@
 	margin-bottom: 95px;
 	text-align: center;
 }
-.login-form {
-	display: flex;
-	flex-direction: column;
-
-	gap: 34px;
-}
 .login-form .item {
-	display: flex;
 	align-items: center;
 	padding-left: 10px;
 	border-bottom: 1px solid #fff;
@@ -32,13 +24,11 @@
 	gap: 28px;
 }
 .login-form .icon {
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 37px;
 }
 .login-form .input {
-	flex: 1;
 	height: 37px;
 	border: 0;
 	color: #fff;

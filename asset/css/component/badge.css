@@ -6,23 +6,17 @@
 	margin-bottom: 0;
 }
 .badge-wrap {
-	display: flex;
-	flex-wrap: wrap;
 	margin: 12px 0;
-
-	gap: 4px;
 }
 .badge {
-	display: inline-flex;
 	overflow: hidden;
 	vertical-align: middle;
-	align-items: center;
-	justify-content: center;
 	min-width: 21px;
 	height: 21px;
+	margin: 0 2px;
 	padding: 0 5px;
 	border-radius: 10px;
-	line-height: normal;
+	line-height: 21px;
 
 	gap: 3px;
 }
@@ -30,11 +24,13 @@
 .badge-size-small {
 	height: 20px;
 	padding: 0 6px;
+	line-height: 20px;
 }
 .badge-size-lage {
 	height: 32px;
 	padding: 0 10px;
 	font-weight: 500;
+	line-height: 32px;
 }
 /* badge-bg */
 [class*=badge-bg] {

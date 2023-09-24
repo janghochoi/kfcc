@@ -1,10 +1,12 @@
 @charset "utf-8";
 /* board-head */
 .board-head {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	margin-bottom: 10px;
+}
+.board-head::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 .board-head .total {
 	color: #333;
@@ -14,19 +16,9 @@
 	font-weight: 700;
 }
 .board-head .right {
-	display: flex;
-	align-items: center;
-	margin-left: auto;
-
-	gap: 5px;
-}
-.board-head.type-column {
-	align-items: flex-start;
-	flex-direction: column;
+	float: right;
 }
 .board-head .item {
-	display: flex;
-	align-items: center;
 	height: 36px;
 }
 /* board-view */
@@ -39,9 +31,6 @@
 	font-weight: 700;
 }
 .board-view .utility {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	margin-top: 20px;
 }
 .board-view .view-body {

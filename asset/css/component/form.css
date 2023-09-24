@@ -71,20 +71,24 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 /* input search */
 .input-search {
-	display: inline-flex;
+	position: relative;
+	padding-right: 34px;
 	border: 1px solid #ddd;
 }
 .input-search .input {
 	border: 0;
 }
 .input-search .button {
+	position: absolute;
+	top: 0;
+	right: 0;
 	width: 34px;
+	height: 32px;
 	padding: 0;
 	font-size: 16px;
 }
 /* input date */
 .input-date {
-	display: flex;
 	border: 1px solid #ddd;
 }
 .input-date input {
@@ -94,35 +98,22 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	border: 0;
 }
 .date-group {
-	display: flex;
 	align-items: center;
 
 	gap: 8px;
 }
-.date-group .input-date {
-	flex: 1;
-}
 /* inner text */
 .inner-text {
-	display: inline-flex;
 	overflow: hidden;
 	position: relative;
-	align-items: center;
 	width: 100%;
-
-	gap: 4px;
 }
 .inner-text input {
 	text-align: right;
 }
 /* inner button */
-.inner-button {
-	/*display: flex;*/
-	/*align-items: center;*/
-
-	/*gap: 5px;*/
-}
 .inner-button::after {
+	content: "";
 	display: table;
 	clear: both;
 }
@@ -132,6 +123,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .inner-button .button-icon {
 	float: left;
+	margin-left: 10px;
 	border: 1px solid #ddd;
 }
 /* radio, checkbox */
@@ -206,9 +198,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 /* switch */
 .switch {
-	display: inline-flex;
 	position: relative;
-	align-items: center;
 }
 .switch input {
 	overflow: hidden;
@@ -289,7 +279,6 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	color: #f00;
 }
 .byte-wrap {
-	display: flex;
 	align-items: center;
 	margin-top: 10px;
 }
@@ -318,16 +307,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	margin-top: 0;
 }
 .form-error {
-	display: flex;
 	margin-top: 14px;
 	color: red;
 }
 .form-error [class*=icon-] {
 	margin-right: 6px;
 	transform: translateY(3px);
-}
-.form-error .text {
-	flex: 1;
 }
 /* form-list */
 .form-list:first-child {
@@ -337,18 +322,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	margin-bottom: 0;
 }
 .form-list {
-	display: flex;
-	flex-wrap: wrap;
 	margin: 10px 0;
-
-	gap: 5px 10px;
+}
+.form-list li ~ li {
+	margin-top: 5px;
 }
 .form-list .radio,
 .form-list .checkbox {
 	margin: 0;
-}
-.form-list.type-column {
-	flex-direction: column;
 }
 /* date-wrap */
 .date-wrap > em {
@@ -357,7 +338,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .date-wrap .input {
 	display: inline-block;
 	vertical-align: middle;
-	width: 200px;
+	width: 160px;
 }
 .date-wrap input {
 	padding-right: 60px;

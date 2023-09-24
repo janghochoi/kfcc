@@ -22,14 +22,17 @@
 }
 /* wrap */
 .wrap {
-	display: flex;
 	position: relative;
-	flex-direction: column;
 	min-width: 1300px;
 }
 .inner {
 	margin: 0 auto;
 	padding: 0 20px;
+}
+.inner::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .container {
@@ -44,7 +47,6 @@
 
 /* sub-page content */
 .container:not(.main-page) .content {
-	flex: 1;
 	max-width: 100%;
 	padding: 20px;
 	background-color: #fff;
@@ -55,11 +57,6 @@
 	padding: 15px 0;
 	background-color: #ddd;
 }
-.footer .inner {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
 .footer p {
 	color: #000;
 	font-size: 14px;
@@ -68,9 +65,6 @@
 	position: relative;
 }
 .footer-link .button-link {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	width: 190px;
 	padding: 0 16px 0 21px;
 	border-radius: 25px;
@@ -96,29 +90,78 @@
 	font-size: 14px;
 }
 /* row */
-.row {
-	display: flex;
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 .row.type-between {
 	justify-content: space-between;
 }
-
+.row .left {
+	float: left;
+}
+.row .right {
+	float: right;
+}
+/* switch-box */
+.switch-box .switch-left {
+	width: 265px;
+}
+.switch-box .button-group {
+	position: absolute;
+	top: 50px;
+	left: 260px;
+}
+.switch-box .button-group .button {
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 10px 0;
+	border: 1px solid #eee;
+	background: url(../../images/common/icon-switch-arrow.png) no-repeat center;
+}
+.switch-box .button-group .button-left {
+	transform: rotate(-180deg);
+}
+.switch-table th,
+.switch-table td {
+	vertical-align: middle;
+	height: 50px;
+	padding: 8px 4px;
+	border-bottom: 1px solid #eee;
+	font-size: 13px;
+	text-align: center;
+}
+/* search-group-box */
+.search-group-box {
+	padding: 20px;
+	background-color: #ececec;
+}
+.search-group-box table {
+	table-layout: fixed;
+}
+.search-group-box th,
+.search-group-box td {
+	padding: 3px;
+	font-size: 14px;
+}
 /* switch-box */
 .switch-box {
-	display: flex;
-
-	gap: 14px;
+	position: relative;
+}
+.switch-box::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 .switch-box .switch-left {
+	float: left;
 	width: 250px;
 }
 .switch-box .button-group {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-
-	gap: 10px;
+	position: absolute;
+	top: 50%;
 }
 .switch-box .button-group .button {
 	width: 40px;
@@ -130,7 +173,8 @@
 	transform: rotate(-180deg);
 }
 .switch-box .switch-right {
-	flex: 1;
+	float: right;
+	width: 536px;
 }
 .switch-table th,
 .switch-table td {
@@ -188,29 +232,32 @@
 
 /* col-group */
 .col-group {
-	display: flex;
-
-	gap: 30px;
+	position: relative;
+}
+.col-group::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 .col-group .heading.depth02 {
 	min-height: 34px;
+	line-height: 34px;
 }
 .col.center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	position: absolute;
 
-	gap: 10px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
-
 .col.center .button {
+	display: block;
+	margin: 10px 0;
 	width: 40px;
 	height: 40px;
 	border: 1px solid #eee;
 	background: url(../../images/common/icon-switch-arrow.png) no-repeat center;
 }
-
 .col.center .button-left {
 	transform: rotate(-180deg);
 }

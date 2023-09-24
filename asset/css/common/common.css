@@ -179,15 +179,6 @@ button.underline {
 	overflow-y: auto;
 	margin-top: 15px;
 }
-/* flex */
-.flex {
-	display: flex;
-
-	gap: 12px;
-}
-.flex-item {
-	flex: 1;
-}
 /* has-line */
 .has-line:not(.group):first-child {
 	border-top: 0;
@@ -200,8 +191,6 @@ button.underline {
 	margin-bottom: 0;
 }
 .bullet {
-	display: flex;
-	flex-direction: column;
 	margin: 8px 0;
 }
 .bullet li {

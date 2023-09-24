@@ -134,7 +134,7 @@
   scroll-snap-align: none;
 }
 .swiper-css-mode.swiper-centered > .swiper-wrapper::before {
-  content: '';
+  content: "";
   flex-shrink: 0;
   order: 9999;
 }
@@ -232,7 +232,7 @@
   transform: translateZ(0);
 }
 .swiper-virtual.swiper-css-mode .swiper-wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -663,7 +663,7 @@ button.swiper-pagination-bullet {
   z-index: 0;
 }
 .swiper-cube .swiper-cube-shadow:before {
-  content: '';
+  content: "";
   background: #000;
   position: absolute;
   left: 0;
