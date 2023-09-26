@@ -10,7 +10,7 @@
 	font-size: 13px;
 	text-align: center;
 	white-space: nowrap;
-	line-height: 34px;
+	line-height: 32px;
 	background-color: #fff;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -47,13 +47,13 @@
 .button-size-lage {
 	height: 40px;
 	font-weight: 400;
-	line-height: 40px;
+	line-height: 38px;
 }
 .button-size-xsmall {
 	min-width: 56px;
 	height: 32px;
 	font-weight: 400;
-	line-height: 32px;
+	line-height: 30px;
 }
 .button-size-xsmall.underline {
 	min-width: auto;
@@ -63,7 +63,7 @@
 	height: 20px;
 	padding: 0 7px;
 	font-weight: 400;
-	line-height: 20px;
+	line-height: 18px;
 }
 .button-size-full {
 	min-width: 100%;

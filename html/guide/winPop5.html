@@ -22,9 +22,9 @@
 	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
 	<script>
 		function openWindowPop(url, name) {
-				var options = 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no';
-				window.open(url, name, options);
-			}
+			var options = 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no';
+			window.open(url, name, options);
+		}
 	</script>
 </head>
 <body>
@@ -173,12 +173,13 @@
 										</tbody>
 									</table>
 								</div>
-								<div class="inner-button" style="margin-top: 10px;">
-									<div class="input">
-										<input type="file" id="addFile" title="문서첨부">
-									</div>
-									<label for="addFile" class="button button-bg01">문서첨부</label>
+								<!-- TODO: 20230924 IE11로 인해 file 마크업 수정 -->
+								<div class="filebox preview-image">
+									<input class="upload-name" value="파일선택" disabled="disabled" style="width: 300px;">
+									<label for="input_file" class="button button-bg01">문서첨부</label>
+									<input type="file" id="input_file" class="upload-hidden">
 								</div>
+								<!-- //TODO: 20230924 IE11로 인해 file 마크업 수정 -->
 							</td>
 						</tr>
 						<tr>

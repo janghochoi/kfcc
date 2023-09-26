@@ -531,20 +531,21 @@
 														</tbody>
 													</table>
 												</div>
-												<div class="inner-button" style="margin-top: 10px;">
-													<div class="input">
-														<input type="file" id="addFile" title="문서첨부">
-													</div>
-													<label for="addFile" class="button button-bg01">문서첨부</label>
+												<!-- TODO: 20230924 IE11로 인해 file 마크업 수정 -->
+												<div class="filebox preview-image">
+													<input class="upload-name" value="파일선택" disabled="disabled" style="width: 300px;">
+													<label for="input_file" class="button button-bg01">문서첨부</label>
+													<input type="file" id="input_file" class="upload-hidden">
 												</div>
+												<!-- //TODO: 20230924 IE11로 인해 file 마크업 수정 -->
 											</td>
 										</tr>
 										<tr>
 											<th scope="row">스크롤</th>
 											<!-- TODO: 20230830 스크롤 시킬 영역 추가
-																			<div class="table table-sticky" style="height: 300px;"> height는 상황에 맞게 조절 하시면 됩니다.
-																			scroll-wrap 안에서 table을 호출 할경우 고정 된 높이를 초과할 경우 자동적으로 스크롤 효과가 발생합니다.
-																		-->
+												<div class="table table-sticky" style="height: 300px;"> height는 상황에 맞게 조절 하시면 됩니다.
+												scroll-wrap 안에서 table을 호출 할경우 고정 된 높이를 초과할 경우 자동적으로 스크롤 효과가 발생합니다.
+											-->
 											<td colspan="3">
 												<div class="table table-sticky" style="height: 300px;">
 													<table>

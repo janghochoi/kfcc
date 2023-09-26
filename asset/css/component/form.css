@@ -27,7 +27,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 }
 .input input:read-only,
 .input input:disabled {
-	padding-right: 14px;
+	/*padding-right: 14px;*/
 }
 .input.active input,
 .input input:focus {
@@ -102,14 +102,70 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 	gap: 8px;
 }
+/* input file */
+.filebox {
+	margin: 10px 0;
+}
+.filebox input[type="file"] {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0,0,0,0);
+}
+/* named upload */
+.filebox .upload-name {
+	display: inline-block;
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+	   -moz-appearance: none;
+	        appearance: none;
+	vertical-align: middle;
+	height: 34px;
+	padding: 0 10px;
+	border: 1px solid #ddd;
+	line-height: 32px;
+	background-color: rgba(239, 239, 239, .3);
+}
+.filebox .button {
+	margin-left: 8px;
+}
+/* imaged preview */
+.filebox .upload-display {
+	margin-top: 5px;
+}
+.filebox .upload-thumb-wrap {
+	display: inline-block;
+	vertical-align: middle;
+	width: 54px;
+	padding: 2px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.filebox .upload-display img {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
 /* inner text */
 .inner-text {
 	overflow: hidden;
 	position: relative;
-	width: 100%;
+}
+.inner-text .input {
+	display: inline-block;
+	vertical-align: middle;
+	width: 170px;
 }
 .inner-text input {
 	text-align: right;
+}
+.inner-text .text {
+	margin-left: 5px;
 }
 /* inner button */
 .inner-button::after {
@@ -120,8 +176,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .inner-button .input,
 .inner-button .inner-text {
 	float: left;
+	width: 155px;
 }
-.inner-button .button-icon {
+.inner-button [class*=button]:not(.button-clean) {
 	float: left;
 	margin-left: 10px;
 	border: 1px solid #ddd;
@@ -243,6 +300,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	-webkit-appearance: none;
 	   -moz-appearance: none;
 	        appearance: none;
+	width: 155px;
 	max-width: 100%;
 	height: 34px;
 	padding: 0 35px 0 10px;

@@ -222,6 +222,55 @@
 	};
 	_inputNumber();
 
+	function _inputFile() {
+		var fileTarget = $('.filebox .upload-hidden');
+
+		fileTarget.on('change', function () {
+			if (window.FileReader) {
+				// 파일명 추출
+				var filename = $(this)[0].files[0].name;
+			}
+
+			else {
+				// Old IE 파일명 추출
+				var filename = $(this).val().split('/').pop().split('\\').pop();
+			};
+
+			$(this).siblings('.upload-name').val(filename);
+		});
+
+		//preview image
+		var imgTarget = $('.preview-image .upload-hidden');
+
+		imgTarget.on('change', function () {
+			var myFileBox = $(this).closest('.filebox');
+			myFileBox.children('.upload-display').remove();
+
+			if (window.FileReader) {
+				//image 파일만
+				if (!$(this)[0].files[0].type.match(/image\//)) return;
+
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					var src = e.target.result;
+					myFileBox.append('<div class="upload-display"><div class="upload-thumb-wrap"><img src="' + src + '" class="upload-thumb"></div></div>');
+				}
+				reader.readAsDataURL($(this)[0].files[0]);
+			}
+
+			else {
+				$(this)[0].select();
+				$(this)[0].blur();
+				var imgSrc = document.selection.createRange().text;
+				myFileBox.append('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>');
+
+				var img = $(this).siblings('.upload-display').find('img');
+				img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\"" + imgSrc + "\")";
+			}
+		});
+	}
+	_inputFile();
+
 	// Skip To Content
 	function _skipToContent() {
 		const $skipNaviBtn = $body.find('a.skip-content');
@@ -388,6 +437,7 @@
 		inputFocus: _inputFocus,				// inner-button input focus
 		inputComma: _inputComma,				// 인풋 3자리 마다 , 추가
 		inputNumber: _inputNumber,				// 인풋 숫자만 입력
+		inputFile: _inputFile,					// 인풋 파일
 		skipToContent: _skipToContent,			// Skip To Content
 		scrollLast: _scrollLast,				// 스크롤 마지막
 		tabs: _tabs,							// tab

@@ -21,50 +21,51 @@
 	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
 	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
 	<style type="text/css">
-		body {
-			padding: 30px;
-		}
+body {
+	padding: 30px;
+}
 
-		.guide-title {
-			margin: 20px 0 10px;
-			color: #000;
-			font-size: 18px;
-		}
+.guide-title {
+	margin: 20px 0 10px;
+	color: #000;
+	font-size: 18px;
+}
 
-		.guide-title::before {
-			content: "·";
-			display: inline-block;
-			margin-right: 4px;
-			color: #222;
-		}
+.guide-title::before {
+	content: "·";
+	display: inline-block;
+	margin-right: 4px;
+	color: #222;
+}
 
-		.guide-list {
-			margin: 10px 0 30px;
-		}
+.guide-list {
+	margin: 10px 0 30px;
+}
 
-		.guide-list li {
-			position: relative;
-			margin: 5px 0;
-			color: #222;
-		}
+.guide-list li {
+	position: relative;
+	margin: 5px 0;
+	color: #222;
+}
 
-		.guide-list>li {
-			padding-left: 8px;
-		}
+.guide-list > li {
+	padding-left: 8px;
+}
 
-		.guide-list>li::before {
-			content: "";
-			position: absolute;
-			top: 10px;
-			left: 0;
-			width: 2px;
-			height: 2px;
-			background-color: #333;
-		}
+.guide-list > li::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 2px;
+	height: 2px;
+	background-color: #333;
+}
 
-		.guide-list ul {
-			padding-left: 20px;
-		}
+.guide-list ul {
+	padding-left: 20px;
+}
+
 
 	</style>
 </head>
@@ -425,12 +426,13 @@
 													</tbody>
 												</table>
 											</div>
-											<div class="inner-button" style="margin-top: 10px;">
-												<div class="input">
-													<input type="file" id="addFile" title="문서첨부">
-												</div>
-												<label for="addFile" class="button button-bg01">문서첨부</label>
+											<!-- TODO: 20230924 IE11로 인해 file 마크업 수정 -->
+											<div class="filebox preview-image">
+												<input class="upload-name" value="파일선택" disabled="disabled" style="width: 300px;">
+												<label for="input_file" class="button button-bg01">문서첨부</label>
+												<input type="file" id="input_file" class="upload-hidden">
 											</div>
+											<!-- //TODO: 20230924 IE11로 인해 file 마크업 수정 -->
 										</td>
 									</tr>
 								</tbody>
