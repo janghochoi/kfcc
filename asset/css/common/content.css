@@ -248,3 +248,12 @@
 .window-pop .search-group-box {
 	padding: 10px;
 }
+
+
+.fluid-wrap {
+	display: table;
+	width: 100%;
+}
+.fluid-wrap > * {
+	display: table-cell;
+}
