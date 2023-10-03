@@ -21,50 +21,54 @@
 	<script type="text/javascript" defer src="../../asset/js/common.js"></script>
 	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
 	<style type="text/css">
-		body {
-			padding: 30px;
-		}
+body {
+	padding: 30px;
+}
 
-		.guide-title {
-			margin: 20px 0 10px;
-			color: #000;
-			font-size: 18px;
-		}
+.guide-title {
+	margin: 20px 0 10px;
+	color: #000;
+	font-size: 18px;
+}
 
-		.guide-title::before {
-			content: "·";
-			display: inline-block;
-			margin-right: 4px;
-			color: #222;
-		}
+.guide-title::before {
+	content: "·";
+	display: inline-block;
+	margin-right: 4px;
+	color: #222;
+}
 
-		.guide-list {
-			margin: 10px 0 30px;
-		}
+.guide-list {
+	margin: 10px 0 30px;
+}
 
-		.guide-list li {
-			position: relative;
-			margin: 5px 0;
-			color: #222;
-		}
+.guide-list li {
+	position: relative;
+	margin: 5px 0;
+	color: #222;
+}
 
-		.guide-list>li {
-			padding-left: 8px;
-		}
+.guide-list > li {
+	padding-left: 8px;
+}
 
-		.guide-list>li::before {
-			content: "";
-			position: absolute;
-			top: 10px;
-			left: 0;
-			width: 2px;
-			height: 2px;
-			background-color: #333;
-		}
+.guide-list > li::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 2px;
+	height: 2px;
+	background-color: #333;
+}
 
-		.guide-list ul {
-			padding-left: 20px;
-		}
+.guide-list ul {
+	padding-left: 20px;
+}
+
+
+
+
 
 	</style>
 </head>
@@ -96,7 +100,7 @@
 				<!-- row -->
 				<div class="switch-box"><!-- TODO: 20230819 class명 변경 row => switch -->
 					<!-- left -->
-					<div class="left">
+					<div class="switch-left"><!-- TODO: 20230924 ie11 대응 class 명 수정 left => switch-left -->
 						<!-- board-head -->
 						<div class="board-head type-column">
 							<!-- item -->
@@ -151,12 +155,16 @@
 
 					</div>
 					<!-- //left -->
-					<div class="button-group"><!-- TODO: 20230819 추가삭제 버튼 추가 -->
-						<button type="button" class="button button-right button-action-add"></button>
-						<button type="button" class="button button-left button-action-remove"></button>
+					<!-- center -->
+					<div class="switch-center"><!-- TODO: 20230924 ie11 대응 class 명 수정 center => switch-center -->
+						<div class="button-group"><!-- TODO: 20230819 추가삭제 버튼 추가 -->
+							<button type="button" class="button button-right button-action-add"></button>
+							<button type="button" class="button button-left button-action-remove"></button>
+						</div>
 					</div>
+					<!-- //center -->
 					<!-- right -->
-					<div class="right" style="width: 560px;">
+					<div class="switch-right"><!-- TODO: 20230924 ie11 대응 class 명 수정 right => switch-right -->
 						<!-- board-head -->
 						<div class="board-head">
 							<div class="right">
