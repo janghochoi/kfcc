@@ -106,13 +106,21 @@
 	float: right;
 }
 /* switch-box */
-.switch-box .switch-left {
-	width: 265px;
+.switch-box {
+	display: table;
+	width: 100%;
 }
-.switch-box .button-group {
-	position: absolute;
-	top: 50px;
-	left: 260px;
+.switch-box > * {
+	display: table-cell;
+}
+.switch-box .switch-left {
+	width: 250px;
+}
+.switch-box .switch-center {
+	position: relative;
+	vertical-align: middle;
+	width: 68px;
+	padding: 0 14px;
 }
 .switch-box .button-group .button {
 	display: block;
@@ -160,10 +168,11 @@
 	float: left;
 	width: 250px;
 }
-.switch-box .button-group {
+/*.switch-box .button-group {
 	position: absolute;
 	top: 50%;
-}
+	transform: translateY(-50%);
+}*/
 .switch-box .button-group .button {
 	width: 40px;
 	height: 40px;
