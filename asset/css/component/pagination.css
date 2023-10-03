@@ -2,12 +2,13 @@
 /* pagination */
 .pagination-wrap {
 	position: relative;
+	margin: 20px auto 0;
 	margin-top: 20px;
 	text-align: center;
 }
 .pagination {
-	align-items: center;
-	justify-content: center;
+	display: inline-block;
+	text-align: center;
 }
 .pagination .first,
 .pagination .prev,
@@ -15,6 +16,8 @@
 .pagination .last,
 .pagination strong,
 .pagination a {
+	display: inline-block;
+	vertical-align: middle;
 	width: 30px;
 	height: 30px;
 	border: 0;
