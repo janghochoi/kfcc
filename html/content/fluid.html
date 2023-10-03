@@ -28,63 +28,7 @@
 		<div class="content">
 			<!-- heading -->
 			<div class="heading depth01 heading-payment">
-				<h2 class="title">합동안전보건 점검표</h2>
-				<div class="right">
-					<!-- TOOD : 20230819 복사 인쇄 접기 버튼 추가 -->
-					<div class="controls">
-						<div class="button-group">
-							<button type="button" class="button button-border01" onclick="copyClipboard()">
-								<span class="text">복사</span>
-							</button>
-							<button type="button" class="button button-border01" onclick="printPage()">
-								<span class="text">인쇄</span>
-							</button>
-							<button type="button" class="button button-border01 btn-payment-status active" onclick="paylistStatusCallback()">
-								<i class="fa-solid fa-chevron-up"></i>
-								<span class="text">접기</span>
-							</button>
-						</div>
-						<div class="table type-all-borde">
-							<table>
-								<caption>합동안전보건 점검표 결제 (담당, 팀장, 사장) 정보 표 입니다.</caption>
-								<colgroup>
-									<col style="width: 30px;">
-									<col style="width: 75px;">
-									<col style="width: 75px;">
-									<col style="width: 75px;">
-								</colgroup>
-								<tbody>
-									<tr>
-										<th scope="row" rowspan="3">결<br>제</th>
-										<th scope="col">담당자</th>
-										<th scope="col">팀장</th>
-										<th scope="col">사장</th>
-									</tr>
-									<tr>
-										<td>장그래</td>
-										<td>성과장</td>
-										<td>강사장</td>
-									</tr>
-									<tr>
-										<td>
-											23-00-00<br>
-											00:00
-										</td>
-										<td>
-											23-00-00<br>
-											00:00
-										</td>
-										<td>
-											23-00-00<br>
-											00:00
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<!-- //TOOD : 20230819 복사 인쇄 접기 버튼 추가 -->
-				</div>
+				<h2 class="title">반응성태그모음</h2>
 			</div>
 			<!-- //heading -->
 
@@ -106,17 +50,14 @@
 						<tr>
 							<th scope="row">긴급결재</th>
 							<td colspan="7">
-								<label class="radio">
-									<input type="radio" name="test1">
-									<i></i>
-									<span>사용안함</span>
-								</label>
-								<label class="radio">
-									<input type="radio" name="test1">
-									<i></i>
-									<span>사용</span>
-								</label>
-								<span class="color01">(긴급 아이콘(!) 표시와 함께 결재할 문서 목록의 상단에 위치)</span>
+								<div class="fluid-wrap">
+									<div calss="fluid">
+										<input type="text" />
+									</div>
+									<div class="fixed">
+										<button type="button" class="button-icon button-border02"><i class="fa-solid fa-users fa-color03"></i></button>
+									</div>
+								</div>
 							</td>
 						</tr>
 						<tr>

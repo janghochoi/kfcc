@@ -13,7 +13,6 @@
 	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
 	<!-- plugin -->
-	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
 	<!-- webfont js -->
 	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
 	<!-- common js -->
@@ -237,6 +236,12 @@ html {
 
 
 
+
+
+
+
+
+
 	</style>
 </head>
 <body>
@@ -381,7 +386,7 @@ html {
 						<td title="State">O</td>
 						<td title="ETC"></td>
 					</tr>
-					<tr>
+					<!--<tr>
 						<td title="No"></td>
 						<td title="1depth">조직도 (tree)</td>
 						<td title="2depth">다이얼로그</td>
@@ -419,7 +424,7 @@ html {
 						<td title="Person"></td>
 						<td title="State">O</td>
 						<td title="ETC">버튼 기능형 트리</td>
-					</tr>
+					</tr>-->
 
 					<tr>
 						<td title="No"></td>
@@ -427,7 +432,7 @@ html {
 						<td title="2depth">컨텐츠(프레임셋작업)</td>
 						<td title="3depth"></td>
 						<td title="4depth"></td>
-						<td title="Folder">content</td>
+						<td title="Folder">guide</td>
 						<td title="URL"><a href="/" target="_blank" title="새창">form</a></td>
 						<td title="Date"></td>
 						<td title="Person"></td>
@@ -472,6 +477,18 @@ html {
 						<td title="4depth"></td>
 						<td title="Folder">content</td>
 						<td title="URL"><a href="/" target="_blank" title="새창">view</a></td>
+						<td title="Date"></td>
+						<td title="Person"></td>
+						<td title="State">O</td>
+						<td title="ETC"></td>
+					</tr><tr>
+						<td title="No"></td>
+						<td title="1depth">반응성태그모음</td>
+						<td title="2depth"></td>
+						<td title="3depth"></td>
+						<td title="4depth"></td>
+						<td title="Folder">content</td>
+						<td title="URL"><a href="/" target="_blank" title="새창">fluid</a></td>
 						<td title="Date"></td>
 						<td title="Person"></td>
 						<td title="State">O</td>
@@ -533,7 +550,7 @@ html {
 				const urlElem = tr.querySelector('[title=URL]');
 				const url = urlElem.textContent.trim();
 				const link = urlElem.querySelector('a');
-				if(url == 'form' || url == 'search' || url == 'view' || url == 'write'){
+				if(url == 'form' || url == 'search' || url == 'view' || url == 'write' || url == 'fluid'){
 					link.href = `../guide/frame.html#${url}`;
 				}else{
 					link.href = `${dir}${folder}/${url}.html`;
