@@ -257,3 +257,7 @@
 .fluid-wrap > * {
 	display: table-cell;
 }
+
+.fluid-wrap .select {
+	width: 100%;
+}

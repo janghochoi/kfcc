@@ -37,18 +37,18 @@
 				<table>
 					<caption>합동안전보건 점검표 (긴급결재, 문서번호, 문서보안, 보존권한, 기안자, 기안부서, 작성일자, 기안일자, 완료일자, 폐기일자, 참조자) 구성 표 입니다.</caption>
 					<colgroup>
-						<col style="width:100px;">
+						<col style="width:150px;">
 						<col>
-						<col style="width:100px;">
+						<col style="width:150px;">
 						<col>
-						<col style="width:100px;">
+						<col style="width:150px;">
 						<col>
-						<col style="width:100px;">
+						<col style="width:150px;">
 						<col>
 					</colgroup>
 					<tbody>
 						<tr>
-							<th scope="row">긴급결재</th>
+							<th scope="row">input + iconbtn</th>
 							<td colspan="7">
 								<div class="fluid-wrap">
 									<div calss="fluid">
@@ -56,382 +56,137 @@
 											<input type="text" title="시작 날짜">
 										</div>
 									</div>
-									<div class="fixed" style="width:34px">
+									<div class="fixed" style="width:34px"><!-- TODO: 20230924 fluid 시 fixed 부분은 style width, padding-left 를 주셔야 합니다. -->
 										<button type="button" class="button-icon button-border02"><i class="fa-solid fa-users fa-color03"></i></button>
 									</div>
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<th scope="row">체크박스</th>
+							<th scope="row">셀렉트</th>
 							<td colspan="7">
-								<label class="checkbox">
-									<input type="checkbox" name="test2" checked>
-									<i></i>
-									<span>체크1</span>
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" name="test2">
-									<i></i>
-									<span>체크2</span>
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" name="test2">
-									<i></i>
-									<span>체크3</span>
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" name="test2" disabled>
-									<i></i>
-									<span>체크3</span>
-								</label>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">날짜검색</th>
-							<td colspan="7">
-								<div class="date-wrap">
-									<div class="input">
-										<input type="text" title="시작 날짜">
-									</div>
-									<em>~</em>
-									<div class="input">
-										<input type="text" title="종료 날짜">
+								<div class="fluid-wrap">
+									<div calss="fluid">
+										<select class="select" title="점검표 분류 구분">
+											<option>선택</option>
+										</select>
 									</div>
 								</div>
-								<script type="text/javascript">
-									$(function () {
-										$(".date-wrap input").datepicker({
-											dateFormat: 'yy-mm-dd',
-											showOtherMonths: true,
-											showMonthAfterYear: true,
-											changeYear: true,
-											changeMonth: true,
-											yearSuffix: ".",
-											showOn: "both",
-											buttonImage: "../../asset/images/common/img-datepicker.svg",
-											buttonImageOnly: true,
-											buttonText: "선택",
-											monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-											monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-											dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-											dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
-										});
-									});
-								</script>
 							</td>
 						</tr>
+
 						<tr>
-							<th scope="row">문서번호</th>
-							<td colspan="3">안전보건관리-협동안전보건 점검표2020호</td>
-							<th scope="row">문서보안</th>
-							<td>
-								<select class="select full" title="문서보안 구분">
-									<option>선택</option>
-								</select>
-							</td>
-							<th scope="row">보존권한</th>
-							<td>
-								<select class="select full" title="보존권한 구분">
-									<option>선택</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">기안자</th>
-							<td colspan="3">관리자 담당(내선번호 222)</td>
-							<th scope="row">기안부서</th>
-							<td colspan="3">(주)TCC아이엔에스-운영팀</td>
-						</tr>
-						<tr>
-							<th scope="row">작성일자</th>
-							<td>2022.00.00</td>
-							<th scope="row">기안일자</th>
-							<td>2022.00.00</td>
-							<th scope="row">완료일자</th>
-							<td>2022.00.00</td>
-							<th scope="row">폐기일자</th>
-							<td>2022.00.00</td>
-						</tr>
-						<tr>
-							<th scope="row">참조자</th>
+							<th scope="row">select + btn</th>
 							<td colspan="7">
-								<div class="inner-button">
-									<div class="input">
-										<input type="text" class="input" title="참조자" readonly>
+								<div class="fluid-wrap">
+									<div calss="fluid">
+										<select class="select" title="점검표 분류 구분">
+											<option>선택</option>
+										</select>
 									</div>
-									<button type="button" class="button-icon button-border02"><i class="fa-solid fa-users fa-color03"></i></button>
+									<div class="fixed" style="padding-left:4px; width:114px;"><!-- TODO: 20230924 fluid 시 fixed 부분은 style width, padding-left 를 주셔야 합니다. -->
+										<button type="button" class="button button-bg01">담당매니저 선택</button>
+									</div>
 								</div>
 							</td>
 						</tr>
-						<!-- TOOD : 20230830 첨부파일영역 추가 -->
+
 						<tr>
-							<th scope="row">첨부</th>
+							<th scope="row">input + btn</th>
 							<td colspan="7">
-								<div class="table type-row">
-									<table>
-										<caption>첨부파일리스트</caption>
-										<colgroup>
-											<col style="width:auto">
-											<col style="width:10%">
-											<col style="width:10%">
-											<col style="width:10%">
-										</colgroup>
-										<thead>
-											<tr>
-												<th scope="col">파일명</th>
-												<th scope="col">사이즈</th>
-												<th scope="col">다운로드 수</th>
-												<th scope="col">다운로드</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>발표자료.pdf</td>
-												<td>000KB</td>
-												<td>8</td>
-												<td><button type="button"><i class="fa-solid fa-download"></i></button></td>
-											</tr>
-											<tr>
-												<td>발표자료2.pdf</td>
-												<td>000KB</td>
-												<td>0</td>
-												<td><button type="button"><i class="fa-solid fa-download"></i></button></td>
-											</tr>
-										</tbody>
-									</table>
+								<div class="fluid-wrap">
+									<div calss="fluid">
+										<div class="input">
+											<input type="text" title="담당매니저" disabled="disabled">
+										</div>
+									</div>
+									<div class="fixed" style="padding-left:4px; width:114px;"><!-- TODO: 20230924 fluid 시 fixed 부분은 style width, padding-left 를 주셔야 합니다. -->
+										<button type="button" class="button button-bg01">담당매니저 선택</button>
+									</div>
 								</div>
 							</td>
 						</tr>
-					</tbody>
-				</table>
-			</div>
-			<!-- //table -->
+						<tr>
+							<th scope="row">btn + input</th>
+							<td colspan="7">
+								<div class="fluid-wrap">
+									<div class="fixed" style="padding-right:4px; width:114px;"><!-- TODO: 20230924 fluid 시 fixed 부분은 style width, padding-left 를 주셔야 합니다. -->
+										<button type="button" class="button button-bg01">담당매니저 선택</button>
+									</div>
+									<div calss="fluid">
+										<div class="input">
+											<input type="text" title="담당매니저" disabled="disabled">
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
 
-			<!-- table -->
-			<div class="table">
-				<table>
-					<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
-					<colgroup>
-						<col style="width: 90px;">
-						<col style="width: 400px;">
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-					</colgroup>
-					<thead>
 						<tr>
-							<th scope="col">구분</th>
-							<th scope="col">점검사항</th>
-							<th scope="col">양호</th>
-							<th scope="col">보통</th>
-							<th scope="col">미흡</th>
-							<th scope="col">해당무</th>
-							<th scope="col">내용</th>
-							<th scope="col">내용</th>
-							<th scope="col">내용</th>
+							<th scope="row">mulitple type1</th>
+							<td colspan="7">
+								<div class="fluid-wrap">
+									<div class="fixed" style="padding-right:4px; width:114px;"><!-- TODO: 20230924 fluid 시 fixed 부분은 style width, padding-left 를 주셔야 합니다. -->
+										<button type="button" class="button button-bg01">담당매니저 선택</button>
+									</div>
+									<div calss="fluid">
+										<div class="input">
+											<input type="text" title="담당매니저" disabled="disabled">
+										</div>
+									</div>
+									<div class="fixed" style="padding:0 4px; width:114px;"><!-- TODO: 20230924 fluid 시 fixed 부분은 style width, padding-left 를 주셔야 합니다. -->
+										<button type="button" class="button button-bg01">담당매니저 선택</button>
+									</div>
+									<div calss="fluid">
+										<div class="input">
+											<input type="text" title="담당매니저" disabled="disabled">
+										</div>
+									</div>
+								</div>
+							</td>
 						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>테이블 내부 가로스크롤</td>
-							<td>필요시</td>
-							<td>scroll-wrap</td>
-							<td>필요</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<!-- //table -->
 
-			<!-- table -->
-			<div class="table type-row">
-				<table>
-					<caption>합동안전보건 점검표 (제목, 의견) 구성 표 입니다.</caption>
-					<colgroup>
-						<col style="width:100px;">
-						<col>
-					</colgroup>
-					<tbody>
 						<tr>
-							<th scope="row">제목</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="제목">
+							<th scope="row">mulitple type2</th>
+							<td colspan="7">
+								<div class="fluid-wrap">
+									<div class="fixed" style="padding-right:4px; width:114px;"><!-- TODO: 20230924 fluid 시 fixed 부분은 style width, padding-left 를 주셔야 합니다. -->
+										<button type="button" class="button button-bg01">담당매니저 선택</button>
+									</div>
+									<div calss="fluid">
+										<div class="input">
+											<input type="text" title="담당매니저" disabled="disabled">
+										</div>
+									</div>
+									<div calss="fluid" style="padding-left:4px;">
+										<div class="input">
+											<input type="text" title="담당매니저" disabled="disabled">
+										</div>
+									</div>
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<th scope="row">의견</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="의견">
+							<th scope="row">mulitple type3</th>
+							<td colspan="7">
+								<div class="fluid-wrap">
+									<div calss="fixed" style="width:200px">
+										<select class="select" title="점검표 분류 구분">
+											<option>선택</option>
+										</select>
+									</div>
+									<div calss="fluid" style="padding-left:4px;">
+										<div class="input">
+											<input type="text" title="담당매니저" disabled="disabled">
+										</div>
+									</div>
+									<div class="fixed" style="padding-left:4px; width:114px;"><!-- TODO: 20230924 fluid 시 fixed 부분은 style width, padding-left 를 주셔야 합니다. -->
+										<button type="button" class="button button-bg01">담당매니저 선택</button>
+									</div>
 								</div>
 							</td>
 						</tr>
-					</tbody>
-				</table>
-			</div>
-			<!-- //table -->
 
-			<!-- table -->
-			<div class="table type-row">
-				<table>
-					<caption>합동안전보건 점검표 (점검표 분류, 전검 장소) 구성 표 입니다.</caption>
-					<colgroup>
-						<col style="width:100px;">
-						<col>
-						<col style="width:100px;">
-						<col>
-					</colgroup>
-					<tbody>
-						<tr>
-							<th scope="row">점검표 분류</th>
-							<td>
-								<div class="inner-button">
-									<select class="select" title="점검표 분류 구분">
-										<option>선택</option>
-									</select>
-									<button type="button" class="button button-bg01">화면출력</button>
-								</div>
-							</td>
-							<th scope="row">점검 장소</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="점검 장소">
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<table style="border-top: 0;">
-					<caption>합동안전보건 점검표 (점검시간, 수급업체명, 현장대리인, 수급인 근로자) 구성 표 입니다.</caption>
-					<colgroup>
-						<col style="width:100px;">
-						<col>
-						<col style="width:100px;">
-						<col>
-						<col style="width:100px;">
-						<col>
-					</colgroup>
-					<tbody>
-						<tr>
-							<th scope="row">점검시간</th>
-							<td colspan="5">0000-00-00 ~ 0000-00-00</td>
-						</tr>
-						<tr>
-							<th scope="row">수급업체명1</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="수급업체명1">
-								</div>
-							</td>
-							<th scope="row">현장대리인1</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="현장대리인1">
-								</div>
-							</td>
-							<th scope="row">수급인 근로자1</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="수급인 근로자1">
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">수급업체명2</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="수급업체명2">
-								</div>
-							</td>
-							<th scope="row">현장대리인2</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="현장대리인2">
-								</div>
-							</td>
-							<th scope="row">수급인 근로자2</th>
-							<td>
-								<div class="input">
-									<input type="text" class="input" title="수급인 근로자2">
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<!-- //table -->
-
-			<!-- table -->
-			<div class="table">
-				<table>
-					<caption>합동안전보건 점검표 (구분, 점검사항, 양호, 보통, 미흡, 해당무) 구성 표 입니다.</caption>
-					<colgroup>
-						<col style="width: 90px;">
-						<col>
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-						<col style="width: 90px;">
-					</colgroup>
-					<thead>
-						<tr>
-							<th scope="col">구분</th>
-							<th scope="col">점검사항</th>
-							<th scope="col">양호</th>
-							<th scope="col">보통</th>
-							<th scope="col">미흡</th>
-							<th scope="col">해당무</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td colspan="6">
-								<div class="no-data">
-									상단 점검표 분류 항목을 선택하십시요.
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td class="align-left"></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<!-- //table -->
-
-			<!-- table -->
-			<div class="table">
-				<table>
-					<caption>합동안전보건 점검표 (미흡 시 조치사항 (기타 특이사항)) 구성 표 입니다.</caption>
-					<colgroup>
-						<col>
-					</colgroup>
-					<thead>
-						<tr>
-							<th scope="col" class="align-left">[미흡 시 조치사항 (기타 특이사항)]</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="align-left"></td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
