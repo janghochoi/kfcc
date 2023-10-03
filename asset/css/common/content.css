@@ -155,37 +155,7 @@
 	padding: 3px;
 	font-size: 14px;
 }
-/* switch-box */
-.switch-box {
-	position: relative;
-}
-.switch-box::after {
-	content: "";
-	display: table;
-	clear: both;
-}
-.switch-box .switch-left {
-	float: left;
-	width: 250px;
-}
-/*.switch-box .button-group {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-}*/
-.switch-box .button-group .button {
-	width: 40px;
-	height: 40px;
-	border: 1px solid #eee;
-	background: url(../../images/common/icon-switch-arrow.png) no-repeat center;
-}
-.switch-box .button-group .button-left {
-	transform: rotate(-180deg);
-}
-.switch-box .switch-right {
-	float: right;
-	width: 536px;
-}
+
 .switch-table th,
 .switch-table td {
 	vertical-align: middle;
