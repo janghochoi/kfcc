@@ -15,8 +15,6 @@
 	<!-- jquery -->
 	<script type="text/javascript" src="../../asset/js/jquery-3.7.0.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-ui.js"></script>
-	<!-- plugin -->
-	<script type="text/javascript" src="../../asset/js/swiper-bundle.js"></script>
 	<!-- webfont js -->
 	<script type="text/javascript" src="../../asset/js/webfont.js"></script>
 	<!-- common js -->
@@ -24,203 +22,205 @@
 	<script type="text/javascript" defer src="../../asset/js/dialog.js"></script>
 
 	<style type="text/css">
-		.wrap.guide-page {
-			overflow: visible;
-			min-width: auto;
-			max-width: none;
-			padding: 0;
-		}
+.wrap.guide-page {
+	overflow: visible;
+	min-width: auto;
+	max-width: none;
+	padding: 0;
+}
 
-		.wrap.guide-page .container {
-			overflow-y: visible;
-			height: auto;
-			margin-top: 0;
-			padding-left: 200px;
-		}
+.wrap.guide-page .container {
+	overflow-y: visible;
+	height: auto;
+	margin-top: 0;
+	padding-left: 200px;
+}
 
-		.wrap.guide-page .contents {
-			padding: 30px 40px 50px;
-		}
+.wrap.guide-page .contents {
+	padding: 30px 40px 50px;
+}
 
-		.guide-menu {
-			overflow-y: auto;
-			position: fixed;
-			top: 0;
-			left: 0;
-			z-index: 50;
-			width: 200px;
-			height: 100%;
-			padding-bottom: 30px;
-			background-color: #333;
-		}
+.guide-menu {
+	overflow-y: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	width: 200px;
+	height: 100%;
+	padding-bottom: 30px;
+	background-color: #333;
+}
 
-		.guide-menu .logo {
-			padding: 10px 0;
-			text-align: center;
-			background-color: #fff;
-		}
+.guide-menu .logo {
+	padding: 10px 0;
+	text-align: center;
+	background-color: #fff;
+}
 
-		.guide-menu a {
-			display: block;
-			margin-top: -1px;
-			padding: 10px 15px;
-			border: 1px solid rgba(255, 255, 255, .3);
-			border-width: 1px 0;
-			color: #fff;
-			font-size: 16px;
-			font-weight: 300;
-			transition: all .3s;
-		}
+.guide-menu a {
+	display: block;
+	margin-top: -1px;
+	padding: 10px 15px;
+	border: 1px solid rgba(255, 255, 255, .3);
+	border-width: 1px 0;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 300;
+	transition: all .3s;
+}
 
-		.guide-menu a.current {
-			color: #333;
-			font-weight: 700;
-			background-color: #fff;
-		}
+.guide-menu a.current {
+	color: #333;
+	font-weight: 700;
+	background-color: #fff;
+}
 
-		.guide-title {
-			margin: 50px 0 10px;
-			color: red;
-			line-height: normal;
-		}
+.guide-title {
+	margin: 50px 0 10px;
+	color: red;
+	line-height: normal;
+}
 
-		h1.guide-title {
-			margin-top: 0;
-			font-size: 40px;
-			font-weight: 900;
-		}
+h1.guide-title {
+	margin-top: 0;
+	font-size: 40px;
+	font-weight: 900;
+}
 
-		h2.guide-title {
-			padding-bottom: 10px;
-			border-bottom: 1px solid #ddd;
-			font-size: 30px;
-			font-weight: 700;
-		}
+h2.guide-title {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ddd;
+	font-size: 30px;
+	font-weight: 700;
+}
 
-		h3.guide-title {
-			font-size: 20px;
-		}
+h3.guide-title {
+	font-size: 20px;
+}
 
-		h4.guide-title {
-			margin-top: 20px;
-			font-size: 15px;
-		}
+h4.guide-title {
+	margin-top: 20px;
+	font-size: 15px;
+}
 
-		.guide-title+.guide-title {
-			margin-top: 0;
-		}
+.guide-title + .guide-title {
+	margin-top: 0;
+}
 
-		.guide-title+.heading {
-			margin-top: 0;
-		}
+.guide-title + .heading {
+	margin-top: 0;
+}
 
-		.guide-text {
-			margin: 10px 0 30px;
-		}
+.guide-text {
+	margin: 10px 0 30px;
+}
 
-		.guide-icon-list {
-			display: flex;
-			flex-wrap: wrap;
+.guide-icon-list {
+	display: flex;
+	flex-wrap: wrap;
 
-			gap: 4px;
-		}
+	gap: 4px;
+}
 
-		.guide-icon-list li {
-			flex: 1 1 auto;
-			padding: 5px;
-			text-align: center;
-			background-color: #fcc;
-		}
+.guide-icon-list li {
+	flex: 1 1 auto;
+	padding: 5px;
+	text-align: center;
+	background-color: #fcc;
+}
 
-		.guide-icon-list li [class*=sprIcon] {
-			margin: 0;
-		}
+.guide-icon-list li [class*=sprIcon] {
+	margin: 0;
+}
 
-		.guide-icon-list li .name {
-			margin-top: 5px;
-			color: #333;
-			font-size: 14px;
-		}
+.guide-icon-list li .name {
+	margin-top: 5px;
+	color: #333;
+	font-size: 14px;
+}
 
-		.guide-list-color {
-			display: flex;
-			flex-wrap: wrap;
+.guide-list-color {
+	display: flex;
+	flex-wrap: wrap;
 
-			gap: 10px;
-		}
+	gap: 10px;
+}
 
-		.guide-list-color li {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-direction: column;
-			padding: 10px;
-			background-color: #fcc;
+.guide-list-color li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	background-color: #fcc;
 
-			gap: 3px;
-		}
+	gap: 3px;
+}
 
-		.guide-del {
-			position: relative;
-			text-decoration: line-through;
-			text-decoration-color: red;
-		}
+.guide-del {
+	position: relative;
+	text-decoration: line-through;
+	text-decoration-color: red;
+}
 
-		.guide-del:before {
-			content: "사용안함";
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			padding-top: 30%;
-			text-align: center;
-			text-decoration: none;
-			background-color: rgba(255, 255, 255, .7);
-		}
+.guide-del:before {
+	content: "사용안함";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-top: 30%;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgba(255, 255, 255, .7);
+}
 
-		pre code {
-			margin: 0;
-			padding: 0;
-		}
+pre code {
+	margin: 0;
+	padding: 0;
+}
 
-		pre ::selection {
-			background-color: #000;
-		}
+pre ::selection {
+	background-color: #000;
+}
 
-		.content-inner {
-			background-color: #f1f1f1;
-		}
+.content-inner {
+	background-color: #f1f1f1;
+}
 
-		@media (max-width: 767px) {
-			.guide-menu {
-				overflow-x: auto;
-				width: 100%;
-				height: auto;
-				padding-bottom: 0;
-			}
+@media (max-width: 767px) {
+	.guide-menu {
+		overflow-x: auto;
+		width: 100%;
+		height: auto;
+		padding-bottom: 0;
+	}
 
-			.guide-menu ul {
-				display: flex;
-			}
+	.guide-menu ul {
+		display: flex;
+	}
 
-			.guide-menu a {
-				padding: 10px;
-				white-space: nowrap;
-			}
+	.guide-menu a {
+		padding: 10px;
+		white-space: nowrap;
+	}
 
-			.wrap.guide-page .container {
-				padding-left: 0;
-			}
+	.wrap.guide-page .container {
+		padding-left: 0;
+	}
 
-			.wrap.guide-page .contents {
-				padding: 30px 21px;
-			}
+	.wrap.guide-page .contents {
+		padding: 30px 21px;
+	}
 
-			pre {
-				display: none;
-			}
-		}
+	pre {
+		display: none;
+	}
+}
+
+
 
 	</style>
 </head>
@@ -1095,22 +1095,7 @@
 					</pre>
 
 
-					<h3 class="guide-title">Switch</h3>
-					<label class="switch">
-						<input type="checkbox">
-						<span></span>
-						<i></i>
-					</label>
-					<pre>
-						<code class="language-html">
-							&lt;label class=&quot;switch&quot;&gt;
-								&lt;input type=&quot;checkbox&quot;&gt;
-								&lt;span&gt;&lt;/span&gt;
-								&lt;i&gt;&lt;/i&gt;
-							&lt;/label&gt;
-						</code>
-					</pre>
-				</div>
+
 
 				<div id="menu-form-select">
 					<h2 class="guide-title">Form Select</h2>
